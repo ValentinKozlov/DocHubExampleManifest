@@ -1,7 +1,7 @@
 docs:
   # Заглушка пока нет описсания по бизнес архитектуре
   swamp.tech_arch:    
-    location: 05. Технологическая архитектура
+    location: Технологическая архитектура
     description: Описание технологической архитектурой
     type: markdown
     template: tech_arch.md

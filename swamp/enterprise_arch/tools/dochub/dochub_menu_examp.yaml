@@ -1,0 +1,178 @@
+dochub_menu_examp:
+  dochub:
+    title: DocHub
+    order: 1
+
+  dochub.arch_governance:
+    title: Архитектурные принципы и стандарты
+    order: 1000
+  dochub.arch_governance.introduction:
+    title: Введение в архитектуру
+    order: 1200
+  dochub.arch_governance.principles:
+    title: Архитектурные принципы
+    order: 1300
+  dochub.arch_governance.standards:
+    title: Архитектурные стандарты
+    order: 1400
+  dochub.arch_governance.standards.monitoring:
+    title: Стандарты мониторинга
+    order: 1410
+  dochub.arch_governance.standards.itsec:
+    title: Стандарты кибербезопасности
+    order: 1420
+  dochub.arch_governance.platforms:
+    title: Стандарты по платформам
+    order: 1500
+  dochub.arch_governance.platforms.dochub:
+    title: DocHub
+    order: 1510
+  dochub.arch_governance.platforms.dochub.code_standard:
+    title: Конвенция кодирования
+    order: 1511
+  dochub.arch_governance.platforms.s_systems:
+    title: S платформы
+    order: 1520
+  dochub.arch_governance.platforms.1c:
+    title: Платформа 1C
+    order: 1530
+  dochub.arch_governance.platforms.ms_dynamics:
+    title: Платформа MS Dynamics
+    order: 1540
+  dochub.arch_governance.platforms.kafka:
+    title: Apache Kafka
+    order: 1550
+  dochub.arch_governance.platforms.k8s:
+    title: Кластер Kubernetes
+    order: 1560
+  dochub.arch_governance.patterns:
+    title: Типовые паттерны реализации задач
+    order: 1600
+
+  dochub.business_arch:
+    title: Бизнес архитектура
+    order: 2000
+  dochub.business_arch.proc_map:
+    title: Карта процессов
+    order: 2100
+
+  dochub.inform_arch:
+    title: Информационная архитектура
+    order: 3000
+  dochub.inform_arch.business_entities:
+    title: Бизнес-сущности
+    order: 3100
+  dochub.inform_arch.systems_business_entities:
+    title: Список бизнес-сущностей в системах
+    order: 3200
+
+
+  dochub.app_arch:
+    title: Прикладная архитектура
+    order: 4000
+  dochub.app_arch.systems_list:
+    title: Список систем
+    order: 4100
+  dochub.app_arch.app_map:
+    title: Карта приложений
+    order: 4200
+  dochub.app_arch.pal1:
+    title: Прикладной ландшафт ПА-L1
+    order: 4300
+  dochub.app_arch.pal1_details:
+    title: Детальная документация систем ПА-L1
+    order: 4400
+  dochub.app_arch.pal2:
+    title: Детальная архитектуры систем ПА-L2
+    order: 4500
+  dochub.app_arch.pal2_details:
+    title: Детальная документация систем ПА-L2
+    order: 4600
+  dochub.app_arch.aspects:
+    title: Функционал систем
+    order: 4700
+  dochub.app_arch.aspects.business_func:
+    title: Бизнес функциональность
+    order: 4710
+  dochub.app_arch.aspects.tech_func:
+    title: Техническая функциональность
+    order: 4720
+  dochub.app_arch.systems_graph:
+    title: Graph систем
+    order: 4800
+  dochub.app_arch.systems_details_list:
+    title: Список систем - детальный
+    order: 4900
+
+  dochub.tech_arch:
+    title: Технологическая архитектура
+    order: 5000
+  dochub.tech_arch.clusters:
+    title: Кластера ГК Болото
+    order: 5100
+  dochub.tech_arch.techradar:
+    title: Техрадар
+    order: 5200
+
+
+  dochub.arch_decision:
+    title: Архитектура решений
+    order: 6000
+  dochub.arch_decision.adl:
+    title: Architecture decision log
+    order: 6100
+  dochub.arch_decision.tactical:
+    title: Тактические архитектуры
+    order: 6200
+
+  dochub.arch_dev:
+    title: Развитие корп архитектуры
+    order: 7000
+  dochub.arch_dev.processes:
+    title: Политики и архитектурные процессы
+    order: 7100
+  dochub.arch_dev.tools:
+    title: Инструменты
+    order: 7200
+  dochub.arch_dev.tools.dochub:
+    title: DocHub
+    order: 7210
+  dochub.arch_dev.tools.dochub.dochub_app_arch_desc_guide:
+    title: Руководство по описанию прикладной архитектуры
+    order: 7211
+  dochub.arch_dev.tools.dochub.jsonata_query_example:
+    title: Примеры запросов JSONata
+    order: 7212
+  dochub.arch_dev.tools.dochub.menu_structure:
+    title: Целевая структура меню
+    order: 7213
+  dochub.arch_dev.tools.dochub.problems:
+    title: Проблемы
+    order: 7216
+  dochub.arch_dev.tools.dochub.devtool:
+    title: JSONata
+    order: 7217
+  dochub.arch_dev.tools.storm:
+    title: 02. Storm BPMN
+    order: 7220
+  dochub.arch_dev.tools.storm.storm_bpmn_guide:
+    title: Описание нюансов работы в ГК Болото
+    order: 7221
+  dochub.arch_dev.teams:
+    title: Команды
+    order: 7230
+  dochub.arch_dev.plan:
+    title: План развития
+    order: 7240
+
+  dochub.dictionaries:
+    title: Справочники
+    order: 8000
+  dochub.dictionaries.settings:
+    title: Настройки
+    order: 8100
+
+  dochub.glossary:
+    title: Глоссарий терминов
+    order: 10000
+
