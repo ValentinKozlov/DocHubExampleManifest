@@ -1,5 +1,4 @@
-imports:
-  - docs.yaml  
+imports:  
   - it_platforms/_root.yaml
   - arch_principles/_root.yaml  
   - patterns/_root.yaml

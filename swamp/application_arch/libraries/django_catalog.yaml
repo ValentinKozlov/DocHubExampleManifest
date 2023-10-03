@@ -1,0 +1,15 @@
+libraries:
+  django_catalog:
+    title: Django Catalog
+    description: >
+      Django пакет, предоставляющий справочные модели и обеспечивающий связь с [Catalog](https://catalog.samoletgroup.ru/)
+    library_type: controlled
+    control_type: enterprise    
+    mentor: d.matakov
+    maintainers:
+      - a.trubnikov
+    repository: samolet.repo.devdept.django-catalog
+    technologies:  # Используемые технологии
+      - Django
+      - Python      
+      - PostgreSQL

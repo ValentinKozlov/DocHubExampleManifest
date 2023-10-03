@@ -1,5 +1,6 @@
 imports:
-# - swamp/_root.yaml
+  - swamp/_root.yaml
+
 swamphub:
   manifest:    
     version: <VERSION>

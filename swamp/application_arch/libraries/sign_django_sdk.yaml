@@ -1,0 +1,16 @@
+libraries:
+  sign_django_sdk:
+    title: Sign Django SDK
+    description: >
+      Модуль подписания для приложений Django
+    library_type: controlled
+    control_type: enterprise    
+    mentor: m.lytvyn
+    maintainers:
+      - v.kozlov
+      - a.trubnikov
+    repository: samolet.repo.signing-group.sign-django-sdk
+    technologies:  # Используемые технологии
+      - Django
+      - Python      
+      - PostgreSQL

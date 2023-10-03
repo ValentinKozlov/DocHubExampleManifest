@@ -1,6 +1,6 @@
 docs:
   arch_principles:
-    location: Архитектурные принципы и стандарты/Архитектурные принципы
+    location: Архитектурные принципы и стандарты/Принципы
     description: Архитектурные принципы
     type: markdown
     source: arch_principles.md

@@ -1,9 +1,18 @@
 aspects:
-  qa_systems:
-    title: QA системы
-    location: QA системы
+  wart_treatment:
+    title: Лечение бородавок
+    location: Лечение бородавок
 
-  sales:
-    title: Продажи
-    location: Продажи
+  mold removal:
+    title: Удаление плесени
+    location: Удаление плесени
+
+  moss covering:
+    title: Покрытие мхом
+    location: Покрытие мхом
+
+  mud baths:
+    title: Грязевые ванны
+    location: Грязевые ванны
+
     

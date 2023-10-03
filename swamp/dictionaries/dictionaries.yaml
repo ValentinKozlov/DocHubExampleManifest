@@ -1,7 +1,6 @@
 dictionaries:
   settings:
-    title: Настройки
-    order: 8100
+    title: Настройки    
   settings.critical_level:
     title: Уровень критичности приложений
     order: 8110

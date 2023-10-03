@@ -1,0 +1,7 @@
+docs:
+  arch_principles:
+    location: Архитектурные принципы и стандарты/Стандарты по платформам
+    description: Архитектурные принципы
+    type: markdown
+    source: standards.md
+
