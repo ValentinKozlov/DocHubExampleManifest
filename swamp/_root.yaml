@@ -8,6 +8,7 @@ imports:
   - information_arch/_root.yaml  
   - standards/_root.yaml  
   - tech_arch/_root.yaml
+  - dochub_menu.yaml
   
   
   

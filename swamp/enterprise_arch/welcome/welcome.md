@@ -1,1 +1,3 @@
-# Welcome page в web версии
+# ГК Болото
+
+![TOGAF](./images/swamp_residents.jpg)
