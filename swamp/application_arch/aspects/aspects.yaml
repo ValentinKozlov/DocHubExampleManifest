@@ -1,28 +1,95 @@
 aspects:
-  lechenie_borodavok:
+
+# Покупка дома на болоте
+  pokupka_doma_na_bolote:
+    title: Покупка дома на болоте
+    location: Покупка дома
+
+  pokupka_doma_na_bolote.zapolnenie_zayavok:
+    title: Заполнение заявок
+    location: Заполнение заявок
+
+  pokupka_doma_na_bolote.proverka_zayavok:
+    title: Проверка заявок
+    location: Проверка заявок
+
+  pokupka_doma_na_bolote.proverka_kreditnoj_istorii:
+    title: Проверка кредитной истории
+    location: Проверка кредитной истории
+
+  pokupka_doma_na_bolote.raschet_ipoteki:
+    title: Расчет ипотеки
+    location: Расчет ипотеки
+
+  pokupka_doma_na_bolote.podbor_doma_na_bolote:
+    title: Подбор дома на болоте
+    location: Подбор дома на болоте
+
+  pokupka_doma_na_bolote.proverka_chistoty_titula:
+    title: Проверка чистоты титула
+    location: Проверка чистоты титула
+
+  pokupka_doma_na_bolote.registraciya_sdelki:
+    title: Регистрация сделки
+    location: Регистрация сделки
+
+# Болотный профилакторий
+  bolotnyj_profilaktorij:
+    title: Болотный профилакторий
+    location: Болотный профилакторий
+
+  bolotnyj_profilaktorij.lechenie_borodavok:
     title: Лечение бородавок
     location: Лечение бородавок
 
-  udalenie_pleseni:
+  bolotnyj_profilaktorij.udalenie_pleseni:
     title: Удаление плесени
     location: Удаление плесени
 
-  pokrytie_mkhom:
+  bolotnyj_profilaktorij.pokrytie_mkhom:
     title: Покрытие мхом
     location: Покрытие мхом
 
-  gryazevye_vanny:
+  bolotnyj_profilaktorij.gryazevye_vanny:
     title: Грязевые ванны
     location: Грязевые ванны
 
-  lechenie_piyavkami:
+  bolotnyj_profilaktorij.lechenie_piyavkami:
     title: Лечение пиявками
     location: Лечение пиявками
 
-  lechenie_zmeinym_yadom:
+  bolotnyj_profilaktorij.lechenie_zmeinym_yadom:
     title: Лечение змеиным ядом
     location: Лечение змеиным ядом
     
-  otpaivanie_tinoj:
+  bolotnyj_profilaktorij.otpaivanie_tinoj:
     title: Отпаивание тиной
     location: Отпаивание тиной
+
+  bolotnyj_profilaktorij.massazh_nogami:
+    title: Массаж ногами
+    location: Массаж ногами
+
+  bolotnyj_profilaktorij.utoplenie_v_bolote:
+    title: Утопление в болоте
+    location: Утопление в болоте
+
+# Строительство дома на болоте
+  stroim_doma_na_bolote:
+    title: Строим дома на болоте
+    location: Строим дома на болоте
+  stroim_doma_na_bolote.zakupka_govna_i_palok:
+    title: Закупка говна и палок
+    location: Закупка говна и палок
+  stroim_doma_na_bolote.sbor_mkha:
+    title: Сбор мха
+    location: Сбор мха
+  stroim_doma_na_bolote.sbor_gryazi_na_kirpichi:
+    title: Сбор грязи на кирпичи
+    location: Сбор грязи на кирпичи
+  stroim_doma_na_bolote.kontrol_bobrov:
+    title: Контроль бобров
+    location: Контроль бобров
+  stroim_doma_na_bolote.razdacha_volshebnykh_lyulej:
+    title: Раздача волшебных люлей
+    location: Раздача волшебных люлей

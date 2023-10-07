@@ -1,13 +1,13 @@
 libraries:
-  sign_django_sdk:
-    title: Sign Django SDK
+  swamp_ui:
+    title: Swamp UI
     description: >
-      Модуль подписания для приложений Django
+      Библиотека со стилями ГК Болото
     library_type: inhouse
     control_type: regulated    
-    mentor: b.funtik
+    mentor: fr.vodyanoj
     maintainers:
-      - b.dyadyushka_mokus
+      - cr.duremar
     repository: https://github.com/rpiontik/DocHubExamples
     technologies:  # Используемые технологии
       - Django

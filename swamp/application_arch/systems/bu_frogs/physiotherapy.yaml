@@ -1,58 +1,58 @@
 components:
-  swamp.bu_crocodiles.autoforms:
-    title: AutoForms
+  swamp.bu_frogs.physiotherapy:
+    title: Лечебная физкультура
     entity: system
-    guid: 524f1b24-bf7e-4ffc-bad9-c3458cac66ff
+    guid: cf259a03-253f-4c33-a12f-7bc04d33a355
     system_status: production
-    dev_model: inhouse
-    short_description: Форма автозаполнения
-    description: Сервис для автозаполнения пользовательской формы клиента
+    dev_model: external
+    short_description: Сервис Лечебная физкультура
+    description: Сервис автоматизирующий проведение лечебной физкультуры
     business_owners:
-      - cr.shrek
-    application_owner: cr.dyujmovochka
-    budget_holder: cr.papa_karlo
-    architect: cr.duremar
+      - fr.kikimora
+    application_owner: fr.vodyanoj
+    budget_holder: fr.baba_yaga
+    architect: fr.bolotnik
     critical_level: business_operational #administrative/business_operational/business_critical/mission_critical
-    system_category: business_app #channel_app/business_app/ext_business_app/it_app/ext_it_app
+    system_category: ext_business_app #channel_app/business_app/ext_business_app/it_app/ext_it_app
     # Автоматически сгенерированный код #
     # Удалите этот комментарий после внесения фактических значений индикаторов.
     # - Для оценок `partially` и `none` комментарий (поле `comment`) обязателен.
     # - При внесении фактических значений индикаторов укажите текущую дату.
     indicators:
       - id: indicator_arch_maturity # Система соответствует архитектурным стандартам и принципам Компании
-        fit: fully
+        fit: none
         # fully - система полностью соответствует стандартам и принципам (в случаях, где стандарты еще не сформулированы)
         # partially - выполняется только часть стандартов, принципы нарушаются
         # none - система совсем не соответствует стандартам и про принципы никто не слышал
-        comment: Автоматически сгенерированный комментарий
+        comment: Архитектуры нет
         date: 07.10.2023
       - id: indicator_code_control # Исходный код системы полностью доступен в любой момент
-        fit: fully
+        fit: none
         # fully - исходный код храниться в корпоративном gitlab или может быть беспрепятственно получен (например, скачен с github) и помещен в корпоративный репозиторий
         # partially - часть кода (например, ядро или платформа) закрыты и доступ к нему получить невозможно
         # none - код полностью закрыт
-        comment: Автоматически сгенерированный комментарий
+        comment: Вендор нне дает код
         date: 07.10.2023
       - id: indicator_vendor # Отсутствуют критичные риски вендора (уход с рынка, прекращение поддержки, изменение ценовой политики)
-        fit: fully
+        fit: none
         # fully - разработка и поддержка системы ведется без участия вендора или разрыв сотрудничества с вендором не несет критичных рисков компании
         # partially - есть риск ухода вендора с рынка, например санкционный риск или вендор с высокой долей вероятности может пересмотреть условия сотрудничества, развитие системы без вендора представляется проблематичным
         # none - вендор или сотрудничество с ним находится в зоне высокого риска, развитие без вендора невозможно
-        comment: Автоматически сгенерированный комментарий
+        comment: Вендор может свалить в любой момент
         date: 07.10.2023
       - id: indicator_team_capacity # Ресурс команды достаточен для развития и сопровождения системы. Оценка должна выполняться на основании соответствия количества задач количеству ресурсов.
-        fit: fully
+        fit: none
         # fully - команда полностью укомплектована и нет постоянно растущего бэклога
         # partially - количество задач превышает возможности команды, но в команде есть достаточное количество открытых вакансии, закрытие которых должно помочь разрешить недостаток ресурса
         # none - в команде нет открытых вакансий и объем текущей работы превышает возможности команды (растет бэклог) на протяжении последних 2 месяцев
-        comment: Автоматически сгенерированный комментарий
+        comment: Большая текучка, скоро разрабатывать начнет уборщица
         date: 07.10.2023
       - id: indicator_process # Разработка и сопровождение системы осуществляется в соответствии с целевым процессом
-        fit: fully
+        fit: none
         # fully - разработка и сопровождение идут в полном соответствии с целевым процессом
         # partially - нет полного соответствие целевым процессам, но есть согласованный внутри команды roadmap как наладить процесс разработки и сопровождения
         # none - разработка идет хаотично, сопровождение нестабильно и несвоевременно, согласованных командой планов по изменению ситуации нет
-        comment: Автоматически сгенерированный комментарий
+        comment: Процесса нет
         date: 07.10.2023
     urls:
       - id: prod
@@ -67,65 +67,72 @@ components:
 
     technologies: # Используемые технологии
       - PostgreSQL
-      - Java
-      - Kotlin
-      - Spring
-      - jdk17
-      - RESTful
+      - Python
+      - TypeScript
     aspects:
-      - pokupka_doma_na_bolote.zapolnenie_zayavok
-      - pokupka_doma_na_bolote.proverka_zayavok
+      - bolotnyj_profilaktorij.massazh_nogami
+      - bolotnyj_profilaktorij.utoplenie_v_bolote
 
-    # links:
-    #   - id: 
-    #     direction: <--
+    links:
+      - id: swamp.bu_frogs.healthy_body
+        direction: <--
+        title: Данные жителей болот
+      - id: swamp.kikimora
+        direction: <--
+        title: Получение услуги
+      - id: swamp.bu_crocodiles.autoforms
+        direction: <--
+        title: Данные жителей болота
+      - id: swamp.bu_crocodiles.autoforms
+        direction: <--
+        title: Данные жителей болота 
+
+
+    libraries:
+      - swamp_ui
+      - django_catalog
+      - sign_django_sdk
 
 # Описание уровня уровня ПА-L2
 
-  swamp.bu_crocodiles.autoforms.frontend:
+  swamp.bu_frogs.physiotherapy.frontend:
     title: Фронт
     entity: component
     repository: https://github.com/RabotaRu/DocHub
     technologies:  # Используемые технологии
-      - Java
-      - Kotlin
-      - Spring
-      - jdk17
-      - RESTful
+      - Python
+      - TypeScript
     links:
-      - id: swamp.bu_crocodiles.autoforms.backend
+      - id: swamp.bu_frogs.physiotherapy.backend
         direction: <-->
         title: HTTPS
 
-  swamp.bu_crocodiles.autoforms.backend:
+  swamp.bu_frogs.physiotherapy.backend:
     title: Бэкенд
     entity: component
     repository: https://github.com/RabotaRu/DocHub
     technologies:  # Используемые технологии
-      - Java
-      - Kotlin
-      - Spring
-      - jdk17
-      - RESTful
+      - Python
+      - TypeScript
     links:
-      - id: swamp.bu_crocodiles.autoforms.db
+      - id: swamp.bu_frogs.physiotherapy.db
         direction: <-->
         title: tcp 5432    
 
-  swamp.bu_crocodiles.autoforms.db:
+  swamp.bu_frogs.physiotherapy.db:
       title: СУБД
       entity: database # для СУБД нужно указывать именно database
       technologies: 
         - PostgreSQL
 
 contexts:   # Контексты представления архитектурных компонентов
-  swamp.bu_crocodiles.autoforms:
-    title: Архитектура AutoSuggest (уровень ПА-L2)
-    location: Детальная архитектуры систем ПА-L2/Детальная архитектура систем (ПА-L2)/AutoForms
+  swamp.bu_frogs.physiotherapy:
+    title: Архитектура сервиса Лечебная физкультура (уровень ПА-L2)
+    location: Детальная архитектуры систем ПА-L2/Детальная архитектура систем (ПА-L2)/Лечебная физкультура
     extra-links: true
     uml:      
-      $autor: Дуремар
+      $autor: Болотник
       $version: 0.0.1
       $moment: 07.10.2023
     components:
-      - swamp.bu_crocodiles.autoforms.*
+      - swamp.bu_frogs.physiotherapy.*

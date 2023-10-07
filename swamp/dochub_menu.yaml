@@ -48,25 +48,13 @@ dochub_menu:
     title: Список систем
     order: 4100
     visible: true
-  dochub.app_arch.app_map:
-    title: Карта приложений
-    order: 4200
-    visible: true
   dochub.app_arch.pal1:
     title: Прикладной ландшафт ПА-L1
     order: 4300
     visible: true
-  dochub.app_arch.pal1_details:
-    title: Детальная документация систем ПА-L1
-    order: 4400
-    visible: true
   dochub.app_arch.pal2:
     title: Детальная архитектуры систем ПА-L2
     order: 4500
-    visible: true
-  dochub.app_arch.pal2_details:
-    title: Детальная документация систем ПА-L2
-    order: 4600
     visible: true
   dochub.app_arch.aspects:
     title: Функционал систем
@@ -75,26 +63,6 @@ dochub_menu:
   dochub.app_arch.systems_graph:
     title: Graph систем
     order: 4800
-    visible: true
-  dochub.app_arch.systems_details_list:
-    title: Список систем - детальный
-    order: 4900
-    visible: true
-  dochub.app_arch.repositories_list:
-    title: Список репозиториев
-    order: 4910
-    visible: true
-  dochub.app_arch.kafka_topics:
-    title: Топики Kafka
-    order: 4920
-    visible: true
-  dochub.app_arch.kafka_topics.list:
-    title: Список топиков Kafka
-    order: 4921
-    visible: true
-  dochub.app_arch.kafka_topics.scheme:
-    title: Схема топиков Kafka (IN PROGRESS)
-    order: 4922
     visible: true
   dochub.app_arch.libraries:
     title: Библиотеки
@@ -107,10 +75,6 @@ dochub_menu:
   dochub.app_arch.libraries.in_systems:
     title: Список библиотек в системах
     order: 4932
-    visible: true
-  dochub.app_arch.metrics:
-    title: Метрики
-    order: 4940
     visible: true
 
   dochub.tech_arch:

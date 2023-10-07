@@ -2,13 +2,14 @@ libraries:
   django_catalog:
     title: Django Catalog
     description: >
-      Django пакет, предоставляющий справочные модели и обеспечивающий связь с [Catalog](https://catalog.samoletgroup.ru/)
-    library_type: controlled
-    control_type: enterprise    
-    mentor: d.matakov
+      Django пакет, предоставляющий справочные модели и обеспечивающий связь с космосом
+    library_type: inhouse
+    control_type: regulated    
+    mentor: hp.begemot_shokolad
     maintainers:
-      - a.trubnikov
-    repository: samolet.repo.devdept.django-catalog
+      - hp.funtik
+      - fr.bolotnik
+    repository: https://github.com/rpiontik/DocHubExamples
     technologies:  # Используемые технологии
       - Django
       - Python      

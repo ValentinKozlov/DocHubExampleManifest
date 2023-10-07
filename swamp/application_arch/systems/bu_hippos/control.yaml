@@ -1,58 +1,58 @@
 components:
-  swamp.bu_crocodiles.autoforms:
-    title: AutoForms
+  swamp.bu_hippos.control:
+    title: Контроль за работой
     entity: system
     guid: 524f1b24-bf7e-4ffc-bad9-c3458cac66ff
-    system_status: implementation
+    system_status: production
     dev_model: inhouse
-    short_description: Форма автозаполнения
-    description: Сервис для автозаполнения пользовательской формы клиента
+    short_description: Сервис контроля за работой бобров
+    description: Сервис автоматизирующий контроль за работой бобров. Бобры всех утомили и работать не хотят.
     business_owners:
-      - cr.kikimora
-    application_owner: cr.vodyanoj
-    budget_holder: cr.baba_yaga
-    architect: cr.bolotnik
-    critical_level: business_operational #administrative/business_operational/business_critical/mission_critical
+      - hp.luchshij_syshchik_bez_diploma
+    application_owner: hp.begemot_shokolad
+    budget_holder: hp.dyadyushka_mokus
+    architect: hp.funtik
+    critical_level: mission_critical #administrative/business_operational/business_critical/mission_critical
     system_category: business_app #channel_app/business_app/ext_business_app/it_app/ext_it_app
     # Автоматически сгенерированный код #
     # Удалите этот комментарий после внесения фактических значений индикаторов.
     # - Для оценок `partially` и `none` комментарий (поле `comment`) обязателен.
     # - При внесении фактических значений индикаторов укажите текущую дату.
     indicators:
-      - id: indicator_arch_maturity # Система соответствует архитектурным стандартам и принципам Компании (https://dochub.samoletgroup.ru/docs/arch_principles, https://dochub.samoletgroup.ru/entities/seps/seps_list)
+      - id: indicator_arch_maturity # Система соответствует архитектурным стандартам и принципам Компании
         fit: fully
         # fully - система полностью соответствует стандартам и принципам (в случаях, где стандарты еще не сформулированы)
         # partially - выполняется только часть стандартов, принципы нарушаются
         # none - система совсем не соответствует стандартам и про принципы никто не слышал
-        comment: Автоматически сгенерированный комментарий
+        comment: 
         date: 07.10.2023
       - id: indicator_code_control # Исходный код системы полностью доступен в любой момент
         fit: fully
         # fully - исходный код храниться в корпоративном gitlab или может быть беспрепятственно получен (например, скачен с github) и помещен в корпоративный репозиторий
         # partially - часть кода (например, ядро или платформа) закрыты и доступ к нему получить невозможно
         # none - код полностью закрыт
-        comment: Автоматически сгенерированный комментарий
+        comment: 
         date: 07.10.2023
       - id: indicator_vendor # Отсутствуют критичные риски вендора (уход с рынка, прекращение поддержки, изменение ценовой политики)
         fit: fully
         # fully - разработка и поддержка системы ведется без участия вендора или разрыв сотрудничества с вендором не несет критичных рисков компании
         # partially - есть риск ухода вендора с рынка, например санкционный риск или вендор с высокой долей вероятности может пересмотреть условия сотрудничества, развитие системы без вендора представляется проблематичным
         # none - вендор или сотрудничество с ним находится в зоне высокого риска, развитие без вендора невозможно
-        comment: Автоматически сгенерированный комментарий
+        comment: 
         date: 07.10.2023
       - id: indicator_team_capacity # Ресурс команды достаточен для развития и сопровождения системы. Оценка должна выполняться на основании соответствия количества задач количеству ресурсов.
         fit: fully
         # fully - команда полностью укомплектована и нет постоянно растущего бэклога
         # partially - количество задач превышает возможности команды, но в команде есть достаточное количество открытых вакансии, закрытие которых должно помочь разрешить недостаток ресурса
         # none - в команде нет открытых вакансий и объем текущей работы превышает возможности команды (растет бэклог) на протяжении последних 2 месяцев
-        comment: Автоматически сгенерированный комментарий
+        comment: 
         date: 07.10.2023
       - id: indicator_process # Разработка и сопровождение системы осуществляется в соответствии с целевым процессом
         fit: fully
         # fully - разработка и сопровождение идут в полном соответствии с целевым процессом
         # partially - нет полного соответствие целевым процессам, но есть согласованный внутри команды roadmap как наладить процесс разработки и сопровождения
         # none - разработка идет хаотично, сопровождение нестабильно и несвоевременно, согласованных командой планов по изменению ситуации нет
-        comment: Автоматически сгенерированный комментарий
+        comment: 
         date: 07.10.2023
     urls:
       - id: prod
@@ -67,56 +67,78 @@ components:
 
     technologies: # Используемые технологии
       - PostgreSQL
-      - Java
-      - Kotlin
-      - Spring
-      - jdk17
+      - C#
+      - JS
+      - React
       - RESTful
+      - GRPC
+      - BPMN
+      - Redis      
     aspects:
-      - lechenie_borodavok
+      - stroim_doma_na_bolote.kontrol_bobrov
+      - stroim_doma_na_bolote.razdacha_volshebnykh_lyulej
 
     links:
-      - id: world.partners.dadata
+      - id: swamp.bober
         direction: <--
+        title: Раздача люлей
+      - id: swamp.bu_hippos.materials
+        direction: <--
+        title: Материалы для строительства
 
 # Описание уровня уровня ПА-L2
-  samolet.bu_bank.autosuggest.app:
-    title: Модуль Автозаполнения
+
+  swamp.bu_hippos.control.frontend:
+    title: Фронт
     entity: component
-    technologies:
-      - Java
-      - Kotlin
-      - Spring
-      - jdk17
+    repository: https://github.com/RabotaRu/DocHub
+    technologies:  # Используемые технологии
+      - C#
+      - JS
+      - React
       - RESTful
-    deployment_units:
-      prod.main: #<prod>.<имя du>
-        resource_type: k8s #k8s/virtual/phisycal
-        multiplier: 4
-        cpu: 2 #float - количество ядер
-        ram: 4 #float - количество памяти в Gb
+      - GRPC
+      - BPMN
+      - Redis
+    links:
+      - id: swamp.bu_hippos.control.backend
+        direction: <-->
+        title: HTTPS
 
-      stage.main: #<stage>.<имя du>
-        resource_type: k8s #k8s/virtual/phisycal
-        multiplier: 6
-        cpu: 2 #float - количество ядер
-        ram: 4 #float - количество памяти в Gb
+  swamp.bu_hippos.control.backend:
+    title: Бэкенд
+    entity: component
+    repository: https://github.com/RabotaRu/DocHub
+    technologies:  # Используемые технологии
+      - C#
+      - JS
+      - React
+      - RESTful
+      - GRPC
+      - BPMN
+      - Redis 
+    links:
+      - id: swamp.bu_hippos.control.db
+        direction: <-->
+        title: tcp 5432
+      - id: swamp.bu_crocodiles.autoforms
+        direction: <--
+        title: Данные жителей болота 
 
-      dev.main: #<dev>.<имя du>
-        resource_type: k8s #k8s/virtual/phisycal
-        multiplier: 8
-        cpu: 2 #float - количество ядер
-        ram: 4 #float - количество памяти в Gb
+  swamp.bu_hippos.control.db:
+      title: СУБД
+      entity: database # для СУБД нужно указывать именно database
+      technologies: 
+        - PostgreSQL
 
 contexts:   # Контексты представления архитектурных компонентов
-  samolet.bu_bank.autosuggest:
-    title: Архитектура AutoSuggest (уровень ПА-L2)
-    location: Детальная архитектура систем (ПА-L2)/AutoSuggest
+  swamp.bu_hippos.control:
+    title: Архитектура сервиса Контроль за работой (уровень ПА-L2)
+    location: Детальная архитектуры систем ПА-L2/Детальная архитектура систем (ПА-L2)/Контроль за работой
     extra-links: true
-    uml:
-      $notation: plantuml  # sber C4Model plantuml
-      $autor: Артур Миров
+    uml:      
+      $autor: Фунтик
       $version: 0.0.1
       $moment: 07.10.2023
     components:
-      - samolet.bu_bank.autosuggest.*
+      - swamp.bu_hippos.control.*

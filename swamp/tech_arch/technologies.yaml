@@ -136,7 +136,7 @@ technologies:               # Описание технологического 
         - djangobus
         - DjangoBus
       section: framework
-      link: https://10d.pages.samoletgroup.ru/django-bus/
+      link:
       status: adopt
 
     ASP.NET_MVC:

@@ -1,4 +1,4 @@
 imports:  
   - django_catalog.yaml
   - sign_django_sdk.yaml
-  - samolet_ui.yaml
+  - swamp_ui.yaml

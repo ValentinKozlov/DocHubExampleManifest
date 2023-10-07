@@ -16,7 +16,7 @@ components:
     title: Папа Карло
     entity: person 
  
-  # Ответственные за заводь лягушек
+  # Ответственные за лягушачью заводь
   swamp.kikimora:
     title: Кикимора
     entity: person
@@ -51,4 +51,9 @@ components:
   swamp.luchshij_syshchik_bez_diploma:
     title: Лучший сыщик без диплома
     entity: person
+
+  swamp.bober:
+    title: Бобер
+    entity: person
+
 

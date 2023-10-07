@@ -1,18 +1,18 @@
 components:
-  swamp.bu_crocodiles.autoforms:
-    title: AutoForms
+  swamp.bu_hippos.materials:
+    title: Добыча материалов
     entity: system
     guid: 524f1b24-bf7e-4ffc-bad9-c3458cac66ff
     system_status: production
     dev_model: inhouse
-    short_description: Форма автозаполнения
-    description: Сервис для автозаполнения пользовательской формы клиента
+    short_description: Сервис по добычи материалов
+    description: Сервис автоматизирующий добычу материалов для строительства домов на болоте
     business_owners:
-      - cr.shrek
-    application_owner: cr.dyujmovochka
-    budget_holder: cr.papa_karlo
-    architect: cr.duremar
-    critical_level: business_operational #administrative/business_operational/business_critical/mission_critical
+      - hp.luchshij_syshchik_bez_diploma
+    application_owner: hp.begemot_shokolad
+    budget_holder: hp.dyadyushka_mokus
+    architect: hp.funtik
+    critical_level: mission_critical #administrative/business_operational/business_critical/mission_critical
     system_category: business_app #channel_app/business_app/ext_business_app/it_app/ext_it_app
     # Автоматически сгенерированный код #
     # Удалите этот комментарий после внесения фактических значений индикаторов.
@@ -20,11 +20,11 @@ components:
     # - При внесении фактических значений индикаторов укажите текущую дату.
     indicators:
       - id: indicator_arch_maturity # Система соответствует архитектурным стандартам и принципам Компании
-        fit: fully
+        fit: none
         # fully - система полностью соответствует стандартам и принципам (в случаях, где стандарты еще не сформулированы)
         # partially - выполняется только часть стандартов, принципы нарушаются
         # none - система совсем не соответствует стандартам и про принципы никто не слышал
-        comment: Автоматически сгенерированный комментарий
+        comment: Архитектуры нет, говнокодим с колес
         date: 07.10.2023
       - id: indicator_code_control # Исходный код системы полностью доступен в любой момент
         fit: fully
@@ -41,18 +41,18 @@ components:
         comment: Автоматически сгенерированный комментарий
         date: 07.10.2023
       - id: indicator_team_capacity # Ресурс команды достаточен для развития и сопровождения системы. Оценка должна выполняться на основании соответствия количества задач количеству ресурсов.
-        fit: fully
+        fit: none
         # fully - команда полностью укомплектована и нет постоянно растущего бэклога
         # partially - количество задач превышает возможности команды, но в команде есть достаточное количество открытых вакансии, закрытие которых должно помочь разрешить недостаток ресурса
         # none - в команде нет открытых вакансий и объем текущей работы превышает возможности команды (растет бэклог) на протяжении последних 2 месяцев
-        comment: Автоматически сгенерированный комментарий
+        comment: Болотная лихорадка выкосила 90% команды
         date: 07.10.2023
       - id: indicator_process # Разработка и сопровождение системы осуществляется в соответствии с целевым процессом
-        fit: fully
+        fit: none
         # fully - разработка и сопровождение идут в полном соответствии с целевым процессом
         # partially - нет полного соответствие целевым процессам, но есть согласованный внутри команды roadmap как наладить процесс разработки и сопровождения
         # none - разработка идет хаотично, сопровождение нестабильно и несвоевременно, согласованных командой планов по изменению ситуации нет
-        comment: Автоматически сгенерированный комментарий
+        comment: Процесса нет, бегаем по кругу и кричим аааааа
         date: 07.10.2023
     urls:
       - id: prod
@@ -67,65 +67,80 @@ components:
 
     technologies: # Используемые технологии
       - PostgreSQL
-      - Java
-      - Kotlin
-      - Spring
-      - jdk17
+      - C#
+      - JS
+      - React
       - RESTful
+      - GRPC
+      - BPMN
+      - Redis      
     aspects:
-      - pokupka_doma_na_bolote.zapolnenie_zayavok
-      - pokupka_doma_na_bolote.proverka_zayavok
+      - stroim_doma_na_bolote.zakupka_govna_i_palok
+      - stroim_doma_na_bolote.sbor_mkha
+      - stroim_doma_na_bolote.sbor_gryazi_na_kirpichi
+      - bolotnyj_profilaktorij.lechenie_borodavok
 
-    # links:
-    #   - id: 
-    #     direction: <--
+    links:
+      - id: swamp.vodyanoj
+        direction: <--
+        title: Получение услуги
+      - id: swamp.bu_crocodiles.autoforms
+        direction: <--
+        title: Данные жителей болота
 
 # Описание уровня уровня ПА-L2
 
-  swamp.bu_crocodiles.autoforms.frontend:
+  swamp.bu_hippos.materials.frontend:
     title: Фронт
     entity: component
     repository: https://github.com/RabotaRu/DocHub
     technologies:  # Используемые технологии
-      - Java
-      - Kotlin
-      - Spring
-      - jdk17
+      - C#
+      - JS
+      - React
       - RESTful
+      - GRPC
+      - BPMN
+      - Redis
     links:
-      - id: swamp.bu_crocodiles.autoforms.backend
+      - id: swamp.bu_hippos.materials.backend
         direction: <-->
         title: HTTPS
 
-  swamp.bu_crocodiles.autoforms.backend:
+  swamp.bu_hippos.materials.backend:
     title: Бэкенд
     entity: component
     repository: https://github.com/RabotaRu/DocHub
     technologies:  # Используемые технологии
-      - Java
-      - Kotlin
-      - Spring
-      - jdk17
+      - C#
+      - JS
+      - React
       - RESTful
+      - GRPC
+      - BPMN
+      - Redis 
     links:
-      - id: swamp.bu_crocodiles.autoforms.db
+      - id: swamp.bu_hippos.materials.db
         direction: <-->
-        title: tcp 5432    
+        title: tcp 5432
+      - id: swamp.bu_crocodiles.autoforms
+        direction: <--
+        title: Данные жителей болота 
 
-  swamp.bu_crocodiles.autoforms.db:
+  swamp.bu_hippos.materials.db:
       title: СУБД
       entity: database # для СУБД нужно указывать именно database
       technologies: 
         - PostgreSQL
 
 contexts:   # Контексты представления архитектурных компонентов
-  swamp.bu_crocodiles.autoforms:
-    title: Архитектура AutoSuggest (уровень ПА-L2)
-    location: Детальная архитектуры систем ПА-L2/Детальная архитектура систем (ПА-L2)/AutoForms
+  swamp.bu_hippos.materials:
+    title: Архитектура сервиса Добыча материалов (уровень ПА-L2)
+    location: Детальная архитектуры систем ПА-L2/Детальная архитектура систем (ПА-L2)/Добыча материалов
     extra-links: true
     uml:      
-      $autor: Дуремар
+      $autor: Фунтик
       $version: 0.0.1
       $moment: 07.10.2023
     components:
-      - swamp.bu_crocodiles.autoforms.*
+      - swamp.bu_hippos.materials.*

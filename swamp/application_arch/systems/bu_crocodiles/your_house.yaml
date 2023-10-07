@@ -1,18 +1,18 @@
 components:
-  swamp.bu_crocodiles.autoforms:
-    title: AutoForms
+  swamp.bu_crocodiles.your_house:
+    title: Твой дом
     entity: system
-    guid: 524f1b24-bf7e-4ffc-bad9-c3458cac66ff
-    system_status: production
+    guid: f3049b4a-96de-4d9d-a50f-c705eb40fbed
+    system_status: trial
     dev_model: inhouse
-    short_description: Форма автозаполнения
-    description: Сервис для автозаполнения пользовательской формы клиента
+    short_description: Сервис по продаже домой
+    description: Сервис по продаже домой для жителей болота
     business_owners:
       - cr.shrek
     application_owner: cr.dyujmovochka
     budget_holder: cr.papa_karlo
     architect: cr.duremar
-    critical_level: business_operational #administrative/business_operational/business_critical/mission_critical
+    critical_level: mission_critical #administrative/business_operational/business_critical/mission_critical
     system_category: business_app #channel_app/business_app/ext_business_app/it_app/ext_it_app
     # Автоматически сгенерированный код #
     # Удалите этот комментарий после внесения фактических значений индикаторов.
@@ -38,10 +38,10 @@ components:
         # fully - разработка и поддержка системы ведется без участия вендора или разрыв сотрудничества с вендором не несет критичных рисков компании
         # partially - есть риск ухода вендора с рынка, например санкционный риск или вендор с высокой долей вероятности может пересмотреть условия сотрудничества, развитие системы без вендора представляется проблематичным
         # none - вендор или сотрудничество с ним находится в зоне высокого риска, развитие без вендора невозможно
-        comment: Автоматически сгенерированный комментарий
+        comment: Болезни подкосили команду, нужно искать новые ресурсы
         date: 07.10.2023
       - id: indicator_team_capacity # Ресурс команды достаточен для развития и сопровождения системы. Оценка должна выполняться на основании соответствия количества задач количеству ресурсов.
-        fit: fully
+        fit: partially
         # fully - команда полностью укомплектована и нет постоянно растущего бэклога
         # partially - количество задач превышает возможности команды, но в команде есть достаточное количество открытых вакансии, закрытие которых должно помочь разрешить недостаток ресурса
         # none - в команде нет открытых вакансий и объем текущей работы превышает возможности команды (растет бэклог) на протяжении последних 2 месяцев
@@ -73,16 +73,27 @@ components:
       - jdk17
       - RESTful
     aspects:
-      - pokupka_doma_na_bolote.zapolnenie_zayavok
-      - pokupka_doma_na_bolote.proverka_zayavok
+      - pokupka_doma_na_bolote.podbor_doma_na_bolote
+      - pokupka_doma_na_bolote.proverka_chistoty_titula
+      - pokupka_doma_na_bolote.registraciya_sdelki
 
-    # links:
-    #   - id: 
-    #     direction: <--
+    links:
+      - id: swamp.bu_crocodiles.autoforms
+        direction: <--
+        title: Данные жителей болота
+      - id: swamp.bu_crocodiles.credit_calc
+        direction: <--
+        title: Данные расчета
+      - id: swamp.begemot_shokolad
+        direction: <--
+        title: Получение услуги
+
+    libraries:
+      - sign_django_sdk
 
 # Описание уровня уровня ПА-L2
 
-  swamp.bu_crocodiles.autoforms.frontend:
+  swamp.bu_crocodiles.your_house.frontend:
     title: Фронт
     entity: component
     repository: https://github.com/RabotaRu/DocHub
@@ -93,11 +104,11 @@ components:
       - jdk17
       - RESTful
     links:
-      - id: swamp.bu_crocodiles.autoforms.backend
+      - id: swamp.bu_crocodiles.your_house.backend
         direction: <-->
         title: HTTPS
 
-  swamp.bu_crocodiles.autoforms.backend:
+  swamp.bu_crocodiles.your_house.backend:
     title: Бэкенд
     entity: component
     repository: https://github.com/RabotaRu/DocHub
@@ -108,24 +119,24 @@ components:
       - jdk17
       - RESTful
     links:
-      - id: swamp.bu_crocodiles.autoforms.db
+      - id: swamp.bu_crocodiles.your_house.db
         direction: <-->
         title: tcp 5432    
 
-  swamp.bu_crocodiles.autoforms.db:
+  swamp.bu_crocodiles.your_house.db:
       title: СУБД
       entity: database # для СУБД нужно указывать именно database
       technologies: 
         - PostgreSQL
 
 contexts:   # Контексты представления архитектурных компонентов
-  swamp.bu_crocodiles.autoforms:
+  swamp.bu_crocodiles.your_house:
     title: Архитектура AutoSuggest (уровень ПА-L2)
-    location: Детальная архитектуры систем ПА-L2/Детальная архитектура систем (ПА-L2)/AutoForms
+    location: Детальная архитектуры систем ПА-L2/Детальная архитектура систем (ПА-L2)/Твой дом
     extra-links: true
     uml:      
       $autor: Дуремар
       $version: 0.0.1
       $moment: 07.10.2023
     components:
-      - swamp.bu_crocodiles.autoforms.*
+      - swamp.bu_crocodiles.your_house.*
