@@ -29,7 +29,7 @@ technologies:               # Описание технологического 
       status: adopt      # Статус технологии adopt / trial / assess / hold
 
     Python:
-      aliases:        
+      aliases:
         - Python
         - python
         - py
@@ -51,14 +51,15 @@ technologies:               # Описание технологического 
         - go
         - golang
         - Golang
+        - Go
       section: language
       link: https://go.dev/
       status: adopt
-    
+
     1C:
       aliases:
         - 1c
-        - 1C        
+        - 1C
       section: language
       link: https://1c.ru/
       status: adopt
@@ -78,6 +79,22 @@ technologies:               # Описание технологического 
       link: https://kotlinlang.org/docs/home.html
       status: adopt
 
+    Erlang:
+      aliases:
+        - Erlang
+        - erlang
+      section: language
+      link: https://ru.wikipedia.org/wiki/Erlang
+      status: hold
+
+    Cpp:
+      aliases:
+        - Cpp
+        - cpp
+      section: language
+      link: https://ru.wikipedia.org/wiki/C%2B%2B
+      status: hold
+
 # Описание фреймворков
     Django:
       aliases:
@@ -86,7 +103,7 @@ technologies:               # Описание технологического 
       section: framework
       link: https://www.djangoproject.com
       status: adopt
-    
+
     Flask:
       aliases:
         - Flask
@@ -106,9 +123,20 @@ technologies:               # Описание технологического 
     FastAPI:
       aliases:
         - FastAPI
-        - fastAPI        
+        - fastAPI
       section: framework
       link: https://fastapi.tiangolo.com/
+      status: adopt
+
+    Django_Bus:
+      aliases:
+        - Django-Bus
+        - django_bus
+        - django-bus
+        - djangobus
+        - DjangoBus
+      section: framework
+      link: https://10d.pages.samoletgroup.ru/django-bus/
       status: adopt
 
     ASP.NET_MVC:
@@ -146,7 +174,7 @@ technologies:               # Описание технологического 
     Vuejs:
       aliases:
         - Vuejs
-        - Vue.js        
+        - Vue.js
       section: framework
       link: https://vuejs.org/
       status: adopt
@@ -154,7 +182,7 @@ technologies:               # Описание технологического 
     Nodejs:
       aliases:
         - Nodejs
-        - Node.js        
+        - Node.js
       section: framework
       link: https://nodejs.org/en/
       status: adopt
@@ -162,7 +190,7 @@ technologies:               # Описание технологического 
     Angular:
       aliases:
         - Angular
-        - angular        
+        - angular
       section: framework
       link: https://angular.io/
       status: adopt
@@ -184,6 +212,25 @@ technologies:               # Описание технологического 
       link: https://spring.io/
       status: adopt
 
+    Jasper:
+      aliases:
+        - jasper
+        - Jasper
+      section: framework
+      link: https://community.jaspersoft.com/
+      status: adopt
+
+  # ESB
+    Apache_Kafka:
+      aliases:
+        - Apache Kafka
+        - Kafka
+        - apache kafka
+        - apache-kafka
+        - apache_kafka
+      link: https://kafka.apache.org/
+      status: adopt
+
 # Описание СУБД
     PostgreSQL:
       aliases:
@@ -194,9 +241,18 @@ technologies:               # Описание технологического 
       link: https://www.postgresql.org/
       status: adopt
 
+    PgBouncer:
+      aliases:
+        - PgBouncer
+        - pgbouncer
+        - bouncer
+      section: DBMS
+      link: https://www.pgbouncer.org/
+      status: adopt
+
     MSSQL:
       aliases:
-        - MS SQL 
+        - MS SQL
         - Microsoft SQL
       section: DBMS
       link: https://www.microsoft.com/ru-ru/sql-server
@@ -227,14 +283,14 @@ technologies:               # Описание технологического 
 
     PluntUML:
       aliases:
-        - PluntUML        
+        - PluntUML
       section: tools
       link: https://plantuml.com/ru/
       status: trial
-    
+
     DocHub:
       aliases:
-        - DocHub        
+        - DocHub
       section: tools
       link: https://dochub.info/main
       status: trial
@@ -248,9 +304,10 @@ technologies:               # Описание технологического 
 
     Redis:
       aliases:
+        - Redis
         - redis
       section: tools
-      link: https://aws.amazon.com/ru/redis/
+      link: https://redis.io/
       status: adopt
 
     JDK:
@@ -259,6 +316,30 @@ technologies:               # Описание технологического 
       section: tools
       link: https://adoptium.net/temurin/releases/
 
+    CryptoPro:
+      aliases:
+        - CryptoPro
+        - Cryptopro
+        - cryptopro
+      section: tools
+      link: https://www.cryptopro.ru/
+
+    RabbitMQ:
+      aliases:
+        - RabbitMQ
+        - RabbitMq
+        - rabbitmq
+      section: tools
+      link: https://www.rabbitmq.com/
+
+    GitlabCI:
+      aliases:
+        - gitlabci
+        - gitlab_ci
+      section: tools
+      link: https://docs.gitlab.com/ee/ci/
+      status: adopt
+
 
 # Описание хранилищ
     S3MinIO:
@@ -266,6 +347,8 @@ technologies:               # Описание технологического 
         - minio
         - MinIO
         - s3minio
+        - S3Minio
+        - S3MinIO
       section: storages
       link: https://min.io/
       status: adopt
@@ -275,6 +358,6 @@ technologies:               # Описание технологического 
         - NetStorage
         - Network storage
         - Local storage
-      section: storages      
+      section: storages
       status: adopt
 

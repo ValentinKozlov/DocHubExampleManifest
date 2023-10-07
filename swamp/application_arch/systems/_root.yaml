@@ -1,10 +1,9 @@
 imports:
-  - 1cbit_finance.yaml
-  - allure.yaml
-  - crm.yaml
-  - grafana_dev.yaml
-  - sid.yaml
-  - spact.yaml
-  - spoll.yaml
-  - srole.yaml
-  
+# Сервисы БЮ Заводь крокодилов
+  - bu_crocodiles/_root.yaml
+
+# Сервисы БЮ Заводь лягушек
+  - bu_frogs/_root.yaml
+
+# Сервисы БЮ Заводь бегемотов
+  - bu_hippos/_root.yaml

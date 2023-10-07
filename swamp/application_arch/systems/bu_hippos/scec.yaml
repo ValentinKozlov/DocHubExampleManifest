@@ -1,0 +1,99 @@
+components:
+  samolet.bu_moscow.sdevelopment.scec:
+    title: S.KEK    # Название компонента
+    entity: system   # Сущность компонента из PlantUML (https://plantuml.com/ru/deployment-diagram)
+    guid: ccd44aed-71c9-49b7-a49b-b7bda26d2aba
+    system_status: production
+    dev_model: inhouse
+    short_description: Создание и подписание КС-2
+    description: Сервис предназначен для подачи и согласования заявок на контроль выполненных работ, сдачу выполненных объёмов, подачи и согласования актов выполненных работ КС-2
+    business_owners:
+      - ivanenko
+    application_owner: yu.mirzoev
+    budget_holder: m.salavatov
+    architect: i.grin
+    critical_level: business_critical #administrative/business_operational/business_critical/mission_critical
+    system_category: business_app #channel_app/business_app/ext_business_app/it_app/ext_it_app
+    # Автоматически сгенерированный код #
+    # Удалите этот комментарий после внесения фактических значений индикаторов.
+    # - Для оценок `partially` и `none` комментарий (поле `comment`) обязателен.
+    # - При внесении фактических значений индикаторов укажите текущую дату.
+    indicators:
+      - id: indicator_arch_maturity
+        fit: partially
+        comment:
+        date: 10.8.2023
+      - id: indicator_code_control
+        fit: fully
+        comment:
+        date: 10.8.2023
+      - id: indicator_vendor
+        fit: partially
+        comment: Зависит от 1С.
+        date: 10.8.2023
+      - id: indicator_team_capacity
+        fit: partially
+        comment:
+        date: 10.8.2023
+      - id: indicator_process
+        fit: fully
+        comment:
+        date: 10.8.2023
+
+    urls:
+      - id: prod
+        type: server
+        title: Адрес сервера прода
+        url: https://scec.samoletgroup.ru/
+      - id: stage
+        type: server
+        title: Адрес сервера стейджа
+        url: https://scec-stage.samoletgroup.ru/
+      - id: stage
+        type: Wiki
+        title: Документация
+        url: https://wiki.samoletgroup.ru/pages/viewpage.action?pageId=62295892
+    repository: samolet.repo.10d.construction.scec
+    health_risk: # определяет общее "здоровье" системы. Каждый владелец приложения сам может определить, что он подразумевает под здоровьем
+      value: 2
+      date_value: 13.04.2023
+      comments:
+    app_link: https://spot.samoletgroup.ru/product/6757a357-e3e4-432c-965c-86cc2a22aa48
+    technologies: # Используемые технологии
+      - Python
+      - Django
+      - TypeScript
+      - React
+      - Apache Kafka
+      - PostgreSQL
+    roles:                # Аспекты, которе реализует компонент
+      - pto
+      - kontrol_uchet
+      - tehnadzor
+    aspects:
+      - podacha_zayavok_na_kontrol_rabot_i_sdachu_obyyomov
+      - podacha_aktov_KS_2
+      - podpisanie_pechatnykh_form
+      - proverka_i_soglasovanie_zayavok_na_kontrol_rabot_i_sdachu_obyyomov
+      - prinyatie/srezanie_zayavlennykh_obyyomov
+      - proverka_nalichiya_ispolnitelnoy_dokumentatsii_i_garantiynogo_pisma
+      - vozmozhnost_uderzhaniya_do_25%_ot_zayavlennykh_obyyomov
+      - proverka_korrektnosti_dannykh_v_KS_otchyotnyy_period_rekvizity_obyyomy_stoimosti_itogi
+      - prikladyvanie_kopensatsiy
+      - raschyot_avansov_proizvoditsya_v_BITe
+      - proverka_korrektnosti_dannykh_v_itogovykh_pechatnykh_formakh
+      - podpisanie_pechatnykh_form
+    links:
+      #Интеграции между системами одного БЮ
+      - id: samolet.bu_moscow.sdevelopment.scalendar
+        direction: <--
+
+      #Интеграции между внешними системами
+      - id: world.partners.diadoc
+        direction: <--
+      #Интеграции между системами разных БЮ
+      - id: samolet.bu_csp.1cbit_finance.operational
+        direction: <--
+    libraries:
+      - django_catalog
+      - sid

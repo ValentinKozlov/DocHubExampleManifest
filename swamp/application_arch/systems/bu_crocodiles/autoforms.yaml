@@ -1,17 +1,17 @@
 components:
-  samolet.bu_bank.gateway:
-    title: Gateway
+  swamp.bu_crocodiles.autoforms:
+    title: AutoForms
     entity: system
-    guid: dd088658-82ba-4015-8523-d234b8a83553
+    guid: 524f1b24-bf7e-4ffc-bad9-c3458cac66ff
     system_status: implementation
     dev_model: inhouse
-    short_description: Fintech API Gateway
-    description: Fintech API Gateway
+    short_description: Форма автозаполнения
+    description: Сервис для автозаполнения пользовательской формы клиента
     business_owners:
-      - g.avakyan
-    application_owner: g.avakyan
-    budget_holder: g.avakyan
-    architect: a.mirov
+      - cr.shrek
+    application_owner: cr.dyujmovochka
+    budget_holder: cr.papa_karlo
+    architect: cr.duremar
     critical_level: business_operational #administrative/business_operational/business_critical/mission_critical
     system_category: business_app #channel_app/business_app/ext_business_app/it_app/ext_it_app
     # Автоматически сгенерированный код #
@@ -25,119 +25,108 @@ components:
         # partially - выполняется только часть стандартов, принципы нарушаются
         # none - система совсем не соответствует стандартам и про принципы никто не слышал
         comment: Автоматически сгенерированный комментарий
-        date: 22.03.2023
+        date: 07.10.2023
       - id: indicator_code_control # Исходный код системы полностью доступен в любой момент
         fit: fully
         # fully - исходный код храниться в корпоративном gitlab или может быть беспрепятственно получен (например, скачен с github) и помещен в корпоративный репозиторий
         # partially - часть кода (например, ядро или платформа) закрыты и доступ к нему получить невозможно
         # none - код полностью закрыт
         comment: Автоматически сгенерированный комментарий
-        date: 22.03.2023
+        date: 07.10.2023
       - id: indicator_vendor # Отсутствуют критичные риски вендора (уход с рынка, прекращение поддержки, изменение ценовой политики)
         fit: fully
         # fully - разработка и поддержка системы ведется без участия вендора или разрыв сотрудничества с вендором не несет критичных рисков компании
         # partially - есть риск ухода вендора с рынка, например санкционный риск или вендор с высокой долей вероятности может пересмотреть условия сотрудничества, развитие системы без вендора представляется проблематичным
         # none - вендор или сотрудничество с ним находится в зоне высокого риска, развитие без вендора невозможно
         comment: Автоматически сгенерированный комментарий
-        date: 22.03.2023
+        date: 07.10.2023
       - id: indicator_team_capacity # Ресурс команды достаточен для развития и сопровождения системы. Оценка должна выполняться на основании соответствия количества задач количеству ресурсов.
         fit: fully
         # fully - команда полностью укомплектована и нет постоянно растущего бэклога
         # partially - количество задач превышает возможности команды, но в команде есть достаточное количество открытых вакансии, закрытие которых должно помочь разрешить недостаток ресурса
         # none - в команде нет открытых вакансий и объем текущей работы превышает возможности команды (растет бэклог) на протяжении последних 2 месяцев
         comment: Автоматически сгенерированный комментарий
-        date: 22.03.2023
+        date: 07.10.2023
       - id: indicator_process # Разработка и сопровождение системы осуществляется в соответствии с целевым процессом
         fit: fully
         # fully - разработка и сопровождение идут в полном соответствии с целевым процессом
         # partially - нет полного соответствие целевым процессам, но есть согласованный внутри команды roadmap как наладить процесс разработки и сопровождения
         # none - разработка идет хаотично, сопровождение нестабильно и несвоевременно, согласованных командой планов по изменению ситуации нет
         comment: Автоматически сгенерированный комментарий
-        date: 22.03.2023
+        date: 07.10.2023
     urls:
       - id: prod
         type: server
         title: Адрес сервера прода
-        url: https://fintech-gateway.samolet.ru/
+        url: https://dochub.info/main
       - id: stage
         type: server
         title: Адрес сервера стейджа
-        url: https://fintech-gateway-stage.samolet.ru/
-    repository: https://git.samoletgroup.ru/bu_bank/back-end/platform/gateway
+        url: https://dochub.info/main
+    repository: https://github.com/RabotaRu/DocHub
+
     technologies: # Используемые технологии
+      - PostgreSQL
       - Java
+      - Kotlin
       - Spring
       - jdk17
       - RESTful
-    # aspects:
+    aspects:
+      - lechenie_borodavok
+      - gryazevye_vanny
+      - otpaivanie_tinoj
 
-    links:
-      - id: samolet.bu_bank.withdrawal
-        direction: <--
-      - id: samolet.bu_bank.billing
-        direction: <--
-      - id: samolet.bu_bank.celeport
-        direction: <--
-      - id: samolet.bu_bank.validation
-        direction: <--
-      - id: samolet.bu_bank.autosuggest
-        direction: <--
-      - id: samolet.bu_bank.recurrent
-        direction: <--
-      - id: samolet.bu_bank.offers
-        direction: <--
-      - id: samolet.bu_bank.docsign
-        direction: <--
-      - id: samolet.bu_bank.beneficiary
-        direction: <--
-      - id: samolet.bu_bank.booking
-        direction: <--
-      - id: samolet.bu_bank.smftp_feature_toggle
-        direction: <--
-      - id: samolet.bu_bank.smftp_polls_service
-        direction: <--
-      - id: samolet.bu_bank.smftp_client_accounts
-        direction: <--
-      - id: samolet.bu_bank.smftp_roistat
-        direction: <--
+    # links:
+    #   - id: world.partners.dadata
+    #     direction: <--
 
 # Описание уровня уровня ПА-L2
-  samolet.bu_bank.gateway.webhook:
-    title: Контролеры для получения вэб-хуков
+
+  swamp.bu_crocodiles.autoforms.frontend:
+    title: Фронт
     entity: component
-    technologies:
+    repository: https://github.com/RabotaRu/DocHub
+    technologies:  # Используемые технологии
       - Java
+      - Kotlin
       - Spring
       - jdk17
       - RESTful
-    deployment_units:
-      prod.main: #<prod>.<имя du>
-        resource_type: k8s #k8s/virtual/phisycal
-        multiplier: 4
-        cpu: 2 #float - количество ядер
-        ram: 4 #float - количество памяти в Gb
+    links:
+      - id: swamp.bu_crocodiles.autoforms.backend
+        direction: <-->
+        title: HTTPS
 
-      stage.main: #<stage>.<имя du>
-        resource_type: k8s #k8s/virtual/phisycal
-        multiplier: 6
-        cpu: 2 #float - количество ядер
-        ram: 4 #float - количество памяти в Gb
+  swamp.bu_crocodiles.autoforms.backend:
+    title: Бэкенд
+    entity: component
+    repository: https://github.com/RabotaRu/DocHub
+    technologies:  # Используемые технологии
+      - Java
+      - Kotlin
+      - Spring
+      - jdk17
+      - RESTful
+    links:
+      - id: swamp.bu_crocodiles.autoforms.db
+        direction: <-->
+        title: tcp 5432    
 
-      dev.main: #<dev>.<имя du>
-        resource_type: k8s #k8s/virtual/phisycal
-        multiplier: 8
-        cpu: 2 #float - количество ядер
-        ram: 4 #float - количество памяти в Gb
+  swamp.bu_crocodiles.autoforms.db:
+      title: СУБД
+      entity: database # для СУБД нужно указывать именно database
+      technologies: 
+        - PostgreSQL
 
 contexts:   # Контексты представления архитектурных компонентов
-  samolet.bu_bank.gateway:
-    title: Архитектура Gateway (уровень ПА-L2)
-    location: Детальная архитектура систем (ПА-L2)/Gateway
+  swamp.bu_crocodiles.autoforms:
+    title: Архитектура AutoSuggest (уровень ПА-L2)
+    location: Детальная архитектуры систем ПА-L2/Детальная архитектура систем (ПА-L2)/AutoForms
     extra-links: true
-    uml:
-      $notation: plantuml  # sber C4Model plantuml
-      $autor: Валентин Козлов
-      $version: 0.0.3
-      $moment: 21.12.2022
+    uml:      
+      $autor: Дуремар
+      $version: 0.0.1
+      $moment: 07.10.2023
     components:
-      - samolet.bu_bank.gateway.*
+      - swamp.bu_crocodiles.autoforms.*

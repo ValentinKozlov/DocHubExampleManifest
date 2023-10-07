@@ -1,17 +1,17 @@
 components:
-  samolet.bu_bank.linkgenerator:
-    title: Link-Generator
+  swamp.bu_crocodiles.autoforms:
+    title: AutoForms
     entity: system
-    guid: 0fafb0a2-e705-41d5-8e6a-b065b9ab8cd7
+    guid: 524f1b24-bf7e-4ffc-bad9-c3458cac66ff
     system_status: implementation
     dev_model: inhouse
-    short_description: Модуль генерации ссылок и QR кодов
-    description: Модуль генерации ссылок и QR кодов
+    short_description: Форма автозаполнения
+    description: Сервис для автозаполнения пользовательской формы клиента
     business_owners:
-      - g.avakyan
-    application_owner: g.avakyan
-    budget_holder: g.avakyan
-    architect: a.mirov
+      - cr.kikimora
+    application_owner: cr.vodyanoj
+    budget_holder: cr.baba_yaga
+    architect: cr.bolotnik
     critical_level: business_operational #administrative/business_operational/business_critical/mission_critical
     system_category: business_app #channel_app/business_app/ext_business_app/it_app/ext_it_app
     # Автоматически сгенерированный код #
@@ -25,56 +25,63 @@ components:
         # partially - выполняется только часть стандартов, принципы нарушаются
         # none - система совсем не соответствует стандартам и про принципы никто не слышал
         comment: Автоматически сгенерированный комментарий
-        date: 18.04.2023
+        date: 07.10.2023
       - id: indicator_code_control # Исходный код системы полностью доступен в любой момент
         fit: fully
         # fully - исходный код храниться в корпоративном gitlab или может быть беспрепятственно получен (например, скачен с github) и помещен в корпоративный репозиторий
         # partially - часть кода (например, ядро или платформа) закрыты и доступ к нему получить невозможно
         # none - код полностью закрыт
         comment: Автоматически сгенерированный комментарий
-        date: 18.04.2023
+        date: 07.10.2023
       - id: indicator_vendor # Отсутствуют критичные риски вендора (уход с рынка, прекращение поддержки, изменение ценовой политики)
         fit: fully
         # fully - разработка и поддержка системы ведется без участия вендора или разрыв сотрудничества с вендором не несет критичных рисков компании
         # partially - есть риск ухода вендора с рынка, например санкционный риск или вендор с высокой долей вероятности может пересмотреть условия сотрудничества, развитие системы без вендора представляется проблематичным
         # none - вендор или сотрудничество с ним находится в зоне высокого риска, развитие без вендора невозможно
         comment: Автоматически сгенерированный комментарий
-        date: 18.04.2023
+        date: 07.10.2023
       - id: indicator_team_capacity # Ресурс команды достаточен для развития и сопровождения системы. Оценка должна выполняться на основании соответствия количества задач количеству ресурсов.
         fit: fully
         # fully - команда полностью укомплектована и нет постоянно растущего бэклога
         # partially - количество задач превышает возможности команды, но в команде есть достаточное количество открытых вакансии, закрытие которых должно помочь разрешить недостаток ресурса
         # none - в команде нет открытых вакансий и объем текущей работы превышает возможности команды (растет бэклог) на протяжении последних 2 месяцев
         comment: Автоматически сгенерированный комментарий
-        date: 18.04.2023
+        date: 07.10.2023
       - id: indicator_process # Разработка и сопровождение системы осуществляется в соответствии с целевым процессом
         fit: fully
         # fully - разработка и сопровождение идут в полном соответствии с целевым процессом
         # partially - нет полного соответствие целевым процессам, но есть согласованный внутри команды roadmap как наладить процесс разработки и сопровождения
         # none - разработка идет хаотично, сопровождение нестабильно и несвоевременно, согласованных командой планов по изменению ситуации нет
         comment: Автоматически сгенерированный комментарий
-        date: 18.04.2023
+        date: 07.10.2023
     urls:
       - id: prod
         type: server
         title: Адрес сервера прода
-        url: https://fintech-platform.samolet.ru/
+        url: https://dochub.info/main
       - id: stage
         type: server
         title: Адрес сервера стейджа
-        url: https://fintech-platform-stage.samolet.ru/
-    repository: https://git.samoletgroup.ru/bu_bank/back-end/platform/link-generator
+        url: https://dochub.info/main
+    repository: https://github.com/RabotaRu/DocHub
 
     technologies: # Используемые технологии
+      - PostgreSQL
       - Java
       - Kotlin
       - Spring
       - jdk17
       - RESTful
+    aspects:
+      - lechenie_borodavok
+
+    links:
+      - id: world.partners.dadata
+        direction: <--
 
 # Описание уровня уровня ПА-L2
-  samolet.bu_bank.linkgenerator.app:
-    title: Модуль генерации ссылок и QR кодов
+  samolet.bu_bank.autosuggest.app:
+    title: Модуль Автозаполнения
     entity: component
     technologies:
       - Java
@@ -102,14 +109,14 @@ components:
         ram: 4 #float - количество памяти в Gb
 
 contexts:   # Контексты представления архитектурных компонентов
-  samolet.bu_bank.linkgenerator:
-    title: Архитектура LinkGenerator (уровень ПА-L2)
-    location: Детальная архитектура систем (ПА-L2)/LinkGenerator
+  samolet.bu_bank.autosuggest:
+    title: Архитектура AutoSuggest (уровень ПА-L2)
+    location: Детальная архитектура систем (ПА-L2)/AutoSuggest
     extra-links: true
     uml:
       $notation: plantuml  # sber C4Model plantuml
       $autor: Артур Миров
       $version: 0.0.1
-      $moment: 18.04.2023
+      $moment: 07.10.2023
     components:
-      - samolet.bu_bank.linkgenerator.*
+      - samolet.bu_bank.autosuggest.*

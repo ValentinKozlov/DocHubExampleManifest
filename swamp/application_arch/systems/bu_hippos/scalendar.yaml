@@ -1,0 +1,250 @@
+components:
+  samolet.bu_moscow.sdevelopment.scalendar:
+    title: S.Calendar    # Название компонента
+    entity: system   # Сущность компонента из PlantUML (https://plantuml.com/ru/deployment-diagram)
+    guid: 082a2656-e988-4863-9bc5-9d5e53e1db94
+    system_status: production
+    dev_model: inhouse
+    short_description: Сервис управления встречами с подрядчиками
+    description:  Сервис для планирования встреч сотрудников компании Самолет с представителями подрядчиков
+    business_owners:
+      - ivanenko
+    application_owner: m.salavatov
+    budget_holder: m.salavatov
+    architect: i.grin
+    critical_level: business_critical #administrative/business_operational/business_critical/mission_critical
+    system_category: business_app #channel_app/business_app/ext_business_app/it_app/ext_it_app
+    # Автоматически сгенерированный код #
+    # Удалите этот комментарий после внесения фактических значений индикаторов.
+    # - Для оценок `partially` и `none` комментарий (поле `comment`) обязателен.
+    # - При внесении фактических значений индикаторов укажите текущую дату.
+    indicators:
+      - id: indicator_arch_maturity
+        fit: partially
+        comment:
+        date: 10.8.2023
+      - id: indicator_code_control
+        fit: fully
+        comment:
+        date: 10.8.2023
+      - id: indicator_vendor
+        fit: partially
+        comment: Зависит от интеграции с 1С.
+        date: 10.8.2023
+      - id: indicator_team_capacity
+        fit: none
+        comment: В команде нет открытых вакансий и объем текущей работы превышает возможности команды (растет бэклог) на протяжении последних 2 месяцев текущий состав команды еле-еле покрывает запросы бизнеса, остается много техдолга + нет времени для оптимизации, что в свою очередь выливается в громоздкие решения, обширный техдолг, снижение скорости разработки и увеличение стоимости реализации нового функционала.
+        date: 10.8.2023
+      - id: indicator_process
+        fit: fully
+        comment:
+        date: 10.8.2023
+
+    urls:
+      - id: prod
+        type: server
+        title: Адрес сервера прода
+        url: https://calendar.samoletgroup.ru/
+      - id: stage
+        type: server
+        title: Адрес сервера стейджа
+        url: https://calendar-stage.samoletgroup.ru/
+    repository: https://gitlab.samoletgroup.ru/10d/construction/scalendar
+    health_risk: # определяет общее "здоровье" системы. Каждый владелец приложения сам может определить, что он подразумевает под здоровьем
+      value: 3 #1 - плохо; 2 - средний; 3 - хорошо
+      date_value:
+      comments:
+
+    technologies: # Используемые технологии
+      - Python
+      - TypeScript
+    roles:                # Аспекты, которе реализует компонент
+      - tehnadzor
+    aspects:
+      - Vozmozhnost_stavit_vstrechi_na_podryadchika
+      - Vozmozhnost_stavit_vstrechi_na_Sotrudnika
+    links:
+      # Интеграции между системами одного БЮ
+      - id: samolet.bu_moscow.sdevelopment.scontrol
+        direction: <--
+        title: Встреча
+      - id: samolet.bu_moscow.sdevelopment.scec
+        direction: <--
+        title: Встреча
+      - id: samolet.bu_moscow.sdevelopment.scontrol_superapp.samolet_podryadchik_mobile
+        direction: <--
+        title: Встреча
+
+      - id: samolet.bu_moscow.sdevelopment.scontrol_superapp.samolet_control_mobile
+        direction: <--
+        title: Встреча
+    libraries:
+      - sid
+      - django_catalog
+
+
+  # L2 уровень
+
+  samolet.bu_moscow.sdevelopment.scalendar.nginx:
+    title: NGINX
+    entity: component
+
+  samolet.bu_moscow.sdevelopment.scalendar.app:
+    title: Основной Backend (app)
+    description: Backend RestAPI сервис для frontend и мобильных приложений
+    entity: component
+    technologies:
+      - Python
+      - Django
+      - Django REST Framework
+    links:
+      - id: samolet.bu_moscow.sdevelopment.scalendar.pgbouncer
+        direction: -->
+      - id: samolet.bu_moscow.sdevelopment.scalendar.redis
+        direction: -->
+      - id: samolet.bu_moscow.sdevelopment.scalendar.celery
+        direction: -->
+      - id: samolet.bu_moscow.sdevelopment.scalendar.celery_beat
+        direction: -->
+      - id: samolet.bu_csp.sid
+
+  samolet.bu_moscow.sdevelopment.scalendar.consumers:
+    title: Kafka-consumers
+    entity: component
+
+  samolet.bu_moscow.sdevelopment.scalendar.consumers.catalog_consumer:
+    title: Kafka Consumer Catalog
+    description: Kafka-consumer для актуализации справочников
+      из общего сервиса catalog (Объект, Проект, Подрядчик и другое)
+    entity: component
+    technologies:
+      - Python
+      - Django
+      - Kafka
+      - aiokafka
+    links:
+      - id: samolet.bu_moscow.sdevelopment.scalendar.pgbouncer
+        direction: -->
+      - id: samolet.bu_moscow.scommon.scatalog
+        direction: -->
+
+  samolet.bu_moscow.sdevelopment.scalendar.consumers.consumer:
+    title: Kafka-consumer
+    description: Kafka-consumer для получения данных от других сервисов кроме catalog
+    entity: component
+    technologies:
+      - Python
+      - Django
+      - Kafka
+      - aiokafka
+    links:
+      - id: samolet.bu_moscow.sdevelopment.scalendar.pgbouncer
+        direction: -->
+        description: Consumer работает с базой данных также как и main_backend
+
+  samolet.bu_moscow.sdevelopment.scalendar.django_producer:
+    title: Kafka-producing worker
+    description: Отправка сообщений в Kafka
+    entity: component
+    technologies:
+      - Python
+      - Django
+      - Kafka
+      - Confluent-kafka
+    links:
+      - id: samolet.bu_moscow.sdevelopment.scalendar.pgbouncer
+        direction: -->
+        description: Consumer работает с базой данных также как и main_backend
+
+  samolet.bu_moscow.sdevelopment.scalendar.redis:
+    title: Redis
+    description: Хранит кэш и задачи для celery
+    entity: component
+    technologies:
+      - Redis
+  #
+  samolet.bu_moscow.sdevelopment.scalendar.celery:
+    title: Celery
+    description: Отложенное выполнение операций
+    entity: component
+    technologies:
+      - Python
+      - Celery
+    links:
+      - id: samolet.bu_moscow.sdevelopment.scalendar.redis
+        direction: -->
+        description: И как брокер сообщений, и как кэш хранилище
+      - id: samolet.bu_moscow.sdevelopment.scalendar.pgbouncer
+        direction: -->
+
+  samolet.bu_moscow.sdevelopment.scalendar.celery_catalog:
+    title: Celery
+    description: Отложенное выполнение операций
+    entity: component
+    technologies:
+      - Python
+      - Celery
+    links:
+      - id: samolet.bu_moscow.sdevelopment.scalendar.redis
+        direction: -->
+        description: И как брокер сообщений, и как кэш хранилище
+      - id: samolet.bu_moscow.sdevelopment.scalendar.pgbouncer
+        direction: -->
+
+  samolet.bu_moscow.sdevelopment.scalendar.celery_beat:
+    title: Celery beat
+    description: Выполнение операций по расписанию
+    entity: component
+    technologies:
+      - Python
+      - Celery
+    links:
+      - id: samolet.bu_moscow.sdevelopment.scalendar.redis
+        direction: -->
+        description: И как брокер сообщений, и как кэш хранилище
+      - id: samolet.bu_moscow.sdevelopment.scalendar.pgbouncer
+        direction: -->
+
+  samolet.bu_moscow.sdevelopment.scalendar.pgbouncer:
+    title: PG Bouncer
+    description: Балансировщик PostgreSQL
+    entity: component
+    technologies:
+      - PGBouncer
+    links:
+      - id: samolet.bu_moscow.sdevelopment.scalendar.db_postgresql
+        direction: -->
+
+  samolet.bu_moscow.sdevelopment.scalendar.db_postgresql:
+    title: DB
+    description: СУБД PostgreSQL с базой данных
+    entity: database
+    technologies:
+      - PostgreSQL
+
+  samolet.bu_moscow.sdevelopment.scalendar.web:
+    title: WEB
+    description: Веб-клиент (frontend приложение), написанное на ReactJS.
+    entity: component
+    technologies:
+      - JavaScript
+      - ReactJS
+    links:
+      - id: samolet.bu_moscow.sdevelopment.scalendar.app
+        direction: -->
+      - id: samolet.bu_csp.sid
+
+# Отображение Л2 уровня в меню
+
+contexts: # Контексты представления прикладной архитектуры (pa - ПА)
+  samolet.bu_moscow.sdevelopment.scalendar:
+    title: Архитектура S.Calendar (уровень ПА-L2)
+    location: Детальная архитектура систем (ПА-L2)/S.Calendar # Размещение документа в дереве навигации
+    extra-links: true
+    uml:
+      $notation: plantuml  # sber C4Model plantuml
+      $autor: Колдунов Дмитрий
+      $version: 0.0.1
+      $moment: 02.11.2022
+    components:
+      - samolet.bu_moscow.sdevelopment.scalendar.*

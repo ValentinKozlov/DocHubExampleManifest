@@ -1,18 +1,28 @@
 aspects:
-  wart_treatment:
+  lechenie_borodavok:
     title: Лечение бородавок
     location: Лечение бородавок
 
-  mold removal:
+  udalenie_pleseni:
     title: Удаление плесени
     location: Удаление плесени
 
-  moss covering:
+  pokrytie_mkhom:
     title: Покрытие мхом
     location: Покрытие мхом
 
-  mud baths:
+  gryazevye_vanny:
     title: Грязевые ванны
     location: Грязевые ванны
 
+  lechenie_piyavkami:
+    title: Лечение пиявками
+    location: Лечение пиявками
+
+  lechenie_zmeinym_yadom:
+    title: Лечение змеиным ядом
+    location: Лечение змеиным ядом
     
+  otpaivanie_tinoj:
+    title: Отпаивание тиной
+    location: Отпаивание тиной
