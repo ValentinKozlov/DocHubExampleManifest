@@ -1,10 +1,44 @@
 components:
-  # внутренние клиенты Экосистемы
+  # Ответственные за заводь лягушек
+  swamp.kikimora:
+    title: Кикимора
+    entity: person
 
-  swamp.creeping_snake:
-    title: Змей-ползучий
-    entity: person   # Сущность компонента из PlantUML (https://plantuml.com/ru/deployment-diagram)
+  swamp.vodyanoj:
+    title: Водяной
+    entity: person
 
-  swamp.Moidodyr:
-    title: Мойдодыр
-    entity: person   # Сущность компонента из PlantUML (https://plantuml.com/ru/deployment-diagram)
+  swamp.baba_yaga:
+    title: Баба Яга
+    entity: person
+
+  swamp.bolotnik:
+    title: Болотник
+    entity: person
+
+# Ответственные за заводь крокодилов
+  swamp.Шрек:
+    title: Шрек
+    entity: person
+
+  swamp.dyujmovochka:
+    title: Дюймовочка
+    entity: person
+
+  swamp.duremar:
+    title: Дуремар
+    entity: person
+
+# Ответственные за заводь бегемотов
+  swamp.begemot_shokolad:
+    title: Бегемот Шоколад
+    entity: person
+
+  swamp.funtik:
+    title: Фунтик
+    entity: person
+
+  swamp.dyadyushka_mokus:
+    title: Дядюшка Мокус
+    entity: person
+

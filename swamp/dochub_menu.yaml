@@ -13,17 +13,13 @@ dochub_menu:
     title: Принципы    
     order: 1100
     visible: true
-  dochub.arch_governance.standards:
-    title: Стандарты    
-    order: 1200
-    visible: true
   dochub.arch_governance.platforms:
     title: Стандарты по платформам
-    order: 1300
+    order: 1200
     visible: true
   dochub.arch_governance.implement_patterns:
     title: Паттерны реализации задач
-    order: 1400
+    order: 1300
     visible: true
 
   dochub.business_arch:

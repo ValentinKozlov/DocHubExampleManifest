@@ -1,5 +1,6 @@
 docs:
-  arch_patterns.partner_companies_interaction:
+  # Первый домен - это имя каталога, второй конечное название в меню
+  standards.partner_companies_interaction:
     location: Архитектурные принципы и стандарты/Паттерны реализации задач/Взаимодействие с компаниями-партнерами
     autor: Valentin Kozlov
     type: smartants           # Тип документа

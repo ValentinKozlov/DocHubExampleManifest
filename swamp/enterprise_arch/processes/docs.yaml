@@ -1,0 +1,14 @@
+docs:
+  samolet.deployment_management_process:
+    location: Развитие корп архитектуры/Политики и архитектурные процессы/Процесс развертывания систем
+    description: Процесс развертывания систем в ГК Самолёт
+    type: markdown
+    template: ./deployment_management_process/deployment_management_process.md
+    order: 7110
+
+  samolet.libraries_management_process:
+    location: Развитие корп архитектуры/Политики и архитектурные процессы/Процесс управления библиотеками
+    description: Процесс управления библиотеками в ГК Самолёт
+    type: markdown
+    template: ./libraries_management_process/libraries_management_process.md
+    order: 7120

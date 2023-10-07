@@ -1,3 +1,5 @@
 # ГК Болото
 
-![TOGAF](./images/swamp_residents.jpg)
+Жители болот
+
+![Жители болот](./images/swamp_residents.jpg)

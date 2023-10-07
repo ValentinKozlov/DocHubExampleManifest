@@ -1,33 +1,16 @@
 docs:
-  arch_introduction:
+  documentation.arch_introduction:
     location: Документация/Введение в архитектуру
     description: Введение
     type: markdown
     source: introduction.md
 
-  glossary:
+  documentation.glossary:
     location: Документация/Глоссарий терминов
     type: markdown
     source: glossary/glossary.md
 
-  useful_links:
+  documentation.useful_links:
     location: Документация/03. Полезные ссылки
     type: markdown
     source: useful_links/useful_links.md
-
-
-  plugins.frog:
-    location: Документация/Плагины/Мой плагин
-    type: test
-    params:
-      param1: Значение параметра 1
-      param2: Значение параметра 2  
-    source: examples/test.md"
-
-  dochub.plugins.example:
-    location: Документация/Плагины/Пример Ромы
-    type: html
-    headers:
-      head1:
-        type: test
-    source: examples/example.html
