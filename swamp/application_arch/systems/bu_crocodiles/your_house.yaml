@@ -5,8 +5,8 @@ components:
     guid: f3049b4a-96de-4d9d-a50f-c705eb40fbed
     system_status: trial
     dev_model: inhouse
-    short_description: Сервис по продаже домой
-    description: Сервис по продаже домой для жителей болота
+    short_description: Сервис по продаже домов
+    description: Сервис по продаже домов для жителей болота
     business_owners:
       - cr.shrek
     application_owner: cr.dyujmovochka
@@ -88,8 +88,16 @@ components:
         direction: <--
         title: Получение услуги
 
-    libraries:
-      - sign_django_sdk
+    # libraries:
+
+    business_entities:
+      - bank
+      - chekingaccount
+      - contractor
+      - country
+      - unit
+      - agreementtype
+      - contract
 
 # Описание уровня уровня ПА-L2
 
@@ -132,7 +140,7 @@ components:
 contexts:   # Контексты представления архитектурных компонентов
   swamp.bu_crocodiles.your_house:
     title: Архитектура AutoSuggest (уровень ПА-L2)
-    location: Детальная архитектуры систем ПА-L2/Детальная архитектура систем (ПА-L2)/Твой дом
+    location: Детальная архитектуры систем ПА-L2/Твой дом
     extra-links: true
     uml:      
       $autor: Дуремар

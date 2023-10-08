@@ -5,9 +5,9 @@ libraries:
       Модуль подписания для приложений Django
     library_type: inhouse
     control_type: regulated    
-    mentor: b.funtik
+    mentor: hp.funtik
     maintainers:
-      - b.dyadyushka_mokus
+      - hp.dyadyushka_mokus
     repository: https://github.com/rpiontik/DocHubExamples
     technologies:  # Используемые технологии
       - Django

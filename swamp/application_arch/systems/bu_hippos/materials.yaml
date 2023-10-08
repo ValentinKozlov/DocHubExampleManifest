@@ -88,6 +88,22 @@ components:
         direction: <--
         title: Данные жителей болота
 
+    libraries:
+      - swamp_ui
+      - sign_django_sdk
+
+    business_entities:
+      - bank
+      - chekingaccount
+      - contractor
+      - country
+      - draftagreement
+      - currency
+      - organization
+      - region
+      - unit
+
+
 # Описание уровня уровня ПА-L2
 
   swamp.bu_hippos.materials.frontend:
@@ -136,7 +152,7 @@ components:
 contexts:   # Контексты представления архитектурных компонентов
   swamp.bu_hippos.materials:
     title: Архитектура сервиса Добыча материалов (уровень ПА-L2)
-    location: Детальная архитектуры систем ПА-L2/Детальная архитектура систем (ПА-L2)/Добыча материалов
+    location: Детальная архитектуры систем ПА-L2/Добыча материалов
     extra-links: true
     uml:      
       $autor: Фунтик

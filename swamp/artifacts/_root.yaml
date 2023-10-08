@@ -3,4 +3,5 @@ imports:
   - bu_crocodiles/_root.yaml
   - bu_frogs/_root.yaml
   - bu_hippos/_root.yaml
+  - network/_root.yaml
   

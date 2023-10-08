@@ -272,3 +272,69 @@ dictionaries:
         threshold: 0
         color: "#EF9A9A"
         title: Неприемлемо
+
+  accounts:
+    title: Учётные записи пользователей    
+    description: Справочник учётных записей пользователей
+    parameters: 
+      # Заводь крокодилов
+      - name: cr.shrek
+        title: Шрек
+        email: cr.shrek@swamp.ru
+        bu: swamp.crocodile
+      - name: cr.dyujmovochka
+        title: Дюймовочка
+        email: cr.dyujmovochka@swamp.ru
+        bu: swamp.crocodile
+      - name: cr.duremar
+        title: Дуремар
+        email: cr.duremar@swamp.ru
+        bu: swamp.crocodile
+      - name: cr.papa_karlo
+        title: Папа Карло
+        email: cr.papa_karlo@swamp.ru
+        bu: swamp.crocodile
+
+      # Лягушачья заводь
+
+      - name: fr.kikimora
+        title: Кикимора
+        email: fr.kikimora@swamp.ru
+        bu: swamp.frog
+      - name: fr.vodyanoj
+        title: Водяной
+        email: fr.vodyanoj@swamp.ru
+        bu: swamp.frog
+      - name: fr.baba_yaga
+        title: Баба Яга
+        email: fr.baba_yaga@swamp.ru
+        bu: swamp.frog
+      - name: fr.bolotnik
+        title: Болотник
+        email: fr.bolotnik@swamp.ru
+        bu: swamp.frog
+
+      # Заводь бегемотов
+      - name: hp.begemot_shokolad
+        title: Бегемот Шоколад
+        email: hp.begemot_shokolad@swamp.ru
+        bu: swamp.hippo     
+      - name: hp.funtik
+        title: Фунтик
+        email: hp.funtik@swamp.ru
+        bu: swamp.hippo
+      - name: hp.dyadyushka_mokus
+        title: Дядюшка Мокус
+        email: hp.dyadyushka_mokus@swamp.ru
+        bu: swamp.hippo
+      - name: hp.luchshij_syshchik_bez_diploma
+        title: Лучший сыщик без диплома
+        email: hp.luchshij_syshchik_bez_diploma@swamp.ru
+        bu: swamp.hippo
+      - name: hp.bober
+        title: Бобер
+        email: hp.bober@swamp.ru
+        bu: swamp.hippo
+
+
+

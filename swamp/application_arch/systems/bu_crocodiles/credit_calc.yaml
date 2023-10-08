@@ -79,6 +79,14 @@ components:
     libraries:
       - swamp_ui
 
+    business_entities:
+      - bank
+      - chekingaccount
+      - contractor
+      - country
+      - draftagreement
+
+
 # Описание уровня уровня ПА-L2
 
   swamp.bu_crocodiles.credit_calc.frontend:
@@ -120,7 +128,7 @@ components:
 contexts:   # Контексты представления архитектурных компонентов
   swamp.bu_crocodiles.credit_calc:
     title: Архитектура AutoSuggest (уровень ПА-L2)
-    location: Детальная архитектуры систем ПА-L2/Детальная архитектура систем (ПА-L2)/Кредитный калькулятор
+    location: Детальная архитектуры систем ПА-L2/Кредитный калькулятор
     extra-links: true
     uml:      
       $autor: Дуремар

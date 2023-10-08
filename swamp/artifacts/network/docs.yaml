@@ -1,0 +1,55 @@
+docs:
+  systems_network:
+    location: Прикладная архитектура/Graph систем
+    description: Network
+    autor: Валентин Козлов
+    type: markdown
+    source: systems_network.md
+
+  systems_table_network:
+    type: network
+    subjects:
+      - swamp.bu_crocodiles.autoforms
+      - swamp.bu_crocodiles.credit_calc
+      - swamp.bu_crocodiles.your_house
+    source: >
+      (
+        $manifest := $;
+        /* Перебираем все компоненты */
+        $adges  := $distinct(components.$spread().(
+          $node_id := $keys()[0];
+          $node := $.*;
+          $entity := $node.entity;
+          /* Определяем связи */
+          $node.links.{
+            "from": $node_id,
+            "to": id,
+            "entity": $entity,
+            "label": title
+          }
+        ))[entity="system"];
+        /* Выявляем ноды из связей */
+        $nodes := $distinct($append($adges.from, $adges.to)).(
+          $struct := $split($, ".");
+          $group := $replace($, "." & $reverse($struct)[0], "");
+          $component := $lookup($manifest.components, $);
+          {
+            "id": $,
+            "label": $component.title,
+            "entity": $component.entity,
+            "group": $group,
+            "level": $count($struct),
+            /* Позиционируем ноду тем выше, чем выше слой */
+            "y": $count($struct) * 200
+          }
+        )[entity="system"];
+
+        /* Выводим результат */
+        {
+          "nodes": $nodes, /* Массив нод */
+          "edges": $adges, /* Массив связей */
+          "options": {     /* Параметры сетевой диаграммы https://visjs.github.io/vis-network/docs/network/ */
+            "clickToUse": false /* Отключаем обязательный клик перед взаимодействием с пользователем */
+          }
+        }
+      )

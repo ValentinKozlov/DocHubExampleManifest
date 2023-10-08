@@ -1,4 +1,4 @@
 imports:
-  - autoforms.yaml
+  - autoforms/_root.yaml
   - credit_calc.yaml
   - your_house.yaml

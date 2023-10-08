@@ -82,6 +82,16 @@ components:
         direction: <--
         title: Данные жителей болота
 
+    libraries:
+      - swamp_ui
+      - sign_django_sdk
+
+    business_entities:
+      - bank
+      - chekingaccount
+      - contractor
+      - country
+      - draftagreement
 
 # Описание уровня уровня ПА-L2
 
@@ -118,7 +128,7 @@ components:
 contexts:   # Контексты представления архитектурных компонентов
   swamp.bu_frogs.healthy_head:
     title: Архитектура сервиса Здоровая голова (уровень ПА-L2)
-    location: Детальная архитектуры систем ПА-L2/Детальная архитектура систем (ПА-L2)/Здоровая голова
+    location: Детальная архитектуры систем ПА-L2/Здоровая голова
     extra-links: true
     uml:      
       $autor: Болотник

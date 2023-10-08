@@ -50,31 +50,31 @@ dochub_menu:
     visible: true
   dochub.app_arch.pal1:
     title: Прикладной ландшафт ПА-L1
-    order: 4300
+    order: 4200
     visible: true
   dochub.app_arch.pal2:
     title: Детальная архитектуры систем ПА-L2
-    order: 4500
+    order: 4300
     visible: true
   dochub.app_arch.aspects:
     title: Функционал систем
-    order: 4700
+    order: 4400
     visible: true
   dochub.app_arch.systems_graph:
     title: Graph систем
-    order: 4800
+    order: 4500
     visible: true
   dochub.app_arch.libraries:
     title: Библиотеки
-    order: 4930
+    order: 4600
     visible: true
   dochub.app_arch.libraries.list:
     title: Каталог библиотек
-    order: 4931
+    order: 4610
     visible: true
   dochub.app_arch.libraries.in_systems:
     title: Список библиотек в системах
-    order: 4932
+    order: 4620
     visible: true
 
   dochub.tech_arch:

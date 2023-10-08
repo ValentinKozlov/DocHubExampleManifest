@@ -86,6 +86,17 @@ components:
         direction: <--
         title: Материалы для строительства
 
+    libraries:
+      - swamp_ui
+      - django_catalog
+      - sign_django_sdk
+
+    business_entities:
+      - currency
+      - organization
+      - region
+      - unit
+
 # Описание уровня уровня ПА-L2
 
   swamp.bu_hippos.control.frontend:
@@ -134,7 +145,7 @@ components:
 contexts:   # Контексты представления архитектурных компонентов
   swamp.bu_hippos.control:
     title: Архитектура сервиса Контроль за работой (уровень ПА-L2)
-    location: Детальная архитектуры систем ПА-L2/Детальная архитектура систем (ПА-L2)/Контроль за работой
+    location: Детальная архитектуры систем ПА-L2/Контроль за работой
     extra-links: true
     uml:      
       $autor: Фунтик

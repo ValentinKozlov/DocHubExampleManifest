@@ -85,13 +85,18 @@ components:
         title: Данные жителей болота
       - id: swamp.bu_crocodiles.autoforms
         direction: <--
-        title: Данные жителей болота 
-
+        title: Данные жителей болота
 
     libraries:
       - swamp_ui
       - django_catalog
       - sign_django_sdk
+
+    business_entities:
+      - currency
+      - organization
+      - region
+      - unit
 
 # Описание уровня уровня ПА-L2
 
@@ -128,7 +133,7 @@ components:
 contexts:   # Контексты представления архитектурных компонентов
   swamp.bu_frogs.physiotherapy:
     title: Архитектура сервиса Лечебная физкультура (уровень ПА-L2)
-    location: Детальная архитектуры систем ПА-L2/Детальная архитектура систем (ПА-L2)/Лечебная физкультура
+    location: Детальная архитектуры систем ПА-L2/Лечебная физкультура
     extra-links: true
     uml:      
       $autor: Болотник

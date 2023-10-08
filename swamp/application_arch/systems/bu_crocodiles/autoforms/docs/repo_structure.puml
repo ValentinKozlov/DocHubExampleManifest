@@ -1,0 +1,79 @@
+@startuml
+
+    !pragma layout elk
+    title Структура репозиториев и компонент ITHub (DocHub)
+
+    [Репозиторий DocHub (GitHub)] as dochub 
+
+    rectangle "ГК Самолет" {
+        actor "Архитекторы (DocHub)" as matamodel_arch #9400D3
+        actor "Архитекторы (корп, кластеров)" as cluster_arch #9400D3
+        actor "Архитекторы (продуктов)" as product_arch #9400D3
+
+        actor "Пользователь DocHub" as user  #FFD700
+
+        
+        [Репозиторий DocHub (fork)] as dochubfork #66CDAA
+        [SPA DocHub (Web browser)] as spa #1E90FF
+
+        package "DocHub Core" {
+            [Фронтенд (frontend)] as frontend #87CEFA
+            [Бэкенд (backend)] as backend #87CEFA    
+            [Озеро данных (manifest)] as manifest #87CEFA
+            [Метамодель (metamodel)] as metamodel #87CEFA
+        }
+
+        package "Data sources" {
+            [Репозиторий Samolet] as samolet #66CDAA
+            [Репозиторий Продукт 1] as product1 #66CDAA
+            [Репозиторий Продукт 2] as product2 #66CDAA
+            [Репозиторий Продукт N] as productn #66CDAA
+        }
+
+        interface "Внешние системы" as ext_sys
+        interface "Внешние источники данных" as ext_source
+
+        package "Integration adapters" {
+            [Collector] as collector #B0E0E6
+            note left of collector
+            Забирает данные
+            снаружи и пишет
+            их внутрь DocHub
+            end note
+
+            [Publisher (API GateWay)] as publisher #B0E0E6
+            note left of publisher
+            Публикует наружу
+            данные (например пушит
+            в kafka, разные API)
+            end note
+        }
+
+        dochub ..> dochubfork
+        dochubfork ..> frontend
+        dochubfork ..> backend
+        metamodel --> backend
+        manifest --> backend
+        backend --> publisher
+        collector --> manifest
+        backend --> frontend
+        frontend --> spa
+        ext_source -down--> collector
+        publisher --> ext_sys
+        
+
+        samolet -up--> manifest
+        product1 -up--> manifest
+        product2 -up--> manifest
+        productn -up--> manifest
+
+        matamodel_arch --> metamodel
+        cluster_arch -up..> samolet
+        product_arch -up..> product1
+        product_arch -up..> product2
+        product_arch -up..> productn
+
+        user --> spa
+    }
+
+@enduml
