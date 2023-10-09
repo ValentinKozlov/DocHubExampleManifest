@@ -1,8 +1,0 @@
-docs:  
-  swamp.solution_arch:
-    location: Архитектура решений
-    description: Архитектура решений
-    type: markdown
-    template: solution_arch.md
-    
-

@@ -1,4 +1,5 @@
 imports:  
+  - adrs/_root.yaml
   - application_arch/_root.yaml
   - artifacts/_root.yaml
   - business_arch/_root.yaml

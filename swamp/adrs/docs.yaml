@@ -1,9 +1,9 @@
 docs:
   # Первый домен - это имя каталога, если в меню dochub_menu.yaml указан конкретный пункт для вывода информации, то берем имя из указанного файла
-  business_arch:    
-    location: Бизнес архитектура
-    description: Описание бизнес архитектуры
+  adrs.business_arch:    
+    location: Архитектура решений/Architecture decision log
+    description: Пример управления ADR
     type: markdown
-    template: business_arch.md    
+    template: adl.md    
     
 

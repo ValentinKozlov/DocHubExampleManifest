@@ -1,5 +1,5 @@
 docs:
-  swamp.libraries_management_process:
+  enterprise_arch.libraries_management_process:
     location: Развитие корп архитектуры/Политики и архитектурные процессы/Процесс управления библиотеками
     description: Процесс управления библиотеками в ГК Болото
     type: markdown

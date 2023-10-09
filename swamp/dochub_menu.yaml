@@ -86,7 +86,7 @@ dochub_menu:
     order: 5100
     visible: true
   dochub.tech_arch.environments:
-    title: Среды развертывания ГК
+    title: Среды развертывания ГК Болото
     order: 5200
     visible: true
 
@@ -136,8 +136,4 @@ dochub_menu:
   dochub.documentation.useful_links:
     title: Полезные ссылки
     order: 9300
-    visible: true
-  dochub.documentation.company_structure:
-    title: Управленческая структура ГК
-    order: 9400
     visible: true

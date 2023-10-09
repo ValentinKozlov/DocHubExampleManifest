@@ -5,7 +5,7 @@
 
     [Репозиторий DocHub (GitHub)] as dochub 
 
-    rectangle "ГК Самолет" {
+    rectangle "ГК Болото" {
         actor "Архитекторы (DocHub)" as matamodel_arch #9400D3
         actor "Архитекторы (корп, кластеров)" as cluster_arch #9400D3
         actor "Архитекторы (продуктов)" as product_arch #9400D3
@@ -24,7 +24,7 @@
         }
 
         package "Data sources" {
-            [Репозиторий Samolet] as samolet #66CDAA
+            [Репозиторий Swamp] as swamp #66CDAA
             [Репозиторий Продукт 1] as product1 #66CDAA
             [Репозиторий Продукт 2] as product2 #66CDAA
             [Репозиторий Продукт N] as productn #66CDAA
@@ -62,13 +62,13 @@
         publisher --> ext_sys
         
 
-        samolet -up--> manifest
+        swamp -up--> manifest
         product1 -up--> manifest
         product2 -up--> manifest
         productn -up--> manifest
 
         matamodel_arch --> metamodel
-        cluster_arch -up..> samolet
+        cluster_arch -up..> swamp
         product_arch -up..> product1
         product_arch -up..> product2
         product_arch -up..> productn

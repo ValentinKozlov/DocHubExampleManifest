@@ -3,7 +3,7 @@ docs:
     location: Документация/Введение в архитектуру
     description: Введение
     type: markdown
-    source: introduction.md
+    source: intro/introduction.md
 
   documentation.glossary:
     location: Документация/Глоссарий терминов
@@ -11,6 +11,6 @@ docs:
     source: glossary/glossary.md
 
   documentation.useful_links:
-    location: Документация/03. Полезные ссылки
+    location: Документация/Полезные ссылки
     type: markdown
     source: useful_links/useful_links.md

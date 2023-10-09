@@ -1,0 +1,35 @@
+docs:
+  technologies_table_list:
+    type: table
+    headers:
+      - value: title
+        text: Технология
+        sortable: true
+        align: left
+        width: 30%
+        link: link
+
+      - value: section
+        text: Секция
+        sortable: true
+        align: left
+        width: 20%
+
+      - value: status
+        text: Статус
+        sortable: false
+        align: left
+        width: 10%
+
+      - value: aliases
+        text: Алиасы
+        sortable: true
+        align: left
+        width: 40%
+
+    source: swamp.dataset.technologies_list
+
+  technologies_list:
+    location: Технологическая архитектура/Таблица технологий
+    type: markdown
+    source: technologies_table.md

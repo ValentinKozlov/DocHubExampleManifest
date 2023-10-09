@@ -106,6 +106,24 @@ components:
       - id: swamp.bu_crocodiles.autoforms.backend
         direction: <-->
         title: HTTPS
+    deployment_units:
+      prod.main: #<prod>.<имя du>
+        resource_type: k8s #k8s/virtual/phisycal
+        multiplier: 4
+        cpu: 2 #float - количество ядер
+        ram: 4 #float - количество памяти в Gb
+
+      stage.main: #<stage>.<имя du>
+        resource_type: k8s #k8s/virtual/phisycal
+        multiplier: 6
+        cpu: 2 #float - количество ядер
+        ram: 4 #float - количество памяти в Gb
+
+      dev.main: #<dev>.<имя du>
+        resource_type: k8s #k8s/virtual/phisycal
+        multiplier: 8
+        cpu: 2 #float - количество ядер
+        ram: 4 #float - количество памяти в Gb
 
   swamp.bu_crocodiles.autoforms.backend:
     title: Бэкенд
@@ -120,13 +138,58 @@ components:
     links:
       - id: swamp.bu_crocodiles.autoforms.db
         direction: <-->
-        title: tcp 5432    
+        title: tcp 5432
+    deployment_units:
+      prod.main: #<prod>.<имя du>
+        resource_type: k8s #k8s/virtual/phisycal
+        multiplier: 4
+        cpu: 2 #float - количество ядер
+        ram: 4 #float - количество памяти в Gb
+
+      stage.main: #<stage>.<имя du>
+        resource_type: k8s #k8s/virtual/phisycal
+        multiplier: 6
+        cpu: 2 #float - количество ядер
+        ram: 4 #float - количество памяти в Gb
+
+      dev.main: #<dev>.<имя du>
+        resource_type: k8s #k8s/virtual/phisycal
+        multiplier: 8
+        cpu: 2 #float - количество ядер
+        ram: 4 #float - количество памяти в Gb 
 
   swamp.bu_crocodiles.autoforms.db:
       title: СУБД
       entity: database # для СУБД нужно указывать именно database
       technologies: 
         - PostgreSQL
+      deployment_units:
+        prod.main: #<prod>.<имя du>
+          resource_type: virtual #k8s/virtual/phisycal
+          multiplier: 1
+          cpu_type: standart #highend/standart/lowend
+          cpu: 2 #float - количество ядер
+          ram: 4 #float - количество памяти в Gb
+          storage_type: standart #highend/standart/lowend/extralowend
+          storage_size: 1 #Gb
+
+        stage.main: #<stage>.<имя du>
+          resource_type: virtual #k8s/virtual/phisycal
+          multiplier: 1
+          cpu_type: standart #highend/standart/lowend
+          cpu: 2 #float - количество ядер
+          ram: 4 #float - количество памяти в Gb
+          storage_type: standart #highend/standart/lowend/extralowend
+          storage_size: 1 #Gb
+
+        dev.main: #<dev>.<имя du>
+          resource_type: virtual #k8s/virtual/phisycal
+          multiplier: 1
+          cpu_type: standart #highend/standart/lowend
+          cpu: 2 #float - количество ядер
+          ram: 4 #float - количество памяти в Gb
+          storage_type: standart #highend/standart/lowend/extralowend
+          storage_size: 1 #Gb
 
 contexts:   # Контексты представления архитектурных компонентов
   swamp.bu_crocodiles.autoforms:

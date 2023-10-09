@@ -1,0 +1,76 @@
+environments:
+  prod.k8s_cr:
+    title: K8S Крокодилов - prod
+    description: Продовая поляна крокодилов
+    resource_type: k8s #k8s/vm/phisycal
+    entity: Container    
+    deployment_units:
+      swamp.bu_crocodiles.autoforms:
+        swamp.bu_crocodiles.autoforms.frontend:
+          - prod.main
+        swamp.bu_crocodiles.autoforms.backend:
+          - prod.main
+      swamp.bu_crocodiles.credit_calc:
+        swamp.bu_crocodiles.credit_calc.frontend:
+          - prod.main
+        swamp.bu_crocodiles.credit_calc.backend:
+          - prod.main
+      swamp.bu_crocodiles.your_house:
+        swamp.bu_crocodiles.your_house.frontend:
+          - prod.main
+        swamp.bu_crocodiles.your_house.backend:
+          - prod.main
+
+  stage.k8s_cr:
+    title: K8S Крокодилов - stage
+    description: Стейдж-поляна K8S Крокодилов
+    resource_type: k8s #k8s/vm/phisycal
+    entity: Container    
+    deployment_units:
+      swamp.bu_crocodiles.autoforms:
+        swamp.bu_crocodiles.autoforms.frontend:
+          - stage.main
+        swamp.bu_crocodiles.autoforms.backend:
+          - stage.main
+        swamp.bu_crocodiles.autoforms.db:
+          - stage.main
+      swamp.bu_crocodiles.credit_calc:
+        swamp.bu_crocodiles.credit_calc.frontend:
+          - stage.main
+        swamp.bu_crocodiles.credit_calc.backend:
+          - stage.main
+        swamp.bu_crocodiles.credit_calc.db:
+          - stage.main
+      swamp.bu_crocodiles.your_house:
+        swamp.bu_crocodiles.your_house.frontend:
+          - stage.main
+        swamp.bu_crocodiles.your_house.backend:
+          - stage.main
+        swamp.bu_crocodiles.your_house.db:
+          - stage.main
+
+
+  dev.k8s_cr:
+    title: K8S Крокодилов - dev
+    description: Поляна разработки K8S Крокодилов
+    resource_type: k8s #k8s/vm/phisycal
+    entity: Container    
+    deployment_units:
+      swamp.bu_crocodiles.autoforms:
+        swamp.bu_crocodiles.autoforms.frontend:
+          - dev.main
+        swamp.bu_crocodiles.autoforms.backend:
+          - dev.main
+      swamp.bu_crocodiles.credit_calc:
+        swamp.bu_crocodiles.credit_calc.frontend:
+          - dev.main
+        swamp.bu_crocodiles.credit_calc.backend:
+          - dev.main
+      swamp.bu_crocodiles.your_house:
+        swamp.bu_crocodiles.your_house.frontend:
+          - dev.main
+        swamp.bu_crocodiles.your_house.backend:
+          - dev.main
+        swamp.bu_crocodiles.your_house.db:
+          - dev.main
+

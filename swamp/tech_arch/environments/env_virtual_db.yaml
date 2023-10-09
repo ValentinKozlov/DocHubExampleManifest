@@ -1,0 +1,29 @@
+environments:
+  prod.virtual_db:
+    title: Виртуальная среда БД - prod
+    description: Продуктовая виртуальная среда баз данных
+    resource_type: vm #k8s/vm/phisycal
+    entity: ContainerDb    
+    deployment_units:
+      swamp.bu_crocodiles.autoforms:
+        swamp.bu_crocodiles.autoforms.db:
+          - prod.main        
+      swamp.bu_crocodiles.credit_calc:
+        swamp.bu_crocodiles.credit_calc.db:
+          - prod.main
+      swamp.bu_crocodiles.your_house:
+        swamp.bu_crocodiles.your_house.db:
+          - prod.main
+
+
+  stage.virtual_db:
+    title: Виртуальная среда БД - stage
+    description: Виртуальная стейдж-среда баз данных
+    resource_type: vm #k8s/vm/phisycal
+    entity: ContainerDb    
+
+  dev.virtual_db:
+    title: Виртуальный кластер БД - dev
+    description: Виртуальная среда разработки баз данных
+    resource_type: vm #k8s/vm/phisycal
+    entity: ContainerDb    
