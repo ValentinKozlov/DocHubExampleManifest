@@ -27,12 +27,29 @@ docs:
         align: left
         width: 10%
 
+      - value: budget_holder
+        text: Владелец бюджета
+        sortable: true
+        align: left
+        width: 10%
+
+      - value: budget_holders_bu
+        text: БЮ Владельца бюджета
+        sortable: true
+        align: left
+        width: 10%
+
+      - value: deployment_card
+        text: Карточка развертывания
+        link: link_to_deployment_card
+        align: left
+        width: 10%
+
       - value: system_entities
         text: Бизнес-сущности
         link: link_to_system_entities
         align: left
         width: 10%
-
     source: swamp.dataset.systems_list
 
   systems_list:
