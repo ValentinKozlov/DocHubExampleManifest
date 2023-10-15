@@ -1,2 +1,2 @@
 imports:  
-  - docs.yaml  
+  - docs/_root.yaml  
