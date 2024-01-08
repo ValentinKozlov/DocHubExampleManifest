@@ -1,4 +1,4 @@
-environments:
+sweaf.ta.environments:
   prod.k8s_cr:
     title: K8S Крокодилов - prod
     description: Продовая поляна крокодилов

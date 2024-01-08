@@ -1,4 +1,4 @@
-environments:
+sweaf.ta.environments:
   prod.virtual_db:
     title: Виртуальная среда БД - prod
     description: Продуктовая виртуальная среда баз данных

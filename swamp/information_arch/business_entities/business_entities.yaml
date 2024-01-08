@@ -1,4 +1,4 @@
-business_entities:
+sweaf.ia.business_entities:
   bank:
     title: Банки
     description: pass    
