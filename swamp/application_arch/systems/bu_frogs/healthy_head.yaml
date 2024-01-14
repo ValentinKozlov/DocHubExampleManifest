@@ -2,7 +2,7 @@ components:
   swamp.bu_frogs.healthy_head:
     title: Здоровая голова
     entity: system
-    guid: 524f1b24-bf7e-4ffc-bad9-c3458cac66ff
+    guid: 730ed184-1cc1-4214-ae70-06a77b66058e
     system_status: production
     dev_model: inhouse
     short_description: Сервис Здоровая голова
