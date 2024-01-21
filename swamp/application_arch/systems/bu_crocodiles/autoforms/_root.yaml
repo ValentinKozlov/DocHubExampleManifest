@@ -2,7 +2,7 @@ components:
   swamp.bu_crocodiles.autoforms:
     title: AutoForms
     entity: system
-    guid: 524f1b24-bf7e-4ffc-bad9-c3458cac66ff
+    guid: 9d2ab034-f462-4950-8d9e-590245c4fa70
     system_status: production
     dev_model: inhouse
     short_description: Форма автозаполнения

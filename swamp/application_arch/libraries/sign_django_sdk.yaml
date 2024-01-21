@@ -1,4 +1,4 @@
-libraries:
+sweaf.app.libraries:
   sign_django_sdk:
     title: Sign Django SDK
     description: >

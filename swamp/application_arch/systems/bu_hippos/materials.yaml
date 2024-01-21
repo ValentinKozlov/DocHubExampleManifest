@@ -2,7 +2,7 @@ components:
   swamp.bu_hippos.materials:
     title: Добыча материалов
     entity: system
-    guid: 524f1b24-bf7e-4ffc-bad9-c3458cac66ff
+    guid: ffdba56b-9e05-482a-89fd-47a5a43019dd
     system_status: production
     dev_model: inhouse
     short_description: Сервис по добычи материалов

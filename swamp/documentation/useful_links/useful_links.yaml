@@ -29,3 +29,14 @@ useful_links:
     description: Обучающие видео от участников комьюнити.
     section: Архитектура
 
+  - name: SEAF
+    link: https://github.com/SEAFTeam/seaf-core
+    description: Sber Enterprise Architecture Framework (SEAF).
+    section: Архитектура
+
+  - name: archpkg
+    link: https://www.npmjs.com/package/archpkg
+    description: Менеджер пакетов архитектурного кода DocHub.
+    section: Архитектура
+
+  

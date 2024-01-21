@@ -86,7 +86,7 @@ dochub_menu:
     order: 5100
     visible: true
   dochub.tech_arch.environments:
-    title: Среды развертывания ГК Болото
+    title: Среды развертывания
     order: 5200
     visible: true
 
