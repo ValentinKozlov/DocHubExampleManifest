@@ -10,4 +10,22 @@ contexts:   # Контексты представления архитектур
       $moment: 07.11.2023
     components:
       - swamp.bu_frogs.*
+
+
+  bu_hippos.tactical_units:
+    title: Общий контекст БЮ Лягушачья заводь - архитектура ПА-L1 со всеми связями
+    location: Прикладной ландшафт ПА-L1/БЮ Лягушачья заводь/Пример с доп группировкой
+    extra-links: true
+    add-group: true
+    uml:      
+      $autor: Валентин Козлов
+      $version: 2.0.0
+      $moment: 28.01.2024
+    components:
+      - "**"
+    # Запрос пока не учитывает extra-links из контекста, поэтому приходиться насильно втыкать этот флаг 'isExtraLinks': true
+    source: >  # выбираем все системы по tactical_unit, можно передавать более одного значения 'tactical_unit': ['health','other']
+      (
+        $eval($.functions.get_systems_for_context, {'manifest': $, 'isExtraLinks': true, 'tactical_unit': ['health']});
+      )
     

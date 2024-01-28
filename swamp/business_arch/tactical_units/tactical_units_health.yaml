@@ -1,0 +1,11 @@
+sweaf.ba.tactical_units:
+  health:
+    title: Кластер Здоровья
+    type: cluster
+    business_owners:
+      - fr.kikimora      
+    application_owner: fr.vodyanoj    
+    budget_holder: fr.baba_yaga
+    architect: fr.bolotnik
+    system_category: business_app
+    parrent: swamp.bu_frogs

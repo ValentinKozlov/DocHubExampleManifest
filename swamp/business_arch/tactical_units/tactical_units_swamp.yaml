@@ -1,13 +1,21 @@
-components:
+sweaf.ba.tactical_units:
+  swamp:
+    title: Экосистема ГК Болото
   swamp.bu_crocodiles:
     guid: c75236aa-532b-41fb-b5b0-c10b227aa2e1
     title: Бизнес-юнит Заводь крокодилов
-    entity: unit
+    type: bu
+    owner: v.kozlov
+    parrent: swamp
   swamp.bu_frogs:
     guid: 75f14c4c-07b6-4a8a-a82f-045244fa30fa
     title: Бизнес-юнит Лягушачья заводь
-    entity: unit
+    type: bu
+    owner: v.kozlov
+    parrent: swamp
   swamp.bu_hippos:
     guid: 1d92ce53-b6d6-44ea-9827-6a35bde34401
     title: Бизнес-юнит Заводь бегемотов
-    entity: unit  
+    type: bu
+    owner: v.kozlov
+    parrent: swamp

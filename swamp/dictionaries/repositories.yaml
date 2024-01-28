@@ -1,0 +1,12 @@
+# Данные по репозиториям получаются динамически из Gitlab. Это пример JSON, который мы получаем.
+repositories:
+    "https://github.com/RabotaRu/DocHub": {
+        "avatar_url": "",
+        "default_branch": "master",
+        "full_path": "RabotaRu/DocHub",
+        "gitlab_id": 754,
+        "name": "dochub",
+        "namespace": "dochub",
+        "path": "dochub",
+        "url": "https://github.com/RabotaRu/DocHub"
+    }
