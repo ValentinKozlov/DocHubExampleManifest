@@ -8,4 +8,4 @@ sweaf.ba.tactical_units:
     budget_holder: fr.baba_yaga
     architect: fr.bolotnik
     system_category: business_app
-    parrent: swamp.bu_frogs
+    parent: swamp.bu_frogs
