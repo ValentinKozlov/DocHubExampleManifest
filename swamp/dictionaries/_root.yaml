@@ -1,2 +1,3 @@
 imports:  
   - dictionaries.yaml
+  - repositories.yaml

@@ -281,56 +281,56 @@ sweaf.ia.dictionaries:
       - name: cr.shrek
         title: Шрек
         email: cr.shrek@swamp.ru
-        bu: swamp.crocodile
+        bu: swamp.bu_crocodiles
       - name: cr.dyujmovochka
         title: Дюймовочка
         email: cr.dyujmovochka@swamp.ru
-        bu: swamp.crocodile
+        bu: swamp.bu_crocodiles
       - name: cr.duremar
         title: Дуремар
         email: cr.duremar@swamp.ru
-        bu: swamp.crocodile
+        bu: swamp.bu_crocodiles
       - name: cr.papa_karlo
         title: Папа Карло
         email: cr.papa_karlo@swamp.ru
-        bu: swamp.crocodile
+        bu: swamp.bu_crocodiles
 
       # Лягушачья заводь
 
       - name: fr.kikimora
         title: Кикимора
         email: fr.kikimora@swamp.ru
-        bu: swamp.frog
+        bu: swamp.bu_frogs
       - name: fr.vodyanoj
         title: Водяной
         email: fr.vodyanoj@swamp.ru
-        bu: swamp.frog
+        bu: swamp.bu_frogs
       - name: fr.baba_yaga
         title: Баба Яга
         email: fr.baba_yaga@swamp.ru
-        bu: swamp.frog
+        bu: swamp.bu_frogs
       - name: fr.bolotnik
         title: Болотник
         email: fr.bolotnik@swamp.ru
-        bu: swamp.frog
+        bu: swamp.bu_frogs
 
       # Заводь бегемотов
       - name: hp.begemot_shokolad
         title: Бегемот Шоколад
         email: hp.begemot_shokolad@swamp.ru
-        bu: swamp.hippo     
+        bu: swamp.bu_hippos     
       - name: hp.funtik
         title: Фунтик
         email: hp.funtik@swamp.ru
-        bu: swamp.hippo
+        bu: swamp.bu_hippos
       - name: hp.dyadyushka_mokus
         title: Дядюшка Мокус
         email: hp.dyadyushka_mokus@swamp.ru
-        bu: swamp.hippo
+        bu: swamp.bu_hippos
       - name: hp.luchshij_syshchik_bez_diploma
         title: Лучший сыщик без диплома
         email: hp.luchshij_syshchik_bez_diploma@swamp.ru
-        bu: swamp.hippo
+        bu: swamp.bu_hippos
       - name: hp.bober
         title: Бобер
         email: hp.bober@swamp.ru

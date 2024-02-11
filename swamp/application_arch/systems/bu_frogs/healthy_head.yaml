@@ -7,13 +7,17 @@ components:
     dev_model: inhouse
     short_description: Сервис Здоровая голова
     description: Сервис автоматизирующий лечение головы, путем перекладывания проблем с больной головы на здоровую
-    business_owners:
-      - fr.kikimora
-    application_owner: fr.vodyanoj
-    budget_holder: fr.baba_yaga
-    architect: fr.bolotnik
-    critical_level: business_operational #administrative/business_operational/business_critical/mission_critical
-    system_category: business_app #channel_app/business_app/ext_business_app/it_app/ext_it_app
+    # Пример заполнения реквизитов системы через tactical_unit
+    tactical_unit: health
+    # Все реквизиты ниже вплоть до system_category заполняются из tactical_unit
+    # business_owners:
+    #   - fr.kikimora
+    # application_owner: fr.vodyanoj
+    # budget_holder: fr.baba_yaga
+    # architect: fr.bolotnik
+    # critical_level: business_operational #administrative/business_operational/business_critical/mission_critical
+    # system_category: business_app #channel_app/business_app/ext_business_app/it_app/ext_it_app
+    
     # Автоматически сгенерированный код #
     # Удалите этот комментарий после внесения фактических значений индикаторов.
     # - Для оценок `partially` и `none` комментарий (поле `comment`) обязателен.
