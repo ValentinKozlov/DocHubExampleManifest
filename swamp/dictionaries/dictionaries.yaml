@@ -1,108 +1,200 @@
 sweaf.ia.dictionaries:
   settings:
     title: Настройки    
+    order: 8100
   settings.critical_level:
     title: Уровень критичности приложений
     order: 8110
-    description: Справочник уровней критичности приложения/системы/сервиса с точки зрения бизнеса
+    description: Справочник уровней критичности автоматизированной системы (АС) с точки зрения бизнеса
     link: https://about.gitlab.com/handbook/security/security-assurance/security-risk/storm-program/critical-systems.html
     parameters:
-      - name: administrative        
+      - name: administrative
+        guid: 9f2d230a-3542-4fce-a3f8-269563e103ea
         title: Administrative
-        description: Приложение/система/сервис является обеспечивающим
+        description: Система является обеспечивающей
         order: 1
         icon: mdi-cog-outline
         color: gray lighten-3
-      - name: business_operational        
+      - name: business_operational
+        guid: 38c33be3-21f2-4e19-ab70-2d8fc9236d72
         title: Business Operational
-        description: Приложение/система/сервис обеспечивает текущую операционную деятельность компании
+        description: Система обеспечивает текущую операционную деятельность компании
         order: 2
         icon: mdi-handshake
         color: green lighten-3
-      - name: business_critical        
+      - name: business_critical
+        guid: b0b879a5-214e-46c7-9814-bc6ec28869c8
         title: Business Critical
-        description: Приложение/система/сервис является критически важным для текущей деятельности компании
+        description: Система является критически важной для текущей деятельности компании
         order: 3
         icon: mdi-cash-multiple
         color: orange lighten-3
-      - name: mission_critical        
+      - name: mission_critical
+        guid: 970b3f6d-aa4b-4570-805a-025d18a158a1
         title: Mission Critical
-        description: Работоспособность приложения/сервиса влияет на само существование компании или на достижение её критических целей
+        description: Работоспособность системы влияет на само существование компании или на достижение её критических целей
         order: 4
         icon: mdi-bullseye-arrow
         color: red lighten-3
-
-  settings.system_category:
-    title: Категория приложений
-    description: Справочник категорий приложения/системы/сервиса
-    order: 8120
+  settings.business_areas:
+    title: Бизнес-область
+    description: Справочник бизнес-областей
+    order: 8130
     link:
     parameters:
-      - name: channel_app
-        title: Канальные приложения
-        description: В этот раздел попадают все приложения/системы/сервисы через которые к нам попадают данные из вне. Например, мобильные приложения, теллеграм каналы и т.д.
+      - name: channel_and_sales
+        title: Каналы и продажи
+        short_description:
+        description: В этот раздел попадают все системы реализующие процессы управления продажами и каналов продаж.
         order: 1
         color: blue
-      - name: business_app
-        title: Бизнес-приложения
-        description: В этот раздел попадают все приложения/системы/сервисы, которые требуются бизнесу для выполнения своих процессов и которые находятся в инфраструктуре, которую мы контролируем.
+      - name: clients_and_marketing
+        title: Клиенты и маркетинг
+        short_description:
+        description: В этот раздел попадают все системы реализующие процессы управления клиентскими данными и маркетингом.
         order: 2
-        color: teal
-      - name: ext_business_app
-        title: Внешние бизнес-приложения
-        description: В этот раздел попадают все приложения/системы/сервисы, которые требуются бизнесу для выполнения своих процессов и которые находятся в инфраструктуре, которой мы не управляем.
+        color: blue
+      - name: construction
+        title: Строительство
+        short_description: МКД, ИЖС, Коммерческие и Соцобъекты, Инфраструктура
+        description: В этот раздел попадают все системы реализующие процессы строительства.
         order: 3
-        color: deep-purple
-      - name: it_app
-        title: ИТ-приложения
-        description: В этот раздел попадают все приложения/системы/сервисы, которые требуются ИТ для выполнения своих процессов и которые находятся в инфраструктуре, которую мы контролируем.
+        color: blue
+      - name: software_production
+        title: Производство ПО
+        short_description:
+        description: В этот раздел попадают все продаваемые системы.
         order: 4
-        color: light-green
-      - name: ext_it_app
-        title: Внешние ИТ-приложения
-        description: В этот раздел попадают все приложения/системы/сервисы, которые требуются ИТ для выполнения своих процессов и которые находятся в инфраструктуре, которой мы не управляем.
+        color: blue
+      - name: real_estate_funds
+        title: Фонды недвижимости
+        short_description:
+        description: В этот раздел попадают все системы реализующие процессы управления фондами недвижимости.
         order: 5
-        color: yellow
+        color: blue
+      - name: property_management
+        title: Управление недвижимостью
+        short_description:
+        description: В этот раздел попадают все системы реализующие процессы управления недвижимостью после сдачи.
+        order: 6
+        color: blue
+      - name: bank
+        title: Банк
+        short_description:
+        description: В этот раздел попадают все системы реализующие процессы Самолет-Банк.
+        order: 7
+        color: blue
+      - name: education
+        title: Образование
+        short_description:
+        description: В этот раздел попадают все системы реализующие процессы управления процессами образования.
+        order: 8
+        color: blue
+      - name: finance_and_control
+        title: Управление финансами и контроль
+        short_description:
+        description: В этот раздел попадают все системы реализующие процессы управления финансами.
+        order: 9
+        color: grey
+      - name: data_governance
+        title: Управление данными
+        short_description:
+        description: В этот раздел попадают все системы реализующие процессы управления данными.
+        order: 10
+        color: grey
+      - name: hr_and_collaboration
+        title: HR и коллаборация
+        short_description:
+        description: В этот раздел попадают все системы реализующие процессы HR и взаимодействия между сотрудниками.
+        order: 11
+        color: grey
+      - name: security
+        title: Безопасность
+        short_description:
+        description: В этот раздел попадают все системы реализующие процессы управления безопасностью. Речь идет как о физической безопасности на объектах, так и КБ.
+        order: 12
+        color: grey
+      - name: enhancement_services
+        title: Обеспечивающие сервисы
+        short_description:
+        description: В этот раздел попадают все системы обеспечивающие эффективную реализацию текущих бизнес-процессов.
+        order: 13
+        color: grey
+      - name: purchases
+        title: Закупки
+        short_description:
+        description: В этот раздел попадают все системы реализующие процессы закупок.
+        order: 14
+        color: grey
+      - name: it_services_and_platforms
+        title: ИТ Сервисы и Платформы
+        short_description:
+        description: В этот раздел попадают все системы реализующие процессы ИТ для ИТ.
+        order: 15
+        color: grey
+      - name: undefined
+        title: Неопределено
+        short_description:
+        description: Функции системы не определены или указанная функциональность не отнесена к группе.
+        order: 16
+        color: deep-purple
+  
   settings.system_status:
     title: Статусы систем
-    order: 8130
+    order: 8140
     description: Статус системы определяет её этап в жизненном цикле
     parameters:
-      - name: concept        
+      - name: concept
+        guid: cd50cde8-ad41-42a6-8125-cf8e33079bb1
         title: Инициатива
-        description: Этот статус появляется у системы/сервиса в момент планирования архитектуры to-be.
+        description: Этот статус появляется у системы в момент планирования архитектуры to-be
+        status_event: Возникла идея создания новой системы
         is_system_active: false
-      - name: implementation        
+      - name: implementation
+        guid: 12344a36-54b9-472d-be17-b5e4b5fea193
         title: Реализация
-        description: Этот статус появляется у системы/сервиса когда она находится либо в процессе разработки, либо в процессе внедрения для внешних систем.
+        description: Этот статус появляется у системы когда она находится либо в процессе разработки, либо в процессе внедрения для внешних систем
+        status_event: Начата работа по разработке новой системы
         is_system_active: true
-      - name: production        
-        title: В продуктиве
-        description: Этот статус появляется у системы/сервиса когда она находится в продуктиве.
-        is_system_active: true
-      - name: trial        
+      - name: trial
+        guid: 0c909dff-c8bf-4d1f-8353-594119cfb9d2
         title: Опытная эксплуатация
-        description: Этот статус появляется у системы/сервиса когда она находится на этапе опытной эксплуатации.
+        description: Этот статус появляется у системы когда она находится на этапе опытной эксплуатации.
+        status_event: Система запущена в опытную эксплуатацию на stage-сервере
         is_system_active: true
-      - name: decommissioning        
+      - name: production
+        guid: 8c370db1-aaff-40f7-b761-06fd1cd2e104
+        title: В продуктиве
+        description: Этот статус появляется у системы когда она находится в продуктиве.
+        status_event: Система запущена в опытно-промышленную эксплуатацию на prod-сервере
+        is_system_active: true
+      - name: deprecated
+        guid: 68cbb5c4-5589-41a6-88e5-8286f08cb758
+        title: Устарела
+        description: Этот статус появляется у системы когда принято решение что она устарела.
+        status_event: Стартовали работы по замене функциональности реализованной в данной системе (заключен договор/выделена команда)
+        is_system_active: true
+      - name: decommissioning
+        guid: be4be64c-a676-4bcd-870d-5622bbdbbf32
         title: Вывод из эксплуатации
-        description: Этот статус появляется, когда принято решение о выводе системы/сервиса из эксплуатации.
+        description: Окончанием опытной эксплуатации была подтверждена готовность функционала в альтернативной системе
+        status_event: 
         is_system_active: true
-      - name: archive        
+      - name: archive
+        guid: a9a310c4-fce0-4588-898e-4328c416b2c2
         title: Архивная
-        description: Этот статус появляется, когда принято решение оставить систему/сервис в качестве архивной (когда система работает, но доступ к ней есть только на чтение к старым данным).
-        is_system_active: true
-      - name: retirement        
-        title: Выведена из эксплуатации
-        description: Этот статус появляется у системы/сервиса, когда она выведена из эксплуатации.
+        description: Этот статус появляется, когда принято решение оставить систему/сервис в качестве архивной (когда система работает, но доступ к ней есть только на чтение к старым данным)
+        status_event: 
         is_system_active: false
-      - name: migration        
-        title: Передана другому БЮ
-        description: Этот статус появляется у системы/сервиса в момент когда она передаётся на поддержку и развитие в другой бизнес-юнит.
-        is_system_active: true
+      - name: retirement
+        guid: b6fdb731-112a-45fb-94d5-5820e255e42a
+        title: Выведена из эксплуатации
+        description: Этот статус появляется у системы, когда она выведена из эксплуатации
+        status_event: 
+        is_system_active: false
   settings.entity:
     title: Взаимосвязи сущностей в разных нотациях рисования
-    order: 8140
+    order: 8150
     description: Взаимосвязи сущностей в разных нотациях рисования
     parameters:
       - name: database
@@ -124,7 +216,7 @@ sweaf.ia.dictionaries:
         mermaid: Container
   settings.dev_model:
     title: Модель разработки
-    order: 8150
+    order: 8160
     description: Модель разработки определяет каким образом система развивается - собственными силами либо силами подрядчика во внутреннем контуре разработки Компании, либо за пределами контура
     parameters:
       - name: inhouse
@@ -138,31 +230,31 @@ sweaf.ia.dictionaries:
         description: Разработка функционала не ведется, система не развивается
   settings.contacts:
     title: Ключевые контакты
-    order: 8160
-    description: Ключевые контакты, к котором можно обращаться по разным аспектам системы.
+    order: 8170
+    description: Ключевые контакты, к котором можно обращаться по разным аспкетам ситсемы.
     parameters:
       - name: budget_holder
         title: Владелец бюджета
         scrum_title: Product Manager
-        description: Вопросы связанные с бюджетом.
+        description: Это сотрудник, который управляет бюджетом на развитие и поддержку конкретной системы.
         is_optional: false
         order_index: 1
       - name: application_owner
         title: Владелец системы
         scrum_title: Product Owner
-        description: Вопросы связанные с бизнес-функционалом системы и общих планов ее развития.
+        description: Это сотрудник, который в общем отвечает за работоспособность системы, разработку функционала внутри неё и планы её развития. Также он отвечает за определение критичности системы для бизнеса, передачу её на поддержку и кучу других активностей, которые нужно выполнять, чтобы система успешно работала. При этом неважно внешняя эта система или внутреннее владелец приложения должен быть со стороны Самолета.
         is_optional: false
         order_index: 2
       - name: architect
         title: Архитектор
         scrum_title: Architect
-        description: Вопросы технической и бизнес архитектуры.
+        description: Это сотрудник, который отвечает за техническую интеграцию системы внутрь контура Самолет. Для внутренних систем он отвечает за качество реализованной архитектуры систем, для внешних систем от отвечает за коммуникации с внешними командами по техническим вопросам.
         is_optional: false
         order_index: 3
       - name: business_owners
         title: Бизнес-заказчик
         scrum_title: Business Owner
-        description: Вопросы по функционалу отдельных направления системы.
+        description: Это владельцы чьи бизнес-процессы реализованы или реализуются внутри системы. Владельцев процессов может быть более одного для одной системы. По всем вопросам связанными с реализованными бизнес-процессами в системе нужно обращаться к ним.
         is_optional: false
         order_index: 4
       - name: access_approver
@@ -171,7 +263,6 @@ sweaf.ia.dictionaries:
         description: Согласование пользовательского доступа к системе и ее данным.
         is_optional: true
         order_index: 5
-  
   system_health:
     title: Показатели здоровья системы
     order: 8300
@@ -226,7 +317,26 @@ sweaf.ia.dictionaries:
           **partially** - нет полного соответствие целевым процессам, но есть согласованный внутри команды roadmap как наладить процесс разработки и сопровождения;
           **none** - разработка идет хаотично, сопровождение нестабильно и несвоевременно, согласованных командой планов по изменению ситуации нет.
         weight: 2
-        is_critical: false 
+        is_critical: false
+      - name: fit_business_func
+        title: Соответствие функциональным требованиям
+        description: Система соответствует функциональным требованиям, есть возможность исправить недостатки в разумные сроки и за разумные инвестиции.
+        brief: >
+          **fully** - система полностью соответствует функциональным требованиям;
+          **partially** - система частично соответствует функциональным требованиям, но есть возможность исправить недостатки в разумные сроки и за разумные инвестиции;
+          **none** - система в большинстве своем несоответствует функциональным требованиям и это невозможно исправить в разумные сроки и за разумные инвестиции.
+        weight: 3
+        is_critical: true
+      - name: fit_non_func
+        title: Соответствие нефункциональным требованиям
+        description: Система соответствует нефункциональным требованиям, есть возможность исправить недостатки в разумные сроки и за разумные инвестиции.
+        brief: >
+          **fully** - система полностью соответствует нефункциональным требованиям;
+          **partially** - система частично соответствует нефункциональным требованиям, но есть возможность исправить недостатки в разумные сроки и за разумные инвестиции;
+          **none** - система в большинстве своем несоответствует нефункциональным требованиям и это невозможно исправить в разумные сроки и за разумные инвестиции.
+        weight: 3
+        is_critical: true
+
   system_health.fitness:
     title: Значения индикаторов
     order: 8320
