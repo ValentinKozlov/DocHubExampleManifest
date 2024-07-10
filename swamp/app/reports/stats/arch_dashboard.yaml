@@ -1,0 +1,7 @@
+docs:
+  metrics.general_dashboard:
+    location: Архитектура в цифрах/Общий дашборд архитектурных метрик
+    description: Общий дашборд метрик
+    type: markdown
+    author: v.kozlov
+    template: arch_dashboard.md

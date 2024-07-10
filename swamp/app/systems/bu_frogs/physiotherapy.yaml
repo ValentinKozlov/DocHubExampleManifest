@@ -1,0 +1,130 @@
+components:
+  swamp.bu_frogs.physiotherapy:
+    title: Лечебная физкультура
+    entity: system
+    guid: cf259a03-253f-4c33-a12f-7bc04d33a355
+    system_status: production
+    dev_model: external
+    short_description: Сервис Лечебная физкультура
+    description: Сервис автоматизирующий проведение лечебной физкультуры
+    business_owners:
+      - fr.kikimora
+    application_owner: fr.vodyanoj
+    budget_holder: fr.baba_yaga
+    architect: fr.bolotnik
+    critical_level: business_operational    
+    indicators:
+      - id: indicator_arch_maturity
+        fit: none
+        comment: Архитектуры нет
+        date: 07.10.2023
+      - id: indicator_code_control
+        fit: none
+        comment: Вендор не дает код
+        date: 07.10.2023
+      - id: indicator_vendor
+        fit: none
+        comment: Вендор может свалить в любой момент
+        date: 07.10.2023
+      - id: indicator_team_capacity
+        fit: none
+        comment: Большая текучка, скоро разрабатывать начнет уборщица
+        date: 07.10.2023
+      - id: indicator_process
+        fit: none
+        comment: Процесса нет
+        date: 07.10.2023
+      - id: fit_business_func 
+        comment: Автоматически сгенерированный комментарий
+        date: 10.07.2024
+      - id: fit_non_func
+        fit: fully 
+        comment: Автоматически сгенерированный комментарий
+        date: 10.07.2024
+    urls:
+      - id: prod
+        type: server
+        title: Адрес сервера прода
+        url: https://dochub.info/main
+      - id: stage
+        type: server
+        title: Адрес сервера стейджа
+        url: https://dochub.info/main
+    repository: https://github.com/RabotaRu/DocHub
+
+    technologies: # Используемые технологии
+      - PostgreSQL
+      - Python
+      - TypeScript
+    aspects:
+      - bolotnyj_profilaktorij.massazh_nogami
+      - bolotnyj_profilaktorij.utoplenie_v_bolote
+
+    links:
+      - id: swamp.bu_frogs.healthy_body
+        direction: <--
+        title: Данные жителей болот
+      - id: swamp.kikimora
+        direction: <--
+        title: Получение услуги
+      - id: swamp.bu_crocodiles.autoforms
+        direction: <--
+        title: Данные жителей болота
+      - id: swamp.bu_crocodiles.autoforms
+        direction: <--
+        title: Данные жителей болота
+
+    libraries:
+      - swamp_ui
+      - django_catalog
+      - sign_django_sdk
+
+    business_entities:
+      - currency
+      - organization
+      - region
+      - unit
+
+# Описание уровня уровня ПА-L2
+
+  swamp.bu_frogs.physiotherapy.frontend:
+    title: Фронт
+    entity: component
+    repository: https://github.com/RabotaRu/DocHub
+    technologies:  # Используемые технологии
+      - Python
+      - TypeScript
+    links:
+      - id: swamp.bu_frogs.physiotherapy.backend
+        direction: <-->
+        title: HTTPS
+
+  swamp.bu_frogs.physiotherapy.backend:
+    title: Бэкенд
+    entity: component
+    repository: https://github.com/RabotaRu/DocHub
+    technologies:  # Используемые технологии
+      - Python
+      - TypeScript
+    links:
+      - id: swamp.bu_frogs.physiotherapy.db
+        direction: <-->
+        title: tcp 5432    
+
+  swamp.bu_frogs.physiotherapy.db:
+      title: СУБД
+      entity: database # для СУБД нужно указывать именно database
+      technologies: 
+        - PostgreSQL
+
+contexts:   # Контексты представления архитектурных компонентов
+  swamp.bu_frogs.physiotherapy:
+    title: Архитектура сервиса Лечебная физкультура (уровень ПА-L2)
+    location: Детальная архитектуры систем ПА-L2/Лечебная физкультура
+    extra-links: true
+    uml:      
+      $autor: Болотник
+      $version: 0.0.1
+      $moment: 07.10.2023
+    components:
+      - swamp.bu_frogs.physiotherapy.*

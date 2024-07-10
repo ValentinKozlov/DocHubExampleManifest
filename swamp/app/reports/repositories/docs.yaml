@@ -1,0 +1,48 @@
+docs:
+  repositories_table_list:
+    type: table
+    headers:
+      - value: id
+        text: ID
+        sortable: true
+        align: left
+
+      - value: name
+        text: Репозиторий
+        sortable: true
+        align: left
+        link: url
+
+      - value: namespace
+        text: Пространство
+        sortable: true
+        align: left
+
+      - value: default_branch
+        text: Ветка по умолчанию
+        sortable: false
+        align: left
+
+      - value: gitlab_id
+        text: GitlLab ID
+        sortable: true
+        align: left
+
+      - value: full_path
+        text: Полный путь
+        sortable: true
+        align: left
+
+      - value: system_title
+        text: Система
+        sortable: true
+        align: left
+        link: link_to_system
+
+    source: samolet.dataset.repositories
+
+  repositories_list:
+    location: Прикладная архитектура/Список репозиториев
+    type: markdown
+    source: repositories_table.md
+

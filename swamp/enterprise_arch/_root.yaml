@@ -1,5 +1,7 @@
 imports:
+  - documentation/_root.yaml
   - processes/_root.yaml
+  - standards/_root.yaml
   - tools/_root.yaml
   - welcome/_root.yaml  
   

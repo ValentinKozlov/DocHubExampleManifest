@@ -1,0 +1,266 @@
+smlteaf.it_accidents:
+  accident_report.sd-865270:
+    title: ЦСП. Kafka Stage, 29/04/2024, SD-865257
+    short_description: >
+      Фиксировались алерты по некорректной работе кафка на нодах sd-kafka-stg01-n01/n02/n03. Возможна временная невозможность чтения/записи в приблизительно 33 процентах топиков.
+    date: 29.04.2024
+    accident_object:
+      object_id: samolet.bu_csp.kafka
+      object_type: components # <идентификатор сущности описывающей объект>
+    accident_report_link: https://wiki.samoletgroup.ru/x/elggDw
+    problem_specification:
+      type: comm_problem
+      details: >
+        Общая проблема
+
+  accident_report.sd-865323:
+    title: Storm, 27/04/2024, SD-864062
+    short_description: >
+      Проблемы с авторизацией, частичная недоступность сервиса.
+    date: 22.04.2024
+    accident_object:
+      object_id: samolet.bu_csp.stormbpmn
+      object_type: components # <идентификатор сущности описывающей объект>
+    accident_report_link: https://wiki.samoletgroup.ru/x/8BVoDw
+    problem_specification:
+      type: comm_problem
+      details: >
+        Общая проблема
+
+  accident_report.sd-863756:
+    title: 1С ЖКХ/ Сайты УК, 26/04/2024, SD-863715
+    short_description: >
+      Недоступность основного функционала 1С ЖКХ.
+    date: 26.04.2024
+    accident_object:
+      object_id: samolet.bu_samolet_plus.1czhkh
+      object_type: components # <идентификатор сущности описывающей объект>
+    accident_report_link: https://wiki.samoletgroup.ru/x/DRZoDw
+    problem_specification:
+      type: comm_problem
+      details: >
+        Общая проблема
+
+  accident_report.sd-867165:
+    title: Tableau, 25/04/2024, SD-861076
+    short_description: >
+      Недоступность Tableau.
+    date: 25.04.2024
+    accident_object:
+      object_id: samolet.bu_csp.tableau_prod
+      object_type: components # <идентификатор сущности описывающей объект>
+    accident_report_link: https://wiki.samoletgroup.ru/x/SRZoDw
+    problem_specification:
+      type: comm_problem
+      details: >
+        Общая проблема
+
+  accident_report.sd-855303:
+    title: S.Project, 22/04/2024, SD-854638
+    short_description: >
+      Не работает S.Project - ошибка 500.
+    date: 22.04.2024
+    accident_object:
+      object_id: samolet.bu_moscow.sproject
+      object_type: components # <идентификатор сущности описывающей объект>
+    accident_report_link: https://wiki.samoletgroup.ru/x/JhZoDw
+    problem_specification:
+      type: comm_problem
+      details: >
+        Общая проблема
+
+  accident_report.sd-855318:
+    title: 1С Корп, 22/04/2024, SD-855265
+    short_description: >
+      Ошибка при подключении к 1С Корп.
+    date: 22.04.2024
+    accident_object:
+      object_id: samolet.bu_csp.1ccorp
+      object_type: components # <идентификатор сущности описывающей объект>
+    accident_report_link: https://wiki.samoletgroup.ru/x/hhVoDw
+    problem_specification:
+      type: comm_problem
+      details: >
+        Общая проблема
+
+  accident_report.sd-862075:
+    title: samolet.ru, 21/04/2024, SD-854451
+    short_description: >
+      Для всех пользователи сайта (4000 MAU) сайт работал медленно.
+    date: 21.04.2024
+    accident_object:
+      object_id: samolet.bu_samolet_plus.samolet_ru
+      object_type: components # <идентификатор сущности описывающей объект>
+    accident_report_link: https://wiki.samoletgroup.ru/x/UYXiDg
+    problem_specification:
+      type: comm_problem
+      details: >
+        Общая проблема
+
+  accident_report.sd-852319:
+    title: VDI, 19/04/2024, SD-851889
+    short_description: >
+      У части пользователей отсутствовало подключение к VDI.
+    date: 19.04.2024
+    accident_object:
+      object_id: samolet.bu_csp.vdi
+      object_type: components # <идентификатор сущности описывающей объект>
+    accident_report_link: https://wiki.samoletgroup.ru/x/v--JDg
+    problem_specification:
+      type: comm_problem
+      details: >
+        Общая проблема
+
+  accident_report.sd-851274:
+    title: S.Project, 18/04/2024, SD-851183
+    short_description: >
+      Пользователи не могли работать в S.Project и получали ошибку 500.
+    date: 18.04.2024
+    accident_object:
+      object_id: samolet.bu_moscow.sproject
+      object_type: components # <идентификатор сущности описывающей объект>
+    accident_report_link: https://wiki.samoletgroup.ru/x/v4LiDg
+    problem_specification:
+      type: comm_problem
+      details: >
+        Общая проблема
+
+  accident_report.sd-850417:
+    title: Check Point NGFW, 18/04/2024, SD-849743
+    short_description: >
+      Невозможность подключиться к VPN с использованием второго фактора, недоступность части сервисов, размещенных в ДЦ Даталайн и ДЦ Нубес, вследствие высокой нагрузки на CPU (трафик на обработку которого не хватало ресурсов отбрасывался).
+    date: 18.04.2024
+    accident_object:
+      object_id: samolet.bu_csp.checkpoint_user_vpn
+      object_type: components # <идентификатор сущности описывающей объект>
+    accident_report_link: https://wiki.samoletgroup.ru/x/A4PiDg
+    problem_specification:
+      type: comm_problem
+      details: >
+        Общая проблема
+
+  accident_report.sd-858597:
+    title: S.Connect, 18/04/2024, SD-849554
+    short_description: >
+      Недоступность S.Connect.
+    date: 18.04.2024
+    accident_object:
+      object_id: samolet.bu_csp.sconnect
+      object_type: components # <идентификатор сущности описывающей объект>
+    accident_report_link: https://wiki.samoletgroup.ru/x/0ITiDg
+    problem_specification:
+      type: comm_problem
+      details: >
+        Общая проблема
+
+  accident_report.sd-852440:
+    title: 1С БитФинанс, 15/04/2024, SD-845496
+    short_description: >
+      Не доступность БИТ ФИНАНС для всех пользователей.
+    date: 15.04.2024
+    accident_object:
+      object_id: samolet.bu_csp.1cbit_finance
+      object_type: components # <идентификатор сущности описывающей объект>
+    accident_report_link: https://wiki.samoletgroup.ru/x/coXiDg
+    problem_specification:
+      type: comm_problem
+      details: >
+        Общая проблема
+
+  accident_report.sd-846259:
+    title: DWH (Data WareHouse), 11/04/2024, SD-841480
+    short_description: >
+      Были проблемы на стороне Базы Данных, не сработал vacuum, по причине чего размер таблицы сильно вырос.
+    date: 11.04.2024
+    accident_object:
+      object_id: samolet.bu_csp.hadoop
+      object_type: components # <идентификатор сущности описывающей объект>
+    accident_report_link: https://wiki.samoletgroup.ru/x/36a_Dg
+    problem_specification:
+      type: comm_problem
+      details: >
+        Общая проблема
+
+  accident_report.sd-841930:
+    title: Confluence, 11/04/2024, SD-839494
+    short_description: >
+      У некоторых пользователей наблюдались проблемы со входом в Confluence.
+    date: 11.04.2024
+    accident_object:
+      object_id: samolet.bu_csp.confluence
+      object_type: components # <идентификатор сущности описывающей объект>
+    accident_report_link: https://wiki.samoletgroup.ru/x/taa_Dg
+    problem_specification:
+      type: comm_problem
+      details: >
+        Общая проблема
+
+  accident_report.sd-841218:
+    title: VDI, 11/04/2024, SD-840129
+    short_description: >
+      Сбой сетевого драйвера на домен-контролере, в результате - часть машин которые попадали на него не могли идентифицироваться, так как "сломался TRUST", и пользователи не могли зайти на VDI.
+    date: 11.04.2024
+    accident_object:
+      object_id: samolet.bu_csp.vdi
+      object_type: components # <идентификатор сущности описывающей объект>
+    accident_report_link: https://wiki.samoletgroup.ru/x/YKa_Dg
+    problem_specification:
+      type: comm_problem
+      details: >
+        Общая проблема
+
+  accident_report.sd-836002:
+    title: S.Gantt, 08/04/2024, SD-835305
+    short_description: >
+      При попытке открытия графиков у пользователей всплывали ошибки (ошибки 500 , Unexpected token 'I', "Internal St... is not valid JSON и другие).
+    date: 08.04.2024
+    accident_object:
+      object_id: samolet.bu_csp.vdi
+      object_type: components # <идентификатор сущности описывающей объект>
+    accident_report_link: https://wiki.samoletgroup.ru/x/JqW_Dg
+    problem_specification:
+      type: comm_problem
+      details: >
+        Общая проблема
+
+  accident_report.sd-831534:
+    title: 1с Документооборот, 04/04/2024, SD-829435
+    short_description: >
+      Медленная работа 1с Документооборот.
+    date: 04.04.2024
+    accident_object:
+      object_id: samolet.bu_moscow.1cdo
+      object_type: components # <идентификатор сущности описывающей объект>
+    accident_report_link: https://wiki.samoletgroup.ru/x/YJGODg
+    problem_specification:
+      type: comm_problem
+      details: >
+        Общая проблема
+
+  accident_report.sd-831791:
+    title: S.ID, 03/04/2024, SD-829341
+    short_description: >
+      	Ошибка 404 Not Found при попытке авторизоваться.
+    date: 03.04.2024
+    accident_object:
+      object_id: samolet.bu_csp.sid
+      object_type: components # <идентификатор сущности описывающей объект>
+    accident_report_link: https://wiki.samoletgroup.ru/x/I5GODg
+    problem_specification:
+      type: comm_problem
+      details: >
+        Общая проблема
+
+  accident_report.sd-826992:
+    title: K-AMPUS, 02/04/2024, SD-826454
+    short_description: >
+      	Пользователи не могли проходить обучения в этот момент, так как сервис зависал на загрузке главной страницы
+    date: 02.04.2024
+    accident_object:
+      object_id: samolet.bu_csp.kampus
+      object_type: components # <идентификатор сущности описывающей объект>
+    accident_report_link: https://wiki.samoletgroup.ru/x/iZGODg
+    problem_specification:
+      type: comm_problem
+      details: >
+        Общая проблема

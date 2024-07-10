@@ -1,0 +1,202 @@
+components:
+  swamp.bu_crocodiles.autoforms:
+    title: AutoForms
+    entity: system
+    guid: 9d2ab034-f462-4950-8d9e-590245c4fa70
+    system_status: production
+    dev_model: inhouse
+    short_description: Форма автозаполнения
+    description: Сервис для автозаполнения пользовательской формы клиента
+    business_owners:
+      - cr.shrek
+    application_owner: cr.dyujmovochka
+    budget_holder: cr.papa_karlo
+    architect: cr.duremar
+    critical_level: business_operational    
+    indicators:
+      - id: indicator_arch_maturity
+        fit: fully
+        comment: Автоматически сгенерированный комментарий
+        date: 07.10.2023
+      - id: indicator_code_control
+        fit: fully
+        comment: Автоматически сгенерированный комментарий
+        date: 07.10.2023
+      - id: indicator_vendor
+        fit: fully
+        comment: Автоматически сгенерированный комментарий
+        date: 07.10.2023
+      - id: indicator_team_capacity
+        fit: fully
+        comment: Автоматически сгенерированный комментарий
+        date: 07.10.2023
+      - id: indicator_process
+        fit: fully
+        comment: Автоматически сгенерированный комментарий
+        date: 07.10.2023
+      - id: fit_business_func 
+        comment: Автоматически сгенерированный комментарий
+        date: 10.07.2024
+      - id: fit_non_func
+        fit: fully 
+        comment: Автоматически сгенерированный комментарий
+        date: 10.07.2024
+    urls:
+      - id: prod
+        type: server
+        title: Адрес сервера прода
+        url: https://dochub.info/main
+      - id: stage
+        type: server
+        title: Адрес сервера стейджа
+        url: https://dochub.info/main
+    repository: https://github.com/RabotaRu/DocHub
+
+    technologies: # Используемые технологии
+      - PostgreSQL
+      - Java
+      - Kotlin
+      - Spring
+      - jdk17
+      - RESTful
+    aspects:
+      - pokupka_doma_na_bolote.zapolnenie_zayavok
+      - pokupka_doma_na_bolote.proverka_zayavok
+
+    # links:
+    #   - id: 
+    #     direction: <--
+
+    libraries:
+      - swamp_ui
+
+    business_entities:
+      - currency
+      - organization
+      - region
+      - unit
+
+
+# Описание уровня уровня ПА-L2
+
+  swamp.bu_crocodiles.autoforms.frontend:
+    title: Фронт
+    entity: component
+    repository: https://github.com/RabotaRu/DocHub
+    technologies:  # Используемые технологии
+      - Java
+      - Kotlin
+      - Spring
+      - jdk17
+      - RESTful
+    links:
+      - id: swamp.bu_crocodiles.autoforms.backend
+        direction: <-->
+        title: HTTPS
+    deployment_units:
+      prod.main: #<prod>.<имя du>
+        resource_type: k8s #k8s/virtual/phisycal
+        multiplier: 4
+        cpu: 2 #float - количество ядер
+        ram: 4 #float - количество памяти в Gb
+
+      stage.main: #<stage>.<имя du>
+        resource_type: k8s #k8s/virtual/phisycal
+        multiplier: 6
+        cpu: 2 #float - количество ядер
+        ram: 4 #float - количество памяти в Gb
+
+      dev.main: #<dev>.<имя du>
+        resource_type: k8s #k8s/virtual/phisycal
+        multiplier: 8
+        cpu: 2 #float - количество ядер
+        ram: 4 #float - количество памяти в Gb
+
+  swamp.bu_crocodiles.autoforms.backend:
+    title: Бэкенд
+    entity: component
+    repository: https://github.com/RabotaRu/DocHub
+    technologies:  # Используемые технологии
+      - Java
+      - Kotlin
+      - Spring
+      - jdk17
+      - RESTful
+    links:
+      - id: swamp.bu_crocodiles.autoforms.db
+        direction: <-->
+        title: tcp 5432
+    deployment_units:
+      prod.main: #<prod>.<имя du>
+        resource_type: k8s #k8s/virtual/phisycal
+        multiplier: 4
+        cpu: 2 #float - количество ядер
+        ram: 4 #float - количество памяти в Gb
+
+      stage.main: #<stage>.<имя du>
+        resource_type: k8s #k8s/virtual/phisycal
+        multiplier: 6
+        cpu: 2 #float - количество ядер
+        ram: 4 #float - количество памяти в Gb
+
+      dev.main: #<dev>.<имя du>
+        resource_type: k8s #k8s/virtual/phisycal
+        multiplier: 8
+        cpu: 2 #float - количество ядер
+        ram: 4 #float - количество памяти в Gb 
+
+  swamp.bu_crocodiles.autoforms.db:
+      title: СУБД
+      entity: database # для СУБД нужно указывать именно database
+      technologies: 
+        - PostgreSQL
+      deployment_units:
+        prod.main: #<prod>.<имя du>
+          resource_type: virtual #k8s/virtual/phisycal
+          multiplier: 1
+          cpu_type: standart #highend/standart/lowend
+          cpu: 2 #float - количество ядер
+          ram: 4 #float - количество памяти в Gb
+          storage_type: standart #highend/standart/lowend/extralowend
+          storage_size: 1 #Gb
+
+        stage.main: #<stage>.<имя du>
+          resource_type: virtual #k8s/virtual/phisycal
+          multiplier: 1
+          cpu_type: standart #highend/standart/lowend
+          cpu: 2 #float - количество ядер
+          ram: 4 #float - количество памяти в Gb
+          storage_type: standart #highend/standart/lowend/extralowend
+          storage_size: 1 #Gb
+
+        dev.main: #<dev>.<имя du>
+          resource_type: virtual #k8s/virtual/phisycal
+          multiplier: 1
+          cpu_type: standart #highend/standart/lowend
+          cpu: 2 #float - количество ядер
+          ram: 4 #float - количество памяти в Gb
+          storage_type: standart #highend/standart/lowend/extralowend
+          storage_size: 1 #Gb
+
+contexts:   # Контексты представления архитектурных компонентов
+  swamp.bu_crocodiles.autoforms:
+    title: Архитектура AutoSuggest (уровень ПА-L2)
+    location: Детальная архитектуры систем ПА-L2/AutoForms
+    extra-links: true
+    uml:      
+      $autor: Дуремар
+      $version: 0.0.1
+      $moment: 07.10.2023
+    components:
+      - swamp.bu_crocodiles.autoforms.*
+
+docs:
+  docs.bu_crocodiles.autoforms:
+    type: plantuml
+    description: Структура репозиториев DocHub    
+    subjects:
+      - swamp.bu_crocodiles.autoforms
+      - swamp.bu_crocodiles.credit_calc
+      - swamp.bu_crocodiles.your_house
+    source: docs/repo_structure.puml
+

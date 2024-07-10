@@ -1,0 +1,80 @@
+docs:
+  metrics.target_systems:
+    # location: Архитектура в цифрах/Доля целевых систем
+    description: Доля целевых ИТ-решений в ИТ ландшафте ГК Самолет
+    type: markdown
+    author: v.kozlov
+    template: target_sys.md
+    origin: samolet.dataset.sys_metrics
+    source: >
+      (
+        /* Получаем данные из dataset samolet.dataset.sys_metrics */
+        $systems := $.systems;
+        
+        $sys_list := $systems.id;
+        $ext_systems_pattern := $get_ext_systems_pattern();
+        $ext_sys_list := $filter($sys_list, function ($v) { $v ~> $ext_systems_pattern });
+
+        $non_target_statuses := ["deprecated", "decommissioning"];    
+        $non_target_sys := $filter($systems, function ($v) { $v.system_status in $non_target_statuses});
+
+        $ext_sys_count := $count($ext_sys_list);
+        $total_sys_count := $count($systems.id);
+        $inter_sys_count := $total_sys_count - $ext_sys_count;
+        $non_target_sys_count := $count($non_target_sys.id);        
+        $non_target_sys_link := "[Количество нецелевых систем: " & $non_target_sys_count & "](/docs/metrics.non_target_systems_list)";
+        
+        {
+          "total": $total_sys_count,
+          "external": $ext_sys_count,
+          "internal": $inter_sys_count,
+          "non_target": $non_target_sys_count,
+          "cover_target": $round(($inter_sys_count-$non_target_sys_count)/$inter_sys_count * 100, 2),
+          "non_target_sys_link": $non_target_sys_link
+        };
+      )
+
+  metrics.non_target_systems_list:
+    description: Список нецелевых систем
+    type: table
+    headers:
+      - value: title
+        text: Система
+        sortable: true
+        align: left
+        width: 10%
+        link: link_to_system
+        
+      - value: short_description
+        text: Краткое описание
+        sortable: false
+        align: left
+        width: 30%
+
+      - value: system_status
+        text: Статус системы
+        sortable: true
+        align: left
+        width: 10%
+
+      - value: tu_block
+        text: ИТ-команда
+        sortable: true
+        align: left
+        width: 10%
+
+    origin: samolet.dataset.sys_metrics
+    source: >
+      (        
+        $systems := $.systems; 
+        $non_target_statuses := ["deprecated", "decommissioning"];
+        $non_target_sys := $filter($systems, function ($v) { $v.system_status in $non_target_statuses});
+        $non_target_sys.{
+          "title": title,
+          "short_description": short_description,
+          "system_status": system_status,
+          "tu_block": tu_block.title,
+          "link_to_system": "/architect/components/" & id
+        };
+
+      )

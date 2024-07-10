@@ -1,0 +1,61 @@
+docs:
+  metrics.systems_health:
+    # location: Архитектура в цифрах/Доля целевых систем
+    description: Доля "здоровых" ИТ-систем в ИТ ландшафте ГК Самолет
+    type: markdown
+    author: v.kozlov
+    template: sys_health.md
+    origin: samolet.dataset.sys_metrics
+    source: >
+      (
+        $systems := $.systems;
+        $tu_blocks := $.tu_blocks;
+        $ratings := $.ratings;
+
+        $tu_block_id := $params.tu_block_id;        
+
+        $tu_blocks_and_totals := $append([{"id": "total", "title": "Общий итог"}], $tu_blocks);
+        $tu_blocks_and_totals := $tu_block_id ? $tu_blocks_and_totals[id=$tu_block_id] : $tu_blocks_and_totals;
+        
+        $tu_blocks_statistics := $tu_blocks_and_totals.(
+          $block := $; 
+          $block_id := $block.id;
+          $tu_block_systems := ($block_id = "total") ? $systems : $systems[tu_block.tu_id = $block_id];
+          $sys_list := $tu_block_systems.id;
+          $ext_systems_pattern := $get_ext_systems_pattern();
+          $ext_sys_list := $filter($sys_list, function ($v) { $v ~> $ext_systems_pattern });
+          $ext_sys_count := $count($ext_sys_list);
+          $inter_sys_count := $count($sys_list) - $ext_sys_count;
+          
+          $rating_statistics := $ratings.(
+            $rating_value := $.name;
+            $rating_title := $.title;            
+
+            $default_count := $count($filter($tu_block_systems, function($v) { $v.rating.name = $rating_value and $v.is_default_rating }));
+            $count := $count($filter($tu_block_systems, function($v) { $v.rating.name = $rating_value }));
+            {
+              "rating": $rating_value,
+              "title": $rating_title,
+              "count": $count,
+              "cover": ($inter_sys_count > 0) ? $round((($count / $inter_sys_count) * 100),2) : 0,
+              "default_count": $default_count
+            };
+          );
+
+          $detailed_sys_link := $tu_block_id = "total"
+          ? "[Детализация по ИТ-командам](/entities/docs/blank?dh-doc-id=metrics.systems_health)";
+
+          {
+            "tu_block": $block.title,
+            "internal": $inter_sys_count,
+            "external": $ext_sys_count,            
+            "total": $count($sys_list),
+            "ratings": $rating_statistics,
+            "detailed_sys_link": $detailed_sys_link
+          };
+        );
+
+        {
+          "unit_statistics": $tu_blocks_statistics
+        };
+      )

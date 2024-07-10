@@ -1,0 +1,192 @@
+components:
+  swamp.bu_crocodiles.your_house:
+    title: Твой дом
+    entity: system
+    guid: f3049b4a-96de-4d9d-a50f-c705eb40fbed
+    system_status: trial
+    dev_model: inhouse
+    short_description: Сервис по продаже домов
+    description: Сервис по продаже домов для жителей болота
+    business_owners:
+      - cr.shrek
+    application_owner: cr.dyujmovochka
+    budget_holder: cr.papa_karlo
+    architect: cr.duremar
+    critical_level: mission_critical
+    indicators:
+      - id: indicator_arch_maturity
+        fit: fully
+        comment: Автоматически сгенерированный комментарий
+        date: 07.10.2023
+      - id: indicator_code_control
+        fit: fully
+        comment: Автоматически сгенерированный комментарий
+        date: 07.10.2023
+      - id: indicator_vendor
+        fit: fully
+        comment: Автоматически сгенерированный комментарий
+        date: 07.10.2023
+      - id: indicator_team_capacity
+        fit: partially
+        comment: Команда вечно ноет, что денег мало, но пока не бежит
+        date: 07.10.2023
+      - id: indicator_process
+        fit: fully
+        comment: Автоматически сгенерированный комментарий
+        date: 07.10.2023
+      - id: fit_business_func 
+        comment: Автоматически сгенерированный комментарий
+        date: 10.07.2024
+      - id: fit_non_func
+        fit: fully 
+        comment: Автоматически сгенерированный комментарий
+        date: 10.07.2024
+    urls:
+      - id: prod
+        type: server
+        title: Адрес сервера прода
+        url: https://dochub.info/main
+      - id: stage
+        type: server
+        title: Адрес сервера стейджа
+        url: https://dochub.info/main
+    repository: https://github.com/RabotaRu/DocHub
+
+    technologies: # Используемые технологии
+      - PostgreSQL
+      - Java
+      - Kotlin
+      - Spring
+      - jdk17
+      - RESTful
+    aspects:
+      - pokupka_doma_na_bolote.podbor_doma_na_bolote
+      - pokupka_doma_na_bolote.proverka_chistoty_titula
+      - pokupka_doma_na_bolote.registraciya_sdelki
+
+    links:
+      - id: swamp.bu_crocodiles.autoforms
+        direction: <--
+        title: Данные жителей болота
+      - id: swamp.bu_crocodiles.credit_calc
+        direction: <--
+        title: Данные расчета
+      - id: swamp.begemot_shokolad
+        direction: <--
+        title: Получение услуги
+
+    # libraries:
+
+    business_entities:
+      - bank
+      - chekingaccount
+      - contractor
+      - country
+      - unit
+      - agreementtype
+      - contract
+
+# Описание уровня уровня ПА-L2
+
+  swamp.bu_crocodiles.your_house.frontend:
+    title: Фронт
+    entity: component
+    repository: https://github.com/RabotaRu/DocHub
+    technologies:  # Используемые технологии
+      - Java
+      - Kotlin
+      - Spring
+      - jdk17
+      - RESTful
+    links:
+      - id: swamp.bu_crocodiles.your_house.backend
+        direction: <-->
+        title: HTTPS
+    deployment_units:
+      prod.main: #<prod>.<имя du>
+        resource_type: k8s #k8s/virtual/phisycal
+        multiplier: 4
+        cpu: 2 #float - количество ядер
+        ram: 4 #float - количество памяти в Gb
+
+      stage.main: #<stage>.<имя du>
+        resource_type: k8s #k8s/virtual/phisycal
+        multiplier: 6
+        cpu: 2 #float - количество ядер
+        ram: 4 #float - количество памяти в Gb
+
+      dev.main: #<dev>.<имя du>
+        resource_type: k8s #k8s/virtual/phisycal
+        multiplier: 8
+        cpu: 2 #float - количество ядер
+        ram: 4 #float - количество памяти в Gb
+
+
+  swamp.bu_crocodiles.your_house.backend:
+    title: Бэкенд
+    entity: component
+    repository: https://github.com/RabotaRu/DocHub
+    technologies:  # Используемые технологии
+      - Java
+      - Kotlin
+      - Spring
+      - jdk17
+      - RESTful
+    links:
+      - id: swamp.bu_crocodiles.your_house.db
+        direction: <-->
+        title: tcp 5432 
+    deployment_units:
+      prod.main: #<prod>.<имя du>
+        resource_type: k8s #k8s/virtual/phisycal
+        multiplier: 4
+        cpu: 2 #float - количество ядер
+        ram: 4 #float - количество памяти в Gb
+
+      stage.main: #<stage>.<имя du>
+        resource_type: k8s #k8s/virtual/phisycal
+        multiplier: 6
+        cpu: 2 #float - количество ядер
+        ram: 4 #float - количество памяти в Gb
+
+      dev.main: #<dev>.<имя du>
+        resource_type: k8s #k8s/virtual/phisycal
+        multiplier: 8
+        cpu: 2 #float - количество ядер
+        ram: 4 #float - количество памяти в Gb
+
+  swamp.bu_crocodiles.your_house.db:
+      title: СУБД
+      entity: database # для СУБД нужно указывать именно database
+      technologies: 
+        - PostgreSQL
+      deployment_units:
+        prod.main: #<prod>.<имя du>
+          resource_type: k8s #k8s/virtual/phisycal
+          multiplier: 4
+          cpu: 8 #float - количество ядер
+          ram: 10 #float - количество памяти в Gb
+
+        stage.main: #<stage>.<имя du>
+          resource_type: k8s #k8s/virtual/phisycal
+          multiplier: 6
+          cpu: 1 #float - количество ядер
+          ram: 2 #float - количество памяти в Gb
+
+        dev.main: #<dev>.<имя du>
+          resource_type: k8s #k8s/virtual/phisycal
+          multiplier: 8
+          cpu: 1 #float - количество ядер
+          ram: 2 #float - количество памяти в Gb
+
+contexts:   # Контексты представления архитектурных компонентов
+  swamp.bu_crocodiles.your_house:
+    title: Архитектура AutoSuggest (уровень ПА-L2)
+    location: Детальная архитектуры систем ПА-L2/Твой дом
+    extra-links: true
+    uml:      
+      $autor: Дуремар
+      $version: 0.0.1
+      $moment: 07.10.2023
+    components:
+      - swamp.bu_crocodiles.your_house.*

@@ -1,0 +1,44 @@
+
+contexts:   # Контексты представления архитектурных компонентов
+  bu_hippos.as_is:
+    title: Общий контекст БЮ Лягушачья заводь - архитектура ПА-L1 со всеми связями
+    location: Прикладной ландшафт ПА-L1/БЮ Лягушачья заводь/Общий контекст
+    extra-links: true    
+    uml:      
+      $autor: Болотник
+      $version: 0.0.1
+      $moment: 07.11.2023
+    components:
+      - swamp.bu_frogs.*
+
+
+  bu_hippos.tactical_units:
+    title: Общий контекст БЮ Лягушачья заводь - архитектура ПА-L1 со всеми связями
+    location: Прикладной ландшафт ПА-L1/БЮ Лягушачья заводь/С группировкой по тактическим юнитам
+    extra-links: true
+    add-group: true
+    uml:      
+      $autor: Валентин Козлов
+      $version: 2.0.0
+      $moment: 28.01.2024
+    components:
+      - swamp.bu_frogs.*
+
+    
+  bu_hippos.specific_tactical_unit:
+    title: Общий контекст БЮ Лягушачья заводь - архитектура ПА-L1 со всеми связями
+    location: Прикладной ландшафт ПА-L1/БЮ Лягушачья заводь/Отбор по конкретному тактическому юниту
+    extra-links: true
+    add-group: true
+    uml:      
+      $autor: Валентин Козлов
+      $version: 2.0.0
+      $moment: 28.01.2024
+    components:      
+      - "**"
+    # Запрос пока не учитывает extra-links из контекста, поэтому приходиться насильно втыкать этот флаг 'isExtraLinks': true
+    source: >  # выбираем все системы по tactical_unit, можно передавать более одного значения 'tactical_unit': ['health','other']
+      (        
+        $get_systems_for_context($, true, ['health']);
+      )
+    

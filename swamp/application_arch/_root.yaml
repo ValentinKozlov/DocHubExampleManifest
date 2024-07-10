@@ -1,6 +1,0 @@
-imports:  
-  - aspects/_root.yaml
-  - libraries/_root.yaml
-  - reports/_root.yaml
-  - systems/_root.yaml  
-  - users/_root.yaml  

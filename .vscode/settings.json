@@ -1,5 +1,7 @@
 {
     "cSpell.words": [
         "Версионирования"
-    ]
+    ],
+    "dochub.isEnterpriseMode": true,
+    "dochub.enterpriseServer": "http://localhost:8080/"
 }
