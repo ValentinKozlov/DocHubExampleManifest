@@ -1,0 +1,148 @@
+components:
+  swamp.bu_hippos.materials:
+    title: Добыча материалов
+    entity: system
+    guid: ffdba56b-9e05-482a-89fd-47a5a43019dd
+    system_status: production
+    dev_model: inhouse
+    short_description: Сервис по добычи материалов
+    description: Сервис автоматизирующий добычу материалов для строительства домов на болоте
+    business_owners:
+      - hp.luchshij_syshchik_bez_diploma
+    application_owner: hp.begemot_shokolad
+    budget_holder: hp.dyadyushka_mokus
+    architect: hp.funtik
+    critical_level: mission_critical 
+    indicators:
+      - id: indicator_arch_maturity
+        fit: none
+        comment: Архитектуры нет, говнокодим с колес
+        date: 07.10.2023
+      - id: indicator_code_control
+        fit: fully
+        comment: Автоматически сгенерированный комментарий
+        date: 07.10.2023
+      - id: indicator_vendor
+        fit: fully
+        comment: Автоматически сгенерированный комментарий
+        date: 07.10.2023
+      - id: indicator_team_capacity 
+        comment: Болотная лихорадка выкосила 90% команды
+        date: 07.10.2023
+      - id: indicator_process 
+        fit: none
+        comment: Процесса нет, бегаем по кругу и кричим аааааа
+        date: 07.10.2023
+      - id: fit_business_func 
+        comment: Автоматически сгенерированный комментарий
+        date: 10.07.2024
+      - id: fit_non_func
+        fit: fully 
+        comment: Автоматически сгенерированный комментарий
+        date: 10.07.2024
+    urls:
+      - id: prod
+        type: server
+        title: Адрес сервера прода
+        url: https://dochub.info/main
+      - id: stage
+        type: server
+        title: Адрес сервера стейджа
+        url: https://dochub.info/main
+    repository: https://github.com/RabotaRu/DocHub
+
+    technologies: # Используемые технологии
+      - PostgreSQL
+      - C#
+      - JS
+      - React
+      - RESTful
+      - GRPC
+      - BPMN
+      - Redis      
+    aspects:
+      - stroim_doma_na_bolote.zakupka_govna_i_palok
+      - stroim_doma_na_bolote.sbor_mkha
+      - stroim_doma_na_bolote.sbor_gryazi_na_kirpichi
+      - bolotnyj_profilaktorij.lechenie_borodavok
+
+    links:
+      - id: swamp.vodyanoj
+        direction: <--
+        title: Получение услуги
+      - id: swamp.bu_crocodiles.autoforms
+        direction: <--
+        title: Данные жителей болота
+
+    libraries:
+      - swamp_ui
+      - sign_django_sdk
+
+    business_entities:
+      - bank
+      - chekingaccount
+      - contractor
+      - country
+      - draftagreement
+      - currency
+      - organization
+      - region
+      - unit
+
+
+# Описание уровня уровня ПА-L2
+
+  swamp.bu_hippos.materials.frontend:
+    title: Фронт
+    entity: component
+    repository: https://github.com/RabotaRu/DocHub
+    technologies:  # Используемые технологии
+      - C#
+      - JS
+      - React
+      - RESTful
+      - GRPC
+      - BPMN
+      - Redis
+    links:
+      - id: swamp.bu_hippos.materials.backend
+        direction: <-->
+        title: HTTPS
+
+  swamp.bu_hippos.materials.backend:
+    title: Бэкенд
+    entity: component
+    repository: https://github.com/RabotaRu/DocHub
+    technologies:  # Используемые технологии
+      - C#
+      - JS
+      - React
+      - RESTful
+      - GRPC
+      - BPMN
+      - Redis 
+    links:
+      - id: swamp.bu_hippos.materials.db
+        direction: <-->
+        title: tcp 5432
+      - id: swamp.bu_crocodiles.autoforms
+        direction: <--
+        title: Данные жителей болота 
+
+  swamp.bu_hippos.materials.db:
+      title: СУБД
+      entity: database # для СУБД нужно указывать именно database
+      technologies: 
+        - PostgreSQL
+
+contexts:   # Контексты представления архитектурных компонентов
+  swamp.bu_hippos.materials:
+    title: Архитектура сервиса Добыча материалов (уровень ПА-L2)
+    location: Детальная архитектуры систем ПА-L2/Добыча материалов
+    extra-links: true
+    uml:      
+      $autor: Фунтик
+      $version: 0.0.1
+      $moment: 07.10.2023
+    components:
+      - swamp.bu_hippos.materials.*

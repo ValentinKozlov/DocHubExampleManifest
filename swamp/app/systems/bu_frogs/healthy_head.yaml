@@ -1,0 +1,121 @@
+components:
+  swamp.bu_frogs.healthy_head:
+    title: Здоровая голова
+    entity: system
+    guid: 730ed184-1cc1-4214-ae70-06a77b66058e
+    system_status: production
+    dev_model: inhouse
+    short_description: Сервис Здоровая голова
+    description: Сервис автоматизирующий лечение головы, путем перекладывания проблем с больной головы на здоровую
+    # Пример заполнения реквизитов системы через tactical_unit
+    tactical_unit: health
+    indicators:
+      - id: indicator_arch_maturity
+        fit: fully
+        comment: Автоматически сгенерированный комментарий
+        date: 07.10.2023
+      - id: indicator_code_control
+        fit: fully
+        comment: Автоматически сгенерированный комментарий
+        date: 07.10.2023
+      - id: indicator_vendor
+        fit: fully
+        comment: Автоматически сгенерированный комментарий
+        date: 07.10.2023
+      - id: indicator_team_capacity
+        fit: fully
+        comment: Автоматически сгенерированный комментарий
+        date: 07.10.2023
+      - id: indicator_process
+        fit: none
+        comment: Автоматически сгенерированный комментарий
+        date: 07.10.2023
+      - id: fit_business_func 
+        comment: Автоматически сгенерированный комментарий
+        date: 10.07.2024
+      - id: fit_non_func
+        fit: fully 
+        comment: Автоматически сгенерированный комментарий
+        date: 10.07.2024
+    urls:
+      - id: prod
+        type: server
+        title: Адрес сервера прода
+        url: https://dochub.info/main
+      - id: stage
+        type: server
+        title: Адрес сервера стейджа
+        url: https://dochub.info/main
+    repository: https://github.com/RabotaRu/DocHub
+
+    technologies: # Используемые технологии
+      - PostgreSQL
+      - Python
+      - TypeScript
+    aspects:
+      - bolotnyj_profilaktorij.otpaivanie_tinoj
+      - bolotnyj_profilaktorij.lechenie_zmeinym_yadom
+      - bolotnyj_profilaktorij.lechenie_piyavkami
+
+    links:
+      - id: swamp.bu_frogs.healthy_body
+        direction: <--
+        title: Данные жителей болот
+      - id: swamp.bu_crocodiles.autoforms
+        direction: <--
+        title: Данные жителей болота
+
+    libraries:
+      - swamp_ui
+      - sign_django_sdk
+
+    business_entities:
+      - bank
+      - chekingaccount
+      - contractor
+      - country
+      - draftagreement
+
+# Описание уровня уровня ПА-L2
+
+  swamp.bu_frogs.healthy_head.frontend:
+    title: Фронт
+    entity: component
+    repository: https://github.com/RabotaRu/DocHub
+    technologies:  # Используемые технологии
+      - Python
+      - TypeScript
+    links:
+      - id: swamp.bu_frogs.healthy_head.backend
+        direction: <-->
+        title: HTTPS
+
+  swamp.bu_frogs.healthy_head.backend:
+    title: Бэкенд
+    entity: component
+    repository: https://github.com/RabotaRu/DocHub
+    technologies:  # Используемые технологии
+      - Python
+      - TypeScript
+    links:
+      - id: swamp.bu_frogs.healthy_head.db
+        direction: <-->
+        title: tcp 5432    
+
+  swamp.bu_frogs.healthy_head.db:
+      title: СУБД
+      entity: database # для СУБД нужно указывать именно database
+      technologies: 
+        - PostgreSQL
+
+contexts:   # Контексты представления архитектурных компонентов
+  swamp.bu_frogs.healthy_head:
+    title: Архитектура сервиса Здоровая голова (уровень ПА-L2)
+    location: Детальная архитектуры систем ПА-L2/Здоровая голова
+    extra-links: true
+    uml:      
+      $autor: Болотник
+      $version: 0.0.1
+      $moment: 07.10.2023
+    components:
+      - swamp.bu_frogs.healthy_head.*

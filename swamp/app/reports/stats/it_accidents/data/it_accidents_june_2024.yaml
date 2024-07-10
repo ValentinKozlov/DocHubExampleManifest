@@ -1,0 +1,140 @@
+smlteaf.it_accidents:
+  accident_report.sd-913863:
+    title: 1с Бит.Финанс, 07/06/2024, SD-913395
+    short_description: >
+      Массовый сбой при проведении документов любого типа.
+    date: 07.06.2024
+    accident_object:
+      object_id: samolet.bu_csp.1cbit_finance
+      object_type: components # <идентификатор сущности описывающей объект>
+    accident_report_link: https://wiki.samoletgroup.ru/x/9jGBE
+    problem_specification:
+      type: comm_problem
+      details: >
+        Общая проблема
+
+  accident_report.sd-903299:
+    title: Сетевая инфраструктура, 05/06/2024, SD-910695
+    short_description: >
+      Проблема на сети, массовое падение сервисов.
+    date: 05.06.2024
+    accident_object:
+      object_id:
+      object_type:
+    accident_report_link: https://wiki.samoletgroup.ru/x/BzOBE
+    problem_specification:
+      type: comm_problem
+      details: >
+        Общая проблема
+  
+  accident_report.sd-921085:
+    title: CheckPoint VPN, 04/06/2024, SD-909444
+    short_description: >
+      Пользователи в указанном промежутке времени не могли авторизоваться на User VPN шлюзе по политике логин/пароль, уже существующие туннели не затронуло.
+    date: 04.06.2024
+    accident_object:
+      object_id: samolet.bu_csp.checkpoint_user_vpn
+      object_type: components
+    accident_report_link: https://wiki.samoletgroup.ru/x/LMDHE
+    problem_specification:
+      type: comm_problem
+      details: >
+        Общая проблема
+
+  accident_report.sd-923053:
+    title: VDI/RDP, 10/06/2024, SD-915783
+    short_description: >
+      Некоторые удаленные пользователи не могли получить доступ к корпоративным ресурсам.
+    date: 10.06.2024
+    accident_object:
+      object_id: samolet.bu_csp.vdi
+      object_type: components # <идентификатор сущности описывающей объект>
+    accident_report_link: https://wiki.samoletgroup.ru/x/AQATEQ
+    problem_specification:
+      type: comm_problem
+      details: >
+        Общая проблема
+
+  accident_report.sd-918221:
+    title: CheckPoint VPN, 11/06/2024, SD-918193
+    short_description: >
+      Пользователи в указанном промежутке времени не могли авторизоваться на User VPN шлюзе по политике логин/пароль, уже существующие туннели не затронуло.
+    date: 11.06.2024
+    accident_object:
+      object_id: samolet.bu_csp.checkpoint_user_vpn
+      object_type: components
+    accident_report_link: https://wiki.samoletgroup.ru/x/LMDHE
+    problem_specification:
+      type: comm_problem
+      details: >
+        Общая проблема
+
+  accident_report.sd-923190:
+    title: S.Home, 03/06/2024, SD-907079
+    short_description: >
+      Не передаются данные из S.Home в S.Control.
+    date: 03.06.2024
+    accident_object:
+      object_id: samolet.bu_moscow.shome
+      object_type: components
+    accident_report_link: https://wiki.samoletgroup.ru/x/s41MEQ
+    problem_specification:
+      type: comm_problem
+      details: >
+        Общая проблема
+
+  accident_report.sd-923554:
+    title: Sentry, 18/06/2024, SD-923479
+    short_description: >
+      Проверка отправленная от Zabbix не успела запроцесситься. Также присутствовал алерт на свободное место в БД Clickhouse при расширении не обновилось STS и под БД не мог подняться после ресайзинга.
+    date: 18.06.2024
+    accident_object:
+      object_id: samolet.bu_csp.sentry
+      object_type: components
+    accident_report_link: https://wiki.samoletgroup.ru/x/kI1MEQ
+    problem_specification:
+      type: comm_problem
+      details: >
+        Общая проблема
+
+  accident_report.sd-none_1:
+    title: Grafana, 19/06/2024, INC-1649
+    short_description: >
+      Пользователи не могли зайти в систему. 
+    date: 19.06.2024
+    accident_object:
+      object_id: samolet.bu_csp.grafana
+      object_type: components
+    accident_report_link: https://wiki.samoletgroup.ru/x/qY1MEQ
+    problem_specification:
+      type: comm_problem
+      details: >
+        Общая проблема
+
+  accident_report.sd-none_2:
+    title: S.Connect, 19/06/2024, INC-1653
+    short_description: >
+      Проверка получения кода в почту zabbixad не пройдена.
+    date: 19.06.2024
+    accident_object:
+      object_id: samolet.bu_csp.sconnect
+      object_type: components
+    accident_report_link: https://wiki.samoletgroup.ru/x/pI1MEQ
+    problem_specification:
+      type: comm_problem
+      details: >
+        Общая проблема
+
+  accident_report.sd-none_3:
+    title: Tableau, 21/06/2024, INC-2298
+    short_description: >
+      Недоступность Tableau.
+    date: 21.06.2024
+    accident_object:
+      object_id: samolet.bu_csp.bi
+      object_type: components
+    accident_report_link: https://wiki.samoletgroup.ru/x/lY1MEQ
+    problem_specification:
+      type: comm_problem
+      details: >
+        Общая проблема

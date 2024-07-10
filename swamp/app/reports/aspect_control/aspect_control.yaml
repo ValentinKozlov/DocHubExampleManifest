@@ -1,0 +1,162 @@
+docs:
+  aspect.control:
+    location: Архитектура в цифрах/Контроль функциональности систем
+    type: markdown
+    source: aspect_control.md
+
+  aspect.system_by_aspect_group:    
+    type: markdown
+    source: systems_table_by_aspects.md
+
+  aspect.systems_by_aspect_group_table:
+    type: table
+    headers:
+      - value: error
+        text: Статус проверки
+        sortable: true
+        align: left
+        width: 30px
+
+      - value: tu_block
+        text: ИТ-команда
+        sortable: true
+        align: left
+        width: 20px
+
+      - value: system
+        text: Система
+        sortable: true
+        align: left
+        width: 20px
+        link: link_to_system
+
+      - value: aspect
+        text: Функциональность (отвечает архитектор системы)
+        sortable: true
+        align: left
+        width: 10%
+
+      - value: architect
+        text: Архитектор системы
+        sortable: true
+        align: left
+        width: 20px
+        link: acc_link
+
+      - value: aspect_group
+        text: Группа функциональности (отвечает корп архитектор)
+        sortable: true
+        align: left
+        width: 20px
+
+      - value: service_type
+        text: Тип группы
+        sortable: true
+        align: left
+        width: 20px
+
+      - value: business_area
+        text: Бизнес область
+        sortable: true
+        align: left
+        width: 20px
+
+      - value: error_desc
+        text: Описание ошибки        
+        align: left
+        width: 30px
+    origin: samolet.dataset.system_aspects
+    source: >
+      (
+        $system_aspects := $;
+        $system_aspects.{
+          "error" : error ? "❌" : "✅",
+          "error_desc" : error_desc,
+          "system" : system,
+          "link_to_system": link_to_system,
+          "aspect": $length(aspect_id) != 0 ? aspect.title & "\n(" & aspect_id & ")" : "❌",
+          "aspect_group": $length(aspect_group_id) != 0 ? aspect_group.title & "\n(" & aspect_group_id & ")" : "❌",
+          "service_type": aspect_group.service_type = "channel" ? "Канал" : aspect_group.service_type = "service" ? "Сервис" : "",          
+          "business_area": business_area.title,
+          "tu_block": tu_block.title,
+          "architect" : architect,
+          "acc_link" : acc_link
+        };
+      )
+
+  aspect.check_duplicate_func:    
+    type: markdown
+    source: check_duplicate_func.md
+
+  aspect.check_duplicate_func_table:
+    type: table
+    headers:
+      - value: business_area
+        text: Бизнес область
+        sortable: true
+        align: left        
+
+      - value: aspect_group
+        text: Группа функциональности
+        sortable: true
+        align: left
+        link: detailed_link
+
+      - value: aspect
+        text: Функциональность системы
+        sortable: true
+        align: left
+      - value: system
+
+        text: Система с дублирующейся функциональностью
+        sortable: true
+        align: left
+        link: link_to_system
+
+      - value: system_desc
+        text: Краткое описание системы
+        sortable: true
+        align: left
+
+      - value: tu_block
+        text: ИТ-команда
+        sortable: true
+        align: left
+        
+    origin: samolet.dataset.system_aspects
+    source: >
+      (
+        $system_aspects := $;        
+        $aspect_group_id := $params.aspect_group_id;
+
+        $system_aspects_group_id := $distinct($aspect_group_id ? $system_aspects[aspect_group_id=$aspect_group_id].aspect_group_id : $system_aspects[aspect_group_id!=""].aspect_group_id);
+        $system_aspects_result := $system_aspects_group_id.(
+          $group_id := $; 
+          $sys_aspects := $system_aspects[aspect_group_id=$group_id];
+          $sys_aspects_count := $count($distinct($sys_aspects.system_id));
+          $sys_aspects_count > 1
+          ? (
+              $sys_aspects.(
+                $sys_aspect := $;
+                $detailed_link := $aspect_group_id
+                ? ""
+                : "/entities/docs/blank?dh-doc-id=aspect.check_duplicate_func_table&aspect_group_id=" & $sys_aspect.aspect_group_id;
+
+                $service_type := $sys_aspects.aspect_group.service_type = "channel" ? "Канал - " : $sys_aspects.aspect_group.service_type = "service" ? "Сервис - " : "";
+                {
+                  "business_area" : $sys_aspect.business_area.title,
+                  "aspect_group" : $service_type & $sys_aspect.aspect_group.title & "\n(" & $sys_aspect.aspect_group_id & ")",
+                  "aspect_group_id" : $sys_aspect.aspect_group_id,
+                  "detailed_link" : $detailed_link,
+                  "system" : $sys_aspect.system,
+                  "system_desc" : $sys_aspect.system_desc,
+                  "system_id" : $sys_aspect.system_id,
+                  "link_to_system": $sys_aspect.link_to_system,
+                  "aspect": $length($sys_aspect.aspect_id) != 0 ? $sys_aspect.aspect.title & "\n(" & $sys_aspect.aspect_id & ")" : "❌",
+                  "aspect_id" : $sys_aspect.aspect_id,
+                  "tu_block" : $sys_aspect.tu_block.title
+                };
+              )
+            )
+        )^(aspect_group_id, aspect_id, system_id);
+      )

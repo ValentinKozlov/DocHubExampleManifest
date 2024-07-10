@@ -1,0 +1,72 @@
+docs:
+  metrics.it_accidents:
+    # location: Архитектура в цифрах/Доля целевых систем
+    description: Доля аварий в ИТ-системах **не** по вине архитектурных решений
+    type: markdown
+    author: v.kozlov
+    template: it_accidents.md    
+    source: >
+      (
+        $manifest := $;
+        $it_accidents := $manifest."smlteaf.it_accidents".$spread().($merge([ { "id" : $keys() }, $.* ]));
+        $it_accidents_arch := $it_accidents[problem_specification.type = "arch_problem"];
+
+        $it_accidents_total_count := $count($it_accidents.id);
+        $it_accidents_arch_count := $count($it_accidents_arch.id);
+        {
+          "total_it_accidents": $it_accidents_total_count,
+          "arch_it_accidents": $it_accidents_arch_count,
+          "cover_arch_it_accidents": $round(($it_accidents_total_count - $it_accidents_arch_count)/$it_accidents_total_count * 100, 2)
+        };
+      )
+
+  metrics.it_accidents_list:
+    description: Список отчетов по ИТ-авариям
+    type: table
+    headers:
+      - value: title
+        text: Авария
+        sortable: true
+        align: left        
+        width: 30%
+        link: accident_report_link
+        
+      - value: short_description
+        text: Краткое описание
+        sortable: false
+        align: left
+        width: 30%
+
+      - value: date
+        text: Дата
+        sortable: true
+        align: left
+
+      - value: type
+        text: Тип проблемы
+        sortable: true
+        align: left
+
+      - value: details
+        text: Детали
+        sortable: true
+        align: left
+        width: 30%
+        
+    source: >
+      (
+        $manifest := $;
+        $it_accidents := $manifest."smlteaf.it_accidents".$spread().(
+          $it_accident := $.*;
+          $problem_type := $it_accident.problem_specification.type = "arch_problem" ? "Архитектурная" : "Общая";
+          {
+            "title": $it_accident.title,
+            "short_description": $it_accident.short_description,
+            "date": $it_accident.date,
+            "type": $problem_type,
+            "details": $it_accident.problem_specification.details,
+            "accident_report_link": $it_accident.accident_report_link
+          };
+          
+        )^(date);
+      )

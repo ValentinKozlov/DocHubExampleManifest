@@ -1,0 +1,182 @@
+smlteaf.it_accidents:
+  accident_report.sd-903299:
+    title: Сетевая инфраструктура ЦОД, SD-903192, 30/05/2024
+    short_description: >
+      Часть сервисов было недоступно
+    date: 30.05.2024
+    accident_object:
+      object_id:
+      object_type:
+    accident_report_link: https://wiki.samoletgroup.ru/x/HytGE
+    problem_specification:
+      type: comm_problem
+      details: >
+        Общая проблема
+
+  accident_report.sd-899781:
+    title: VDI, 27/05/2024, SD-897163
+    short_description: >
+      Невозможность подключения к VDI через 2FA
+    date: 27.05.2024
+    accident_object:
+      object_id: samolet.bu_csp.vdi
+      object_type: components # <идентификатор сущности описывающей объект>
+    accident_report_link: https://wiki.samoletgroup.ru/x/GStGE
+    problem_specification:
+      type: comm_problem
+      details: >
+        Общая проблема
+
+  accident_report.sd-905094:
+    title: S.Cost, 30/05/2024, SD-903478
+    short_description: >
+      Не работает S.Cost: долгая загрузка сервиса, пустые строки в расчете, периодическая ошибка "учетные данные не были предоставлены".
+    date: 30.05.2024
+    accident_object:
+      object_id: samolet.bu_csp.scost
+      object_type: components # <идентификатор сущности описывающей объект>
+    accident_report_link: https://wiki.samoletgroup.ru/x/LCtGE
+    problem_specification:
+      type: comm_problem
+      details: >
+        Общая проблема
+
+  accident_report.sd-899204:
+    title: Контур.Толк, 23/05/2024, SD-892970
+    short_description: >
+      Технические сбои на стороне Контур.Толк. У части пользователей могут наблюдаться проблемы в работе сервиса Контур.Толк: длительное подключение, вылеты из конференции.
+    date: 23.05.2024
+    accident_object:
+      object_id: samolet.bu_csp.kontur_tolk
+      object_type: components # <идентификатор сущности описывающей объект>
+    accident_report_link: https://wiki.samoletgroup.ru/x/zTz2Dw
+    problem_specification:
+      type: comm_problem
+      details: >
+        Общая проблема
+
+  accident_report.sd-897461:
+    title: Сетевые сервисы, 23/05/2024, SD-897105
+    short_description: >
+      При обновлении коммутаторов H3C по RFC-1521 коммутатор 10.20.200.143 не загрузился после перезагрузки.
+    date: 23.05.2024
+    accident_object:
+      object_id:
+      object_type: # <нет сущности в DocHub описывающей данный объект>
+    accident_report_link: https://wiki.samoletgroup.ru/x/FT32Dw
+    problem_specification:
+      type: comm_problem
+      details: >
+        Общая проблема
+
+  accident_report.sd-890833:
+    title: S.Contracts, 22/05/2024, SD-890023
+    short_description: >
+      Не открывались ссылки на договоры, ошибки при заполнении карточки договора.
+    date: 22.05.2024
+    accident_object:
+      object_id: samolet.bu_moscow.scontracts
+      object_type: components # <идентификатор сущности описывающей объект>
+    accident_report_link: https://wiki.samoletgroup.ru/x/-Dz2Dw
+    problem_specification:
+      type: comm_problem
+      details: >
+        Общая проблема
+
+  accident_report.sd-896885:
+    title: Сетевые сервисы, 20/05/2024, SD-887664
+    short_description: >
+      Проблема на сети, массовое падение сервисов.
+    date: 20.05.2024
+    accident_object:
+      object_id:
+      object_type: # <нет сущности в DocHub описывающей данный объект>
+    accident_report_link: https://wiki.samoletgroup.ru/x/pTz2Dw
+    problem_specification:
+      type: comm_problem
+      details: >
+        Общая проблема
+
+  accident_report.sd-886385:
+    title: 1с ЗУП, 17/05/2024, SD-884673
+    short_description: >
+      Недоступность 1с ЗУП.
+    date: 17.05.2024
+    accident_object:
+      object_id: samolet.bu_csp.1czup
+      object_type: components
+    accident_report_link: https://wiki.samoletgroup.ru/x/aaHRDw
+    problem_specification:
+      type: comm_problem
+      details: >
+        Общая проблема
+        
+  accident_report.sd-887175:
+    title: RDS, 16/05/2024, SD-882290
+    short_description: >
+      Невозможность подключиться к RDS.
+    date: 16.05.2024
+    accident_object:
+      object_id:
+      object_type: # <нет сущности в DocHub описывающей данный объект>
+    accident_report_link: https://wiki.samoletgroup.ru/x/cKHRDw
+    problem_specification:
+      type: comm_problem
+      details: >
+        Общая проблема
+
+  accident_report.sd-885011:
+    title: Jira, 16/05/2024, SD-883663
+    short_description: >
+      Большое количество поступающего спама переполнило ящик SD@samolet.ru и парализовано его работу - по почте не создавались заявки.
+    date: 16.05.2024
+    accident_object:
+      object_id: samolet.bu_csp.jira_sd
+      object_type: components
+    accident_report_link: https://wiki.samoletgroup.ru/x/RKHRDw
+    problem_specification:
+      type: comm_problem
+      details: >
+        Общая проблема
+
+  accident_report.sd-881780:
+    title: Check Point NGFW, 15/05/2024, SD-881424
+    short_description: >
+      Потеряна связь до кластера Checkpoint, что привело к недоступности ресурсов расположенных в ЦОД.
+    date: 15.05.2024
+    accident_object:
+      object_id: samolet.bu_csp.checkpoint_user_vpn
+      object_type: components
+    accident_report_link: https://wiki.samoletgroup.ru/x/JaHRDw
+    problem_specification:
+      type: comm_problem
+      details: >
+        Общая проблема
+
+  accident_report.sd-882934:
+    title: S.Team, 02/05/2024, SD-866718
+    short_description: >
+      S.team не работал у всех пользователей, скорее всего мобильное приложение сотрудника не работало у части пользователей
+    date: 02.05.2024
+    accident_object:
+      object_id: samolet.bu_csp.steam
+      object_type: components
+    accident_report_link: https://wiki.samoletgroup.ru/x/iVggDw
+    problem_specification:
+      type: comm_problem
+      details: >
+        Общая проблема
+
+  accident_report.sd-882918:
+    title: S.Employee, 02/05/2024, SD-866718
+    short_description: >
+      Недоступность мобильного приложения  S.Employee для всех пользователей.
+    date: 02.05.2024
+    accident_object:
+      object_id: samolet.bu_csp.semployee
+      object_type: components
+    accident_report_link: https://wiki.samoletgroup.ru/x/hFggDw
+    problem_specification:
+      type: comm_problem
+      details: >
+        Общая проблема

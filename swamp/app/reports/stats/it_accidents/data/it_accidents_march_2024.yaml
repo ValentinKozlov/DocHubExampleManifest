@@ -1,0 +1,154 @@
+smlteaf.it_accidents:
+  accident_report.sd-809212:
+    title: Сервис файлового хранения, 21/03/2024, SD-808759
+    short_description: >
+      Замедление и периодическая недоступность отдельных сетевых папок.
+    date: 21.03.2024
+    accident_object:
+      object_id:
+      object_type: # <нет сущности в DocHub описывающей данный объект>
+    accident_report_link: https://wiki.samoletgroup.ru/x/urA_Dg
+    problem_specification:
+      type: comm_problem
+      details: >
+        Общая проблема
+  
+  accident_report.sd-804723:
+    title: S.Materials, 14/03/2024, SD-800299
+    short_description: >
+      Недоступен сервис S.Materials.
+    date: 14.03.2024
+    accident_object:
+      object_id: samolet.bu_moscow.smaterials
+      object_type: components
+    accident_report_link: https://wiki.samoletgroup.ru/x/KRQwDg
+    problem_specification:
+      type: arch_problem
+      details: >
+        Архитектура S.Materials оставляет желать лучшего, внутри системы куча логических дыр включая дыры хранения логов, что и привело к проблеме
+      
+  accident_report.sd-800331:
+    title: S.SUP, 13/03/2024, SD-797101
+    short_description: >
+      После формирования заявок их не видно на экране.
+    date: 13.03.2024
+    accident_object:
+      object_id: samolet.bu_moscow.ssup
+      object_type: components
+    accident_report_link: https://wiki.samoletgroup.ru/x/1BMwDg
+    problem_specification:
+      type: comm_problem
+      details: >
+        Общая проблема
+
+  accident_report.sd-810236:
+    title: samolet.ru, 11/03/2024, SD-792646
+    short_description: >
+      Медленная работа сайта.
+    date: 11.03.2024
+    accident_object:
+      object_id: samolet.bu_samolet_plus.samolet_ru
+      object_type: components
+    accident_report_link: https://wiki.samoletgroup.ru/x/nLA_Dg
+    problem_specification:
+      type: comm_problem
+      details: >
+        Общая проблема
+
+  accident_report.sd-809294:
+    title: Самолет+ ЦП.Ядро, 08/03/2024, SD-792043
+    short_description: >
+      Появление ошибок HTTP error 500 больше 5 в минуту
+    date: 08.03.2024
+    accident_object:
+      object_id: samolet.bu_samolet_plus.samolet_ru
+      object_type: components
+    accident_report_link: https://wiki.samoletgroup.ru/x/nRQwDg
+    problem_specification:
+      type: arch_problem
+      details: >
+        Система представляет из себя монолит с прямым доступом API к БД, что и постоянно приводит к блокировке данных при больших пакетах записи или чтения
+
+  accident_report.sd-789328:
+    title: 1С ЖКХ, 06/03/2024, SD-788563
+    short_description: >
+      Невозможность входа в база 1С ЖКХ Самолет УК. Пользователи сообщили о массовой проблеме с авторизацией в 1С ЖКХ Самолет УК 2022 Srvr="sd-ap04";Ref="SamoletUK2022".
+    date: 06.03.2024
+    accident_object:
+      object_id: samolet.bu_samolet_plus.1czhkh
+      object_type: components
+    accident_report_link: https://wiki.samoletgroup.ru/x/-0ILDg
+    problem_specification:
+      type: comm_problem
+      details: >
+        Общая проблема
+
+  accident_report.sd-789883:
+    title: Витрина СамолетПлюс.ру, 01/03/2024, SD-782617
+    short_description: >
+      Недоступность сайта samoletplus.ru. Пользователи видели ошибку 500.
+    date: 01.03.2024
+    accident_object:
+      object_id: samolet.bu_samolet_plus.samolet_ru
+      object_type: components
+    accident_report_link: https://wiki.samoletgroup.ru/x/3ob_DQ
+    problem_specification:
+      type: comm_problem
+      details: >
+        Общая проблема
+
+  accident_report.sd-791843:
+    title: Сервис файлового хранения, 01/03/2024, SD-783904
+    short_description: >
+      Пользователи столкнулись с проблемой при попытке открытия сетевых дисков: нет подключения к сетевым дискам, зависание проводника. 
+    date: 01.03.2024
+    accident_object:
+      object_id:
+      object_type: # <нет сущности в DocHub описывающей данный объект>
+    accident_report_link: https://wiki.samoletgroup.ru/x/lz8LDg
+    problem_specification:
+      type: comm_problem
+      details: >
+        Общая проблема
+
+  accident_report.sd-819497:
+    title: S.Connect, 28/03/2024, SD-818971
+    short_description: >
+      Недоступность S.Connect (RocketChat).
+    date: 28.03.2024
+    accident_object:
+      object_id: samolet.bu_csp.sconnect
+      object_type: components
+    accident_report_link: https://wiki.samoletgroup.ru/x/zv9DDg
+    problem_specification:
+      type: comm_problem
+      details: >
+        Общая проблема
+
+  accident_report.sd-826504:
+    title: Check Point NGFW, 26/03/2024, SD-814717
+    short_description: >
+      Глобальные проблемы с подключением по 2FA "Access Denied". 
+    date: 26.03.2024
+    accident_object:
+      object_id: samolet.bu_csp.checkpoint_user_vpn
+      object_type: components
+    accident_report_link: https://wiki.samoletgroup.ru/x/RABdDg
+    problem_specification:
+      type: comm_problem
+      details: >
+        Общая проблема
+
+  accident_report.sd-816581:
+    title: S.Control, 26/03/2024, SD-816106
+    short_description: >
+      Не отображаются заявки для пользователей системы.
+    date: 26.03.2024
+    accident_object:
+      object_id: samolet.bu_moscow.scontrol
+      object_type: components
+    accident_report_link: https://wiki.samoletgroup.ru/x/jJCODg
+    problem_specification:
+      type: comm_problem
+      details: >
+        Общая проблема

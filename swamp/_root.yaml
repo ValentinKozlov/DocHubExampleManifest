@@ -1,14 +1,10 @@
-imports:  
-  - adrs/_root.yaml
-  - application_arch/_root.yaml
-  - artifacts/_root.yaml
-  - business_arch/_root.yaml
-  - dictionaries/_root.yaml
-  - documentation/_root.yaml
+imports:
+  - app/_root.yaml  
+  - ba/_root.yaml
+  - change/_root.yaml  
   - enterprise_arch/_root.yaml
-  - information_arch/_root.yaml  
-  - standards/_root.yaml  
-  - tech_arch/_root.yaml
+  - ia/_root.yaml    
+  - ta/_root.yaml
   - dochub_menu.yaml
   
   

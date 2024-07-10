@@ -1,4 +1,0 @@
-imports:
-  - technologies.yaml  
-  - environments/_root.yaml
-  - reports/_root.yaml

@@ -1,0 +1,9 @@
+docs:
+  # Первый домен - это имя каталога, если в меню dochub_menu.yaml указан конкретный пункт для вывода информации, то берем имя из указанного файла
+  change.adl:    
+    location: Архитектура решений/Architecture decision log
+    description: Пример управления ADR
+    type: markdown
+    template: adl.md    
+    
+
